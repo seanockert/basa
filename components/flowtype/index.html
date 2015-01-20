@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Flowtype</title>
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0;}
+  </style>
+
+</head>
+
+<body>
+
+
+<h1>Flowtype</h1>
+
+<div id="flowtype">
+  <h2>What does FlowType.JS do?</h2>
+  <p>Ideally, the most legible typography contains between 45 and 75 characters per line. This is difficult to accomplish for all screen widths with only CSS media-queries. FlowType.JS eases this difficulty by changing the font-size and subsequently the line-height based on a specific element's width. This allows for a perfect character count per line at any screen width.</p>
+</div>
+<div class="clear"></div>
+
+<ol>
+  <li>Attach the script <a href="../../js/plugins/flowtype.native.js"><code>js/plugins/flowtype.native.js</code></a></li>
+  <li>Init the plugin with the target element: <code>window.flowtype(targetElem, {...});</code></li>
+  <li>Tweak values based on your font: <code>minFont: 16, maxFont: 48, fontRatio: 36</code></li>
+</ol>
+
+<a href="http://simplefocus.com/flowtype">View the documentation</a>
+
+<script src="../../js/plugins/flowtype.native.js"></script>
+
+<script>
+  // Add Flowtype to the 'flowtype' element
+  var flowtypeElem = document.getElementById('flowtype');
+  window.flowtype( flowtypeElem, {
+    minFont : 16,
+    maxFont : 48,
+    fontRatio : 36
+  });
+</script>
+
+
+</body>
+</html>

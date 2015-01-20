@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Responsive Nav</title>
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0;}
+  </style>
+  <link rel="stylesheet" href="components-responsive-nav.css" type="text/css">
+
+</head>
+
+<body>
+
+<h1>Responsive Navigation Menu</h1>
+Resize this page to see the menu adapt.<br>
+
+<button class="open nav-menu x" type="button" role="button" id="menu" aria-label="Toggle Navigation">
+  <span class="lines"></span>
+</button>
+
+<nav id="responsive-nav" class="nav-collapse">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<h2>How to use</h2>
+<ol>
+  <li>Attach the script <a href="../../js/plugins/responsive-nav.min.js"><code>js/plugins/responsive-nav.min.js</code></a></li>
+  <li>Use the base styling in <a href="../../scss/plugins/_responsive-nav.scss"><code>scss/plugins/_responsive-nav.scss</code></a></li>
+  <li>Init the plugin with a nav ID reference: <code>var navigation = responsiveNav('#responsive-nav');</code></li>
+  <li>The breakpoint is defined in the CSS file. Default <code>40em/640px</code></li>
+</ol>
+
+<h2>Advanced usage with a custom button</h2>
+<code><pre>
+var navigation = responsiveNav('#responsive-nav', {
+  transition: 250,
+  label: 'Menu',
+  insert: 'before',
+  customToggle: '#menu',
+  openPos: 'relative',
+  open: function () {
+    var menu = document.getElementById("menu");
+    menu.className=menu.className.replace(/(^|\s)open(\s|$)/, 'close ');
+  },
+  close: function () {
+    var menu = document.getElementById("menu");
+    menu.className=menu.className.replace(/(^|\s)close(\s|$)/, 'open ');
+  }
+});
+</pre></code>
+
+<p><a href="https://github.com/viljamis/responsive-nav.js">View the documentation</a></p>
+
+<script src="../../js/plugins/responsive-nav.min.js"></script>
+
+<script>
+  // Basic usage - provides a Menu link
+  //var navigation = responsiveNav('#responsive-nav');
+
+  // Advanced usage with custom button
+  var navigation = responsiveNav('#responsive-nav', {
+    transition: 250,
+    label: 'Menu',
+    insert: 'before',
+    customToggle: '#menu',
+    openPos: 'relative',
+    open: function () {
+      var menu = document.getElementById("menu");
+      menu.className=menu.className.replace(/(^|\s)open(\s|$)/, 'close ');
+    },
+    close: function () {
+      var menu = document.getElementById("menu");
+      menu.className=menu.className.replace(/(^|\s)close(\s|$)/, 'open ');
+    }
+  });
+
+</script>
+
+
+</body>
+</html>

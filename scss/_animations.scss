@@ -1,0 +1,73 @@
+
+/* Animations */
+
+
+@include keyframes(targetFade) {
+  0%    { background-color: rgba(255,250,217,1); }
+  100%  { background-color: rgba(255,250,217,0); }  
+}
+
+@include keyframes(bounce) {
+    0% { @include transform(scale(1,1)); }
+    40% { @include transform(scale(1.1,0.9)); }
+    65% { @include transform(scale(0.95,1.05)); }
+    100% { @include transform(scale(1,1)); }
+}
+
+@include keyframes(flyIn) {
+  0%, 60%, 75%, 100% {
+    @include vendor-prefix(transition-timing-function, cubic-bezier(0.215, 0.610, 0.355, 1.000));
+  }
+
+  0% {
+    opacity: 0;
+    @include transform(translate3d(-3000px, 0, 0))
+  }
+
+  60% {
+    opacity: 1;
+    @include transform(translate3d(25px, 0, 0))
+  }
+
+  75% {
+    @include transform(translate3d(-10px, 0, 0))
+  }
+
+  100% {
+    @include transform(none)
+  }
+}
+
+@include keyframes(flyOut) {
+  20% {
+    opacity: 1;
+    @include transform(translate3d(20px, 0, 0))
+  }
+
+  100% {
+    opacity: 0;
+    @include transform(translate3d(-2000px, 0, 0))
+  }
+}
+
+.amim {
+  @include vendor-prefix(transition, all 450ms cubic-bezier(0.650, 0.045, 0.405, 1.000));
+}
+
+.bounce {
+  @include vendor-prefix(animation, bounce 0.35s );
+}
+
+.fly-in {
+  @include vendor-prefix(animation, flyIn 1s );
+}
+
+.fly-out {
+  @include vendor-prefix(animation, flyOut 1s );
+}
+
+.bounce,
+.fly-in,
+.fly-out {
+  @include vendor-prefix(fill-mode, forwards);
+}

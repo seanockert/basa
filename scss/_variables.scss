@@ -1,0 +1,103 @@
+
+/* Colours ---------------------- */
+
+$color-off-white: #f6f6f6;
+$color-off-black: #111;
+$color-mid-grey: #404040;
+$color-light-grey: #666;
+$color-mute: #999;
+$color-grey-highlight: #F0F0F0;
+$color-blue: #0085AD;
+
+$color-yellow: #ffe168;
+$color-red: #E74C3C;
+$color-base: #27b987;
+
+$social-facebook-blue: #3b5997;
+$social-twitter-blue: #32ccfe;
+$social-googleplus-red: #f23c26;
+$social-pinterest-red: #CC2229;
+
+
+
+/* Fonts  ---------------------- */
+
+$typeface-primary: 'Open Sans', sans-serif;
+$typeface-header: 'Open Sans', sans-serif;
+
+$font-size-base: 1em !default;
+$font-size-small: 0.875em;
+$font-size-medium: 1.25em;
+$font-size-large: 1.5em;
+$font-size-xlarge: 2.25em;
+$font-size-xxlarge: 3.625em;
+
+$normal: 400;
+$strong: 700;
+
+
+
+/* Mixins ---------------------- */
+
+
+/* Clear floats */
+@mixin clearfix() {
+  *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+.clear { clear: both; }
+  
+/* Replaced by Bourbon functions 
+   eg .box { @include vendor-prefix('border-radius', '10px'); }
+*/
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+
+/* Set the default box-sizing to be border-box */
+@mixin box-sizing($type:border-box) {
+  @if $vendors {
+    -moz-box-sizing: $type;
+    -webkit-box-sizing: $type;
+  }
+  box-sizing: $type;
+}
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+/* Use .no-list for a blank list - useful for nav */
+@mixin blank-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+    }
+}
+
+.no-list { @include blank-list; }
+
+
+.inline-list {
+  @include blank-list;
+
+  li {
+    display: inline-block;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+}

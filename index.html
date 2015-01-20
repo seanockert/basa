@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <title>Basa - base framework</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,700italic' rel='stylesheet' type='text/css'>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <link rel="stylesheet" href="css/ie.css">
+  <![endif]-->
+
+  <!-- Use these to customise how the page will look when shared on Facebook and Twitter -->
+  <meta content="" property="og:title" />
+  <meta content="" property="og:description" />
+  <meta content="" property="og:image" />
+  <meta content="600" property="og:image:width" />
+  <meta content="315" property="og:image:height" />
+  <meta content="" property="og:url" />
+
+  <meta content="" property="twitter:title" />
+  <meta content="" property="twitter:description" />
+  <meta content="" property="twitter:image:src" />
+  <meta content="600" property="twitter:image:width" />
+  <meta content="315" property="twitter:image:height" />
+
+  <script>document.createElement( "picture" );</script>
+  <script src="js/plugins/picture-fill.min.js"></script>
+
+  <script>
+    /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-xxxxxx', '');
+    ga('send', 'pageview');
+    var obLink = function(sku, store, url) { ga('send', 'event', sku, store, url, {'hitCallback': function () { document.location = url; }}); return false; } */
+  </script>
+</head>
+
+<body>
+  <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+  <div id="nav">
+    <div id="logo">
+      <h1>Basa</h1>
+      <strong>Sean's Framework</strong>
+    </div>
+
+    <ul class="vertical-nav" id="main-nav">
+      <li><a href="#section-grid">Grid</a></li>
+      <li><a href="#section-type">Type</a></li>
+      <li><a href="#section-forms">Forms</a></li>
+      <li><a href="#section-plugins">Plugins</a></li>
+      <li><a href="#section-animations">Animations</a></li>
+    </ul>
+
+  </div>
+
+  <div id="content">
+    <div class="row clearfix">
+
+      <div class="columns large-10 medium-9">
+
+        <div id="section-grid" class="section">
+          <h2>1 - The Grid</h2>
+          <h3><em>1.1</em> Foundation Grid</h3>
+          <div class="row">
+            <div class="columns large-6 medium-6">
+              <img src="http://placehold.it/640x320">
+              <h4>Zurb Foundation Grid Layout</h4>
+              <p>Create powerful multi-device layouts quickly and easily with the default 12-column, nest-able Foundation grid. If you're familiar with grid systems, you'll feel right at home. If not, you'll learn quickly.</p>
+
+            </div>
+            <div class="columns large-6 medium-6">
+              <img src="http://placehold.it/640x320">
+              <h4>How to Use</h4>
+              <p>Foundation is mobile-first. Code for small screens first, and larger devices will inherit those styles. Customize for larger screens as necessary.</p>
+              <p><a href="http://foundation.zurb.com/docs/components/grid.html" data-no-instant>View the documentation</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <h3><em>1.2</em> Equal Grid</h3>
+
+        <div class="half">
+            <a href="#section-grid" class="inner">
+              <div class="v-align">
+                  <h2>Clickable Box 1</h2>
+              </div>
+            </a>
+          </div>
+
+          <div class="half two" style="background: #ddd;">
+            <div class="inner">
+              <div class="v-align">
+                  <h2>Box 2</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="half two" style="background: #ccc;">
+            <div class="inner">
+              <div class="v-align">
+                  <h2>Box 3</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+
+          <div class="half two" style="background: #ccc;">
+            <div class="inner">
+              <div class="v-align">
+                  <h2>Box 4</h2>
+              </div>
+            </div>
+          </div>
+          <div class="half four">
+            <div class="half" style="background: #bbb;">
+              <div class="inner">
+              <div class="v-align">
+                  <h2>Box 5</h2>
+              </div>
+              </div>
+            </div>
+            <div class="half">
+              <div class="inner" style="background: #aaa;">
+              <div class="v-align">
+                  <h2>Box 6</h2>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+
+        <div id="section-type" class="section">
+          <h2>2 - Typography</h2>
+
+          <h3><em>2.1</em> Headings</h3>
+
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+
+
+          <br>
+          <h3><em>2.2</em> Lists</h3>
+          <div class="columns large-4 medium-4">
+            <ul>
+              <li>Unordered List Item 1</li>
+              <li>Unordered List Item 2</li>
+              <li>Unordered List Item 3</li>
+            </ul>
+          </div>
+          <div class="columns large-4 medium-4">
+            <ol>
+              <li>Ordered List Item 1</li>
+              <li>Ordered List Item 2</li>
+              <li>Ordered List Item 3</li>
+            </ol>
+          </div>
+          <div class="columns large-4 medium-4">
+            <br>
+            <ul class="no-list">
+              <li>Unstyled List Item 1</li>
+              <li>Unstyled List Item 2</li>
+              <li>Unstyled List Item 3</li>
+            </ul>
+          </div>
+
+          <div class="clear"></div>
+
+          <h3><em>2.3</em> Blockquote</h3>
+
+          <blockquote>When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That's relativity.</blockquote>
+
+          <h3><em>2.4</em> Messages</h3>
+          <div class="msg">
+            <strong>Alert headline!</strong>
+            Message text
+          </div>
+
+          <h3><em>2.5</em> Fancy Divider</h3><br>
+          <div class="divider"></div>
+
+        </div>
+
+        <div class="clear"></div>
+        <hr>
+
+        <div id="section-forms" class="section">
+          <h2>3 - Forms</h2>
+          <div class="row">
+            <div class="columns large-6 medium-12">
+              <form>
+                  <label>Your Name</label>
+                  <input type="text" placeholder="Name">
+
+                  <label>Your Email</label>
+                  <input type="email" placeholder="Email">
+
+                  <label>Comment</label>
+                  <textarea placeholder="Type your comment"></textarea>
+
+                  <input type="submit" value="Send Form">
+              </form>
+              <br><br>
+              <form class="sign-in">
+                  <input type="text" placeholder="Username" value="admin" class="inline">
+                  <input type="password" placeholder="Password" value="xxxxxx" class="inline">
+                  <input type="submit" value="Sign In" class="inline">
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="section-plugins" class="section">
+          <h2>4 - Plugins</h2>
+
+          <h3><em>4.1</em> Lightbox</h3>
+          <a href="http://placehold.it/640x280" rel="lightbox"><img src="http://placehold.it/128x128/27B987/ffffff&text=Click+Me"></a>
+
+          <ol>
+            <li>Attach the script <a href="js/plugins/lightbox.js"><code>js/plugins/lightbox.js</code></a></li>
+            <li>For each picture you want to expand in a lightbox, attach to the anchor link: <code>rel="lightbox"</code></li>
+            <li>You can set a breakpoint. Below this lightbox will simply load the image. Default 568px.</li>
+          </ol>
+
+          <a href="components/lightbox/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.2</em> Picture Fill</h3>
+
+          <img src="http://placehold.it/640x320/0099C7/ffffff&text=Small" sizes="(min-width: 40em) 100vw, 100vw" srcset="http://placehold.it/640x320/0099C7/ffffff&text=Small 640w, http://placehold.it/768x384/E8117F/ffffff&text=Medium 768w, http://placehold.it/840x420/27B987/ffffff&text=Large 840w" alt="">
+          <ol>
+            <li>Attach the script <a href="js/plugins/picture-fill.min.js"><code>js/plugins/picture-fill.min.js</code></a></li>
+            <li>Create a <code>picture</code> element in the header: <code>document.createElement( "picture" );</code></li>
+          </ol>
+
+          <a href="https://github.com/scottjehl/picturefill/tree/1.2" class="button" data-no-instant>More Info</a> <a href="components/picturefill/" class="button red" data-no-instant>Demo</a>
+
+
+          <h3><em>4.3</em> Responsive Nav</h3>
+
+          <button class="open nav-menu x" type="button" role="button" id="menu" aria-label="Toggle Navigation">
+            <span class="lines"></span>
+          </button>
+
+          <nav id="responsive-nav" class="nav-collapse">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+
+          <ol>
+            <li>Attach the script <a href="js/plugins/responsive-nav.min.js"><code>js/plugins/responsive-nav.min.js</code></a></li>
+            <li>Use the base styling in <a href="scss/plugins/_responsive-nav.scss"><code>scss/plugins/_responsive-nav.scss</code></a></li>
+            <li>Init the plugin with a nav ID reference: <code>var navigation = responsiveNav('#responsive-nav');</code></li>
+          </ol>
+
+          <a href="https://github.com/viljamis/responsive-nav.js" class="button" data-no-instant>More Info</a> <a href="components/responsive-nav/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.4</em> Smooth Scroll</h3>
+          <ol>
+            <li>Attach the script <a href="js/plugins/smooth-scroll.js"><code>js/plugins/smooth-scroll.js</code></a></li>
+            <li>Voila! Anchor links will now scroll smoothly.</li>
+          </ol>
+
+          <a href="components/smooth-scroll/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.5</em> Social Buttons</h3>
+          <p>
+            <a href="#" class="social facebook" data-no-instant><span>Share</span><b></b></a>
+            <a href="https://twitter.com/home?status=Your%20tweet%20%23awesome" class="social twitter" data-no-instant><span>Tweet</span><b></b></a>
+          </p>
+          <ol>
+            <li>Attach the script <a href="js/plugins/social-buttons.js"><code>js/plugins/social-buttons.js</code></a></li>
+            <li>Use the button style in <a href="scss/plugins/_social-buttons.scss"><code>scss/plugins/_social-buttons.scss</code></a></li>
+            <li>Change the target URL in the script to your site. This grabs number of tweets and shares for that URL.</li>
+            <li>Add the buttons: <code>&lt;a href="" class="social twitter/facebook"&gt;&lt;span&gt;Tweet/Share&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;</code></li>
+          </ol>
+
+          <a href="components/social-buttons/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.6</em> Flowtype</h3>
+          <div class="row">
+            <div id="flowtype-demo" class="columns large-10">
+              <h4>What does FlowType.JS do?</h4>
+              <p>Ideally, the most legible typography contains between 45 and 75 characters per line. This is difficult to accomplish for all screen widths with only CSS media-queries. FlowType.JS eases this difficulty by changing the font-size and subsequently the line-height based on a specific element's width. This allows for a perfect character count per line at any screen width.</p>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <ol>
+            <li>Attach the script <a href="js/plugins/flowtype.native.js"><code>flowtype.native.js</code></a></li>
+            <li>Init the plugin with the target element: <code>window.flowtype(targetElem, {...});</code></li>
+            <li>Tweak values based on your font: <code>minFont: 16, maxFont: 48, fontRatio: 36</code></li>
+          </ol>
+
+          <a href="http://simplefocus.com/flowtype" class="button" data-no-instant>More Info</a> <a href="components/flowtype/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.7</em> InstantClick</h3>
+
+          <p>
+            <a href="components/instantclick/second-page.html">Click me for a fast load</a>
+          </p>
+
+          <ol>
+            <li>Attach the script <a href="js/plugins/instantclick.min.js"><code>instantclick.min.js</code></a></li>
+            <li>Init the plugin <code>InstantClick.init();</code></li>
+          </ol>
+
+          <a href="http://instantclick.io/" class="button" data-no-instant>More Info</a> <a href="components/instantclick/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.8</em> Accordion</h3>
+            <br>
+            <ul id="accordion">
+              <li class="q">
+                <dt id="question-1">
+                  <h2>Question 1</h2>
+                </dt>
+                <dd>
+                  <p>Answer 1</p>
+                  <small><a href="#question-1">Permalink</a></small>
+                </dd>
+              </li>
+              <li class="q">
+                <dt id="question-2">
+                  <h2>Question 2</h2>
+                </dt>
+                <dd>
+                  <p>Answer 2</p>
+                  <small><a href="#question-2">Permalink</a></small>
+                </dd>
+              </li>
+            </ul>
+
+            <ol>
+              <li>Attach the script <a href="../../js/plugins/accordion.js"><code>js/plugins/accordion.js</code></a></li>
+              <li>Use the accordion style in <a href="../../css/plugins/_accordion.scss"><code>css/plugins/_accordion.scss</code></a></li>
+              <li>Create a list with the ID: <code>accordion</code></li>
+              <li>Add list items like this:
+              <code>
+              &lt;li class="q"&gt;&lt;dt id="question-1"&gt;&lt;h2&gt;Question 1&lt;/h2&gt;&lt;/dt&gt;&lt;dd&gt;Answer 1&lt;/dd&gt;&lt;/li&gt;...
+              </code>
+              </li>
+            </ol>
+
+            <a href="components/accordion/" class="button red" data-no-instant>Demo</a>
+
+
+            <h3><em>4.9</em> Scroll Events</h3>
+
+            <ol>
+              <li>Attach the dependency script <a href="js/vendors/classie.js"><code>js/vendors/classie.js</code></a></li>
+              <li>Attach the script <a href="js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
+              <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
+              <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
+            </ol>
+
+            <a href="components/scroll-events/" class="button red" data-no-instant>Demo</a>
+
+            <h3><em>4.10</em> Modal Popup</h3>
+            <p>This is rare modal plugin that doesn't rely on jQuery. If you're using the jQuery framework anyway, go with <a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a> instead.</p>
+            <a href="https://github.com/drublic/css-modal" class="button" data-no-instant>More Info</a> <a href="components/modal/" class="button red" data-no-instant>Demo</a>
+
+        </div>
+
+
+        <div id="section-animations">
+          <h2>5 - Animations</h2>
+
+          <div class="box"></div>
+
+          <p>Click the buttons below to play the animation.</p>
+          <img src="http://placehold.it/150x150/27B987/ffffff" id="box-animate" class="">
+          <div class="clear"></div><br>
+          <ul id="test-animate" class="inline-list">
+            <li><a href="javascript:void(0)" class="button" data-anim="bounce">Bounce</a></li>
+            <li><a href="javascript:void(0)" class="button" data-anim="fly-in">Fly In</a></li>
+            <li><a href="javascript:void(0)" class="button" data-anim="fly-out">Fly Out</a></li>
+          </ul>
+
+          <div class="clear"></div>
+
+
+         </div>
+
+        <div class="clear"></div>
+    </div>
+
+
+  </div>
+
+  <div id="footer">
+    <div class="row clearfix text-center"> 
+      <p>&copy; 2015 Basa Framework. Work in Progress by <a href="http://balsamade.com">Seano</a></p>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <script src="js/vendors/jquip.min.js"></script> <!-- Plugins don't require dependencies but using for extra functions -->
+  <script src="js/plugins/fastclick.min.js"></script>
+  
+  <script src="js/plugins/lightbox.js"></script>
+  <script src="js/plugins/responsive-nav.min.js"></script>
+  <script src="js/plugins/smooth-scroll.js"></script>
+  <script src="js/plugins/social-buttons.js"></script>
+  <script src="js/plugins/flowtype.native.js"></script>
+  <script src="js/plugins/accordion.js"></script>
+  
+  <script src="js/plugins/instantclick.min.js"></script>
+  <script data-no-instant>InstantClick.init();</script>
+  <script src="js/vendors/classie.js"></script> <!-- Required for scroll-events.js -->
+  <script src="js/plugins/scroll-events.js"></script>
+
+  <script src="js/scripts.js"></script>
+
+
+</body>
+</html>

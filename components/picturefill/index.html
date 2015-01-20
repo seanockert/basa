@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Picture Fill</title>  
+
+  <style>
+    * { box-sizing: border-box } 
+    html, body { margin: 0; padding: 0;}
+  </style>
+
+  <script>document.createElement( "picture" );</script>
+  <script src="../../js/plugins/picture-fill.min.js"></script>
+
+</head>
+
+<body>
+
+                    
+<h1>Picture Fill - Responsive Images</h1>
+Resize this page to see the image source change.<br><br>
+
+<img src="http://placehold.it/640x320/0099C7/ffffff&text=Small" sizes="(min-width: 40em) 100vw, 100vw" srcset="http://placehold.it/640x320/0099C7/ffffff&text=Small 640w, http://placehold.it/768x384/E8117F/ffffff&text=Medium 768w, http://placehold.it/840x420/27B987/ffffff&text=Large 840w" alt="">
+
+<h2>How to use</h2>
+<ol>
+  <li>Attach the script <a href="../../js/plugins/picture-fill.min.js"><code>js/plugins/picture-fill.min.js</code></a></li>
+  <li>Create a <code>picture</code> element in the header: <code>document.createElement( "picture" );</code></li>
+  <li>Add your image and define breakpoints for each version (see source)</li>
+</ol>
+
+<p><a href="https://github.com/scottjehl/picturefill/tree/1.2">View the documentation</a></p>
+<p><a href="http://ericportis.com/posts/2014/srcset-sizes/">More info on Srcset and responsive images</a></p>
+
+
+</body>
+</html>

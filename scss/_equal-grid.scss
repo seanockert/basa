@@ -1,0 +1,89 @@
+/* Create Equal size boxes */
+
+.half {
+  position: relative;
+  width: 100%;
+  background: #eee;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 50%;
+  } 
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &.four {
+    &:before {
+      padding-top: 0%;
+    } 
+    
+    .half { 
+      width: 50%;
+      float: left; 
+
+      &:before {
+        padding-top: 100%;
+      }       
+    }  
+  }  
+}
+
+/* Inside classes to set text to vertically align middle */
+
+.inner {
+  position:  absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  text-align: center;
+  
+  h2 {
+    margin: 0; /* Used for demo only */
+  }
+  
+}
+
+a.inner:hover {
+  background: $color-base !important;
+  color: #fff;  
+}
+
+
+.v-align {
+  @include vertical-align;
+  @include vendor-prefix(transform, translateY(-50%)); 
+}
+
+@media #{$medium-up} {
+
+  .half { 
+    width: 50%;
+    float: left;   
+    
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;  /* initial ratio of 1:1*/
+    }
+    
+    &.two:before {
+      padding-top: 50%;
+    } 
+    
+    &.four {
+      .half:before {
+        padding-top: 100%;
+      }        
+    }        
+  }
+
+  
+}
+     

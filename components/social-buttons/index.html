@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Social Buttons</title>
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0;}
+  </style>
+  <link rel="stylesheet" href="components-social-buttons.css" type="text/css">
+</head>
+
+<body>
+
+<h1>Social Buttons</h1>
+
+<p>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://google.com" class="social facebook"><span>Share</span><b></b></a>
+  <a href="https://twitter.com/home?status=Your%20tweet%20%23awesome" class="social twitter"><span>Tweet</span><b></b></a>   
+</p>  
+
+<h2>How to use</h2>
+<ol>
+  <li>Attach the script <a href="../../js/plugins/social-buttons.js"><code>js/plugins/social-buttons.js</code></a></li>  
+  <li>Use the button style in <a href="../../scss/plugins/_social-buttons.scss"><code>scss/plugins/_social-buttons.scss</code></a>. This includes the images.</li>  
+  <li>Change the target URL in the script to your site (currently stackoverflow.com). This grabs number of tweets and shares for that URL.</li>
+  <li>Add the buttons: <code>&lt;a href="..." class="social twitter/facebook"&gt;&lt;span&gt;Tweet/Share&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;</code></li>
+</ol>  
+
+<script src="../../js/plugins/social-buttons.js"></script>
+
+
+</body>
+</html>

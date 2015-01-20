@@ -1,0 +1,144 @@
+/*! Responsive-nav.js 1.0.25 by @viljamis. Animation by Bennett Feely http://sarasoueidan.com/blog/navicon-transformicons */
+
+$base-padding: 12px;
+$button-size : 2rem; 
+$transition: .2s; // increase this to see the transformations in slow-motion
+$color-nav: #27b987; 
+
+.nav-collapse {
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    width: 100%;
+    display: block;
+    list-style: none;
+  }
+  
+  li {
+    width: 100%;
+    display: block;     
+  }
+  
+  &.opened {
+    max-height: 9999px;    
+  }
+  
+  &.disable-pointer-events {
+    pointer-events: none !important;
+  }
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.columns.nav-collapse {
+  padding: 0;
+}   
+
+
+ 
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/7;
+  background: $color-nav;
+  border-radius: $button-size/14; 
+  transition: $transition;
+} 
+
+button.nav-menu {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  @include vendor-prefix(user-select, none);
+  outline: none;  
+  border: none;
+  background: transparent;
+  padding: 6px; 
+  box-shadow: none;
+  min-width: 10px;
+}
+
+.lines {
+  @include line;
+  position: relative; 
+  
+  &:before, &:after {
+   
+   @include line;
+    position: absolute;
+    left: 0;
+    content: '';
+    transform-origin: $button-size/14 center;
+  }
+  &:before { top: $button-size/4; }
+  &:after { top: -$button-size/4; }
+}
+
+button.nav-menu.x.close .lines{
+    background: transparent;
+
+    &:before, &:after{
+      @include vendor-prefix(transform-origin, 50% 50%);
+      top:0;
+      width: $button-size;
+    }
+
+    &:before{
+      @include vendor-prefix(transform, rotate3d(0,0,1,45deg)); 
+    }
+    &:after{
+      @include vendor-prefix(transform, rotate3d(0,0,1,-45deg)); 
+    }
+} 
+
+ 
+@media #{$medium-up} {
+
+  .js .nav-collapse {
+    position: relative;
+
+    &.closed {
+      max-height: none;  
+    }
+  }
+
+  .nav-menu, .nav-toggle {
+    display: none;
+  }  
+
+  .nav-collapse {
+    display: block;
+    ul {
+      position: relative;
+      top: auto;
+      right: auto;
+      display: block;
+      margin: 0; 
+      width: 100%; 
+      background: none;
+    }
+  
+    li {
+    float: none;    
+    display: inline;
+    
+      a {
+        float: none;
+        display: inline-block;
+        width: auto;
+        padding: $base-padding;
+      } 
+          
+    }
+  }
+
+} 
+ 

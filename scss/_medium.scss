@@ -1,0 +1,61 @@
+
+/* Tablet and up media queries  ---------------------- */
+@media #{$medium-up} {
+
+  body {
+    &.scrolled {
+      #logo {
+        padding: $base-padding/2;
+        padding-bottom: $base-padding/1.5;
+        text-align: left;
+
+        h1 {
+          font-size: $font-size-xlarge;
+        }
+
+        strong {
+          display: none;
+        }
+      }
+
+      .vertical-nav {
+        position: relative;
+       }
+    }
+  }
+
+
+  #nav {
+    float: left;
+    background: #e6e6e6;
+    width: 220px;
+    height: 100%;
+    position: fixed;
+    text-align: left;
+  }
+
+  #logo {
+    padding: $base-padding;
+    padding-bottom: $base-padding*1.5;
+  }
+
+  .vertical-nav {
+
+     li {
+      float: none;
+      display: block;
+     }
+
+     a {
+      padding: $base-padding/2;
+      font-size: $font-size-base;
+     }
+
+  }
+
+
+  #content {
+    margin-left: 220px;
+  }
+
+}

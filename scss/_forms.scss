@@ -1,0 +1,68 @@
+/* Form styles  ---------------------- */
+
+label {
+  display: block;
+  font-size: $font-size-small;
+  padding-top: $base-padding/4;
+  padding-bottom: $base-padding/6;
+}
+
+fieldset {
+  border: none;
+  background: transparent;
+}
+
+input,
+select,
+textarea {
+  border: none;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  outline: 0;
+  @include vendor-prefix('transition', 'all 0.1s linear');
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  border: 1px solid #ddd;
+  padding: $base-padding/4;
+  margin-bottom: $base-padding/4;
+  width: 100%;
+  outline: none;
+
+  &:focus {
+    color: $color-off-black;
+    border-color: $color-blue;
+  }
+}
+
+button,
+input[type="submit"] {
+  min-width: 90px;
+  padding: $base-padding/4;
+  background: $color-blue;
+  font-weight: $strong;
+  color: #fff;
+  line-height: 1.2;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background: lighten($color-blue, 5%);
+    @include vendor-prefix('box-shadow', '1px 1px 4px rgba(0,0,0,0.3)');
+  }
+
+  &:active {
+    background: darken($color-blue, 5%);
+    @include vendor-prefix('box-shadow', 'none');
+  }
+}
+
+input.inline {
+  display: inline-block;
+  width: 140px;
+}

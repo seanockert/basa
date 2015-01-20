@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Accordion</title>
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0;}
+  </style>
+
+  <link rel="stylesheet" href="components-accordion.css" type="text/css">
+</head>
+
+<body>
+
+
+<h1>Accordion</h1>
+
+<ul id="accordion">
+  <li class="q">
+    <dt id="question-1">
+      <h2>Question 1</h2>
+    </dt>
+    <dd>
+      <p>Answer 1</p>
+      <small><a href="#question-1">Permalink</a></small>
+    </dd>
+  </li>
+  <li class="q">
+    <dt id="question-2">
+      <h2>Question 2</h2>
+    </dt>
+    <dd>
+      <p>Answer 2</p>
+      <small><a href="#question-2">Permalink</a></small>
+    </dd>
+  </li>
+</ul>
+
+<ol>
+  <li>Attach the script <a href="../../js/plugins/accordion.js"><code>js/plugins/accordion.js</code></a></li>
+  <li>Add the styles <a href="../../css/plugins/_accordion.scss"><code>css/plugins/_accordion.scss</code></a></li>
+  <li>Create a list with the ID <code>accordion</code></li>
+  <li>Add list items like this:
+<code><pre>
+&lt;li class="q"&gt;
+  &lt;dt id="question-1"&gt;
+    &lt;h2&gt;Question 1&lt;/h2&gt;
+  &lt;/dt&gt;
+  &lt;dd&gt;
+    Answer 1
+  &lt;/dd&gt;
+&lt;/li&gt;
+&lt;li class="q"&gt;
+...
+&lt;/li&gt;
+</pre></code>
+  </li>
+</ol>
+
+
+<script src="../../js/plugins/accordion.js"></script>
+
+
+
+</body>
+</html>

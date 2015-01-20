@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Smooth Scroll</title>
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0;}
+
+    #anchor1, #anchor2, #anchor3 {
+      height: 600px;
+      margin: 0;
+    }
+
+    #anchor1 { background: #eee; }
+    #anchor2 { background: #bbb; }
+    #anchor3 { background: #aaa; }
+
+    .scrolled .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    #main-nav .active a {
+      background: #000;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+<h1>Scroll Events</h1>
+
+<ul class="fixed" id="main-nav">
+  <li><a href="#anchor1">Scroll to Anchor 1</a></li>
+  <li><a href="#anchor2">Scroll to Anchor 2</a></li>
+  <li><a href="#anchor3">Scroll to Anchor 3</a></li>
+</ul>
+
+
+<h3 id="anchor1">Anchor 1. Fixed menu highlights the active item.</h3>
+<h3 id="anchor2">Anchor 2</h3>
+<h3 id="anchor3">Anchor 3</h3>
+
+<h2>How to use</h2>
+<ol>
+  <li>Attach the dependency script <a href="../../js/vendors/classie.js"><code>js/vendors/classie.js</code></a></li>
+  <li>Attach the script <a href="../../js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
+  <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
+  <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
+</ol>
+
+<script src="../../js/vendors/classie.js"></script>
+<script src="../../js/plugins/scroll-events.js"></script>
+
+
+</body>
+</html>
