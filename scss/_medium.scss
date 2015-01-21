@@ -24,6 +24,10 @@
     }
   }
 
+  .section {
+    padding: $base-padding 0;
+    margin: $base-padding 0;
+  }
 
   #nav {
     float: left;

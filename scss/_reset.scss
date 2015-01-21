@@ -54,7 +54,7 @@ table{border-collapse:collapse;border-spacing:0}
 .placeholder { color: #999; }
 ::-webkit-input-placeholder { color: #999; }
 input:-moz-placeholder, textarea:-moz-placeholder { color: #999; }
-hr {display: block;height: 1px;border: 0;border-top: 1px solid #ddd;margin: 1em 0;padding: 0;}
+hr {display: block;height: 1px;border: 0;border-top: 1px solid #ddd;margin: 6px 0;padding: 0;}
 
 // Get rid of gap under images by making them display: inline-block; by default
 img { display: inline-block; -ms-interpolation-mode: bicubic; }

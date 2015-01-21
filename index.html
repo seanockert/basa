@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,700italic' rel='stylesheet' type='text/css'>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +70,7 @@
   <div id="content">
     <div class="row clearfix">
 
-      <div class="columns large-10 medium-9">
+      <div class="columns large-10 large-centered">
 
         <div id="section-grid" class="section">
           <h2>1 - The Grid</h2>
@@ -90,63 +89,64 @@
               <p><a href="http://foundation.zurb.com/docs/components/grid.html" data-no-instant>View the documentation</a></p>
             </div>
           </div>
-        </div>
 
         <div class="clear"></div>
 
         <h3><em>1.2</em> Equal Grid</h3>
 
         <div class="half">
-            <a href="#section-grid" class="inner">
-              <div class="v-align">
-                  <h2>Clickable Box 1</h2>
-              </div>
-            </a>
-          </div>
+          <a href="#section-grid" class="inner">
+            <div class="v-align">
+                <h2>Clickable Box 1</h2>
+            </div>
+          </a>
+        </div>
 
-          <div class="half two" style="background: #ddd;">
+        <div class="half two" style="background: #ddd;">
+          <div class="inner">
+            <div class="v-align">
+                <h2>Box 2</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="half two" style="background: #ccc;">
+          <div class="inner">
+            <div class="v-align">
+                <h2>Box 3</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="half two" style="background: #ccc;">
+          <div class="inner">
+            <div class="v-align">
+                <h2>Box 4</h2>
+            </div>
+          </div>
+        </div>
+        <div class="half four">
+          <div class="half" style="background: #bbb;">
             <div class="inner">
-              <div class="v-align">
-                  <h2>Box 2</h2>
-              </div>
+            <div class="v-align">
+                <h2>Box 5</h2>
+            </div>
             </div>
           </div>
-
-          <div class="half two" style="background: #ccc;">
-            <div class="inner">
-              <div class="v-align">
-                  <h2>Box 3</h2>
-              </div>
+          <div class="half">
+            <div class="inner" style="background: #aaa;">
+            <div class="v-align">
+                <h2>Box 6</h2>
+            </div>
             </div>
           </div>
+        </div>
 
-          <div class="clear"></div>
-
-          <div class="half two" style="background: #ccc;">
-            <div class="inner">
-              <div class="v-align">
-                  <h2>Box 4</h2>
-              </div>
-            </div>
-          </div>
-          <div class="half four">
-            <div class="half" style="background: #bbb;">
-              <div class="inner">
-              <div class="v-align">
-                  <h2>Box 5</h2>
-              </div>
-              </div>
-            </div>
-            <div class="half">
-              <div class="inner" style="background: #aaa;">
-              <div class="v-align">
-                  <h2>Box 6</h2>
-              </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
+      <div class="clear"></div>
+      </div>
+      <hr>
 
         <div id="section-type" class="section">
           <h2>2 - Typography</h2>
@@ -207,32 +207,95 @@
         <hr>
 
         <div id="section-forms" class="section">
-          <h2>3 - Forms</h2>
-          <div class="row">
-            <div class="columns large-6 medium-12">
+          <h2>3 - Forms and Tables</h2>
+
               <form>
-                  <label>Your Name</label>
-                  <input type="text" placeholder="Name">
+                  <h3><em>3.1</em> Stacked Form</h3>
 
-                  <label>Your Email</label>
-                  <input type="email" placeholder="Email">
+                  <label for="name">Your Name</label>
+                  <input type="text" class="name" placeholder="Name">
 
-                  <label>Comment</label>
-                  <textarea placeholder="Type your comment"></textarea>
+                  <label for="email">Your Email</label>
+                  <input type="email" class="email" placeholder="Email address">
 
-                  <input type="submit" value="Send Form">
+                  <label for="comment">Comment</label>
+                  <textarea placeholder="Type your comment" name="comment"></textarea>
+
+                  <label for="agree">
+                    <input id="agree" type="checkbox"> I agree to the <a href="">terms &amp; conditions</a>
+                  </label>
+
+                  <p><input type="submit" value="Send Form"></p>
               </form>
-              <br><br>
-              <form class="sign-in">
-                  <input type="text" placeholder="Username" value="admin" class="inline">
-                  <input type="password" placeholder="Password" value="xxxxxx" class="inline">
-                  <input type="submit" value="Sign In" class="inline">
+
+              <form class="form-inline">
+                <h3><em>3.2</em> Inline Form</h3>
+                <input type="text" placeholder="Username" value="admin">
+                <input type="password" placeholder="Password" value="xxxxxx">
+                <input type="submit" value="Sign In">
               </form>
-            </div>
-          </div>
+
+              <form class="form-mobile large-8">
+                <h3><em>3.3</em> Mobile Form</h3>
+
+                <fieldset>
+                  <input type="text" class="name" placeholder="Name">
+                  <input type="password" class="password" placeholder="Password">
+                  <input type="email" class="email" placeholder="Email address">
+                </fieldset>
+
+                <fieldset>
+                  <input type="text" placeholder="Another Field">
+                  <select>
+                    <option disabled selected class="disabled">Select a Country</option>
+                    <option>Australia</option>
+                    <option>Uganda</option>
+                    <option>Sweden</option>
+                  </select>
+                </fieldset>
+
+                <input type="submit" value="Do Stuff">
+              </form>
+
+              <h3><em>3.4</em> Tables</h3>
+              <table class="basa-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Year of Birth</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Sean</td>
+                    <td>Ockert</td>
+                    <td>1984</td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>Jones</td>
+                    <td>1962</td>
+                  </tr>
+
+                  <tr>
+                    <td>3</td>
+                    <td>Linda</td>
+                    <td>Emmett</td>
+                    <td>2003</td>
+                  </tr>
+                </tbody>
+            </table>
+
         </div>
 
         <div class="clear"></div>
+        <hr>
 
         <div id="section-plugins" class="section">
           <h2>4 - Plugins</h2>
@@ -256,7 +319,7 @@
             <li>Create a <code>picture</code> element in the header: <code>document.createElement( "picture" );</code></li>
           </ol>
 
-          <a href="https://github.com/scottjehl/picturefill/tree/1.2" class="button" data-no-instant>More Info</a> <a href="components/picturefill/" class="button red" data-no-instant>Demo</a>
+          <a href="https://github.com/scottjehl/picturefill/tree/1.2" class="button" data-no-instant>Documentation</a> <a href="components/picturefill/" class="button red" data-no-instant>Demo</a>
 
 
           <h3><em>4.3</em> Responsive Nav</h3>
@@ -280,7 +343,7 @@
             <li>Init the plugin with a nav ID reference: <code>var navigation = responsiveNav('#responsive-nav');</code></li>
           </ol>
 
-          <a href="https://github.com/viljamis/responsive-nav.js" class="button" data-no-instant>More Info</a> <a href="components/responsive-nav/" class="button red" data-no-instant>Demo</a>
+          <a href="https://github.com/viljamis/responsive-nav.js" class="button" data-no-instant>Documentation</a> <a href="components/responsive-nav/" class="button red" data-no-instant>Demo</a>
 
           <h3><em>4.4</em> Smooth Scroll</h3>
           <ol>
@@ -319,7 +382,7 @@
             <li>Tweak values based on your font: <code>minFont: 16, maxFont: 48, fontRatio: 36</code></li>
           </ol>
 
-          <a href="http://simplefocus.com/flowtype" class="button" data-no-instant>More Info</a> <a href="components/flowtype/" class="button red" data-no-instant>Demo</a>
+          <a href="http://simplefocus.com/flowtype" class="button" data-no-instant>Documentation</a> <a href="components/flowtype/" class="button red" data-no-instant>Demo</a>
 
           <h3><em>4.7</em> InstantClick</h3>
 
@@ -332,7 +395,7 @@
             <li>Init the plugin <code>InstantClick.init();</code></li>
           </ol>
 
-          <a href="http://instantclick.io/" class="button" data-no-instant>More Info</a> <a href="components/instantclick/" class="button red" data-no-instant>Demo</a>
+          <a href="http://instantclick.io/" class="button" data-no-instant>Documentation</a> <a href="components/instantclick/" class="button red" data-no-instant>Demo</a>
 
           <h3><em>4.8</em> Accordion</h3>
             <br>
@@ -384,12 +447,14 @@
 
             <h3><em>4.10</em> Modal Popup</h3>
             <p>This is rare modal plugin that doesn't rely on jQuery. If you're using the jQuery framework anyway, go with <a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a> instead.</p>
-            <a href="https://github.com/drublic/css-modal" class="button" data-no-instant>More Info</a> <a href="components/modal/" class="button red" data-no-instant>Demo</a>
+            <a href="https://github.com/drublic/css-modal" class="button" data-no-instant>Documentation</a> <a href="components/modal/" class="button red" data-no-instant>Demo</a>
 
         </div>
 
+        <div class="clear"></div>
+        <hr>
 
-        <div id="section-animations">
+        <div id="section-animations" class="section">
           <h2>5 - Animations</h2>
 
           <div class="box"></div>

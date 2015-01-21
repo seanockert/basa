@@ -1,9 +1,9 @@
 html,
-body { 
-  font-size: $font-size-base; 
+body {
+  font-size: $font-size-base;
 }
 
-html { 
+html {
   background: $color-off-white;
 }
 
@@ -43,6 +43,15 @@ a {
 
 :target {
   @include vendor-prefix(animation, targetFade 2s);
+}
+
+.section {
+  padding: $base-padding/2 0;
+  margin: $base-padding/2 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 /* Layout - remove this and add your own  ---------------------- */
@@ -123,12 +132,6 @@ h3 {
     font-style: normal;
     color: $color-mute;
   }
-}
-
-.section {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: $base-padding;
-  margin-bottom: $base-padding;
 }
 
 #footer {
