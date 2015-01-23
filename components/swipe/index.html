@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Swipe Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0;}
+
+    #swipe div {
+      background: #eee;
+      text-align: center;
+      height: 300px;
+      line-height: 300px;
+      font-size: 4em;
+      font-family: sans-serif;
+      color: #666;
+    }
+
+    #swipe div:nth-child(even) {
+      background: #999;
+    }
+  </style>
+
+  <link rel="stylesheet" href="components-swipe.css" type="text/css">
+</head>
+
+<body>
+
+<h1>Swipe Slider</h1>
+
+<div id="swipe" class="swipe">
+  <div class="swipe-wrap">
+    <div><b>1</b></div>
+    <div><b>2</b></div>
+    <div><b>3</b></div>
+  </div>
+</div>
+
+
+<ol>
+  <li>Attach the script <a href="../../js/plugins/swipe.min.js"><code>js/plugins/swipe.min.js</code></a></li>
+  <li>Add the styles <a href="../../css/plugins/_swipe.scss"><code>css/plugins/_swipe.scss</code></a></li>
+  <li>Attach to a list of elements: <code>var elem = document.getElementById('swipe');</code></li>
+  <li>Init the plugin with <code>window.slider = Swipe(elem, { ... }</code></li>
+</ol>
+
+<a href="https://github.com/thebird/Swipe">View the documentation</a>
+
+<script src="../../js/plugins/swipe.min.js"></script>
+
+<script>
+
+var elem = document.getElementById('swipe');
+window.slider = Swipe(elem, {
+  startSlide: 0,
+  auto: 1500,
+  continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  // callback: function(index, element) {},
+  // transitionEnd: function(index, element) {}
+});
+
+</script>
+
+</body>
+</html>

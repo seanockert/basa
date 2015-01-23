@@ -29,6 +29,8 @@ line-height: 1;
 cursor: pointer;
 }
 
+	dt h2 { margin: 0; }
+
 	dt h2:after {
 	display: block;
 	content: '\2212';

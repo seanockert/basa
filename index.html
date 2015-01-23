@@ -395,7 +395,7 @@
             <li>Init the plugin <code>InstantClick.init();</code></li>
           </ol>
 
-          <a href="http://instantclick.io/" class="button" data-no-instant>Documentation</a> <a href="components/instantclick/" class="button red" data-no-instant>Demo</a>
+          <a href="http://instantclick.io/" class="button" data-no-instant>Documentation</a> <a href="components/instantclick/" class="button red">Demo</a>
 
           <h3><em>4.8</em> Accordion</h3>
             <br>
@@ -449,6 +449,18 @@
             <p>This is rare modal plugin that doesn't rely on jQuery. If you're using the jQuery framework anyway, go with <a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a> instead.</p>
             <a href="https://github.com/drublic/css-modal" class="button" data-no-instant>Documentation</a> <a href="components/modal/" class="button red" data-no-instant>Demo</a>
 
+            <h3><em>4.11</em> Swipe Slider</h3>
+            <p>If using jQuery, the best alternative is <a href="http://kenwheeler.github.io/slick/">Slick slider</a>.</p>
+
+            <div id="swipe" class="swipe">
+              <div class="swipe-wrap">
+                <div><b>1</b></div>
+                <div><b>2</b></div>
+                <div><b>3</b></div>
+              </div>
+            </div>
+            <a href="https://github.com/thebird/Swipe" class="button" data-no-instant>Documentation</a> <a href="components/swipe/" class="button red" data-no-instant>Demo</a>
+
         </div>
 
         <div class="clear"></div>
@@ -460,12 +472,27 @@
           <div class="box"></div>
 
           <p>Click the buttons below to play the animation.</p>
-          <img src="http://placehold.it/150x150/27B987/ffffff" id="box-animate" class="">
+          <div class="row">
+            <div class="columns large-6">
+              <img src="http://placehold.it/150x150/27B987/ffffff" id="box-animate" class="">
+            </div>
+
+            <div class="columns large-6">
+              <ul id="list-animate">
+                <li>First Item in list</li>
+                <li>Second Item in list</li>
+                <li>Third Item in list</li>
+                <li>Fourth Item in list</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="clear"></div><br>
           <ul id="test-animate" class="inline-list">
             <li><a href="javascript:void(0)" class="button" data-anim="bounce">Bounce</a></li>
             <li><a href="javascript:void(0)" class="button" data-anim="fly-in">Fly In</a></li>
             <li><a href="javascript:void(0)" class="button" data-anim="fly-out">Fly Out</a></li>
+            <li><a href="javascript:void(0)" class="button" data-anim="fill-list">Fill List</a></li>
           </ul>
 
           <div class="clear"></div>
@@ -496,11 +523,13 @@
   <script src="js/plugins/social-buttons.js"></script>
   <script src="js/plugins/flowtype.native.js"></script>
   <script src="js/plugins/accordion.js"></script>
+  <script src="js/plugins/swipe.min.js"></script>
   
   <script src="js/plugins/instantclick.min.js"></script>
   <script data-no-instant>InstantClick.init();</script>
   <script src="js/vendors/classie.js"></script> <!-- Required for scroll-events.js -->
   <script src="js/plugins/scroll-events.js"></script>
+  <script src="js/plugins/animations.js"></script>
 
   <script src="js/scripts.js"></script>
 

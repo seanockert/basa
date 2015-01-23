@@ -47,11 +47,12 @@ a {
 
 .section {
   padding: $base-padding/2 0;
-  margin: $base-padding/2 0;
+  margin: $base-padding/2 0 0 0;
 
-  &:first-child {
+  &:first-child, h2:first-child {
     margin-top: 0;
   }
+
 }
 
 /* Layout - remove this and add your own  ---------------------- */

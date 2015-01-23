@@ -5,11 +5,18 @@ $(document).ready( function() {
 
   // Your code here
 
+  // Enable Fastclick to disable the 300ms touch delay on mobile devices
   FastClick.attach(document.body);
 
   detectDevice();
   checkSize();
 
+  var elem = document.getElementById('swipe');
+  window.slider = Swipe(elem, {
+    startSlide: 0,
+    auto: 1500,
+    continuous: true,
+  });
 
 
 });
@@ -64,16 +71,22 @@ var navigation = responsiveNav('#responsive-nav', {
 });
 
 
-  // For triggering animations
-  $("#test-animate li a").click(function(e) {
-    e.preventDefault();
+// For triggering animations
+$("#test-animate li a").click(function(e) {
+  e.preventDefault();
 
-    var anim = $(this).data('anim');
-    element = document.getElementById("box-animate");
+  var anim = $(this).data('anim');
+
+  if (anim == 'fill-list') {
+    queueAnim();
+  } else {
+    var element = document.getElementById("box-animate");
     element.className = '';
     element.offsetWidth = element.offsetWidth;
     element.classList.add(anim);
 
-    return false;
-  });
+  }
+
+  return false;
+});
 

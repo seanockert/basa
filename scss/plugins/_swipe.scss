@@ -1,0 +1,43 @@
+﻿/* Swipe 2 required styles */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+
+  > div {
+    float:left;
+    width:100%;
+    position: relative;
+  }
+}
+
+/* END required styles */
+
+
+
+/* START demo styles */
+
+#swipe {
+  max-width: 300px;
+
+  div {
+    background: #eee;
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+    font-size: 2em;
+    font-family: sans-serif;
+    color: #666;
+    margin-bottom: 12px;
+
+    &:nth-child(2) { background: #ccc; }
+    &:nth-child(3) { background: #aaa; }
+  }
+}
+
+/* END demo styles */
