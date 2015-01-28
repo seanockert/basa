@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0; }
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
   </style>
 
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-accordion.css" type="text/css">
 </head>
 
@@ -37,29 +38,40 @@
   </li>
 </ul>
 
-<ol>
-  <li>Attach the script <a href="../../js/plugins/accordion.js"><code>js/plugins/accordion.js</code></a></li>
-  <li>Add the styles <a href="../../css/plugins/_accordion.scss"><code>css/plugins/_accordion.scss</code></a></li>
-  <li>Create a list with the ID <code>accordion</code></li>
-  <li>Add list items like this:
-<code><pre>
-&lt;li class="q"&gt;
-  &lt;dt id="question-1"&gt;
-    &lt;h2&gt;Question 1&lt;/h2&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;
-    Answer 1
-  &lt;/dd&gt;
-&lt;/li&gt;
-&lt;li class="q"&gt;
-...
-&lt;/li&gt;
-</pre></code>
-  </li>
-</ol>
+<h2>How to Use</h2>
+
+Javscript: <a href="../../js/plugins/accordion.js">accordion.js</a><br>
+SASS: <a href="../../scss/plugins/_accordion.scss">accordion.scss</a>
+
+<pre class="language-markup"><code>
+&lt;link rel="stylesheet" href="css/accordion.css" type="text/css"&gt;
+&lt;script src="js/plugins/accordion.js"&gt;&lt;/script&gt;
+
+&lt;ul id="accordion"&gt;
+  &lt;li class="q"&gt;
+    &lt;dt id="question-1"&gt;
+      &lt;h2&gt;Question 1&lt;/h2&gt;
+    &lt;/dt&gt;
+    &lt;dd&gt;
+      Answer 1
+    &lt;/dd&gt;
+  &lt;/li&gt;
+  &lt;li class="q"&gt;
+    &lt;dt id="question-2"&gt;
+      &lt;h2&gt;Question 2&lt;/h2&gt;
+    &lt;/dt&gt;
+    &lt;dd&gt;
+      Answer 2
+    &lt;/dd&gt;
+  &lt;/li&gt;
+  ...
+&lt;/ul&gt;
+</code></pre>
+
 
 
 <script src="../../js/plugins/accordion.js"></script>
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 
 
 

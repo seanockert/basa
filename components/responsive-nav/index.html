@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
   </style>
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-responsive-nav.css" type="text/css">
 
 </head>
@@ -30,36 +31,54 @@ Resize this page to see the menu adapt.<br>
 </nav>
 
 <h2>How to use</h2>
-<ol>
-  <li>Attach the script <a href="../../js/plugins/responsive-nav.min.js"><code>js/plugins/responsive-nav.min.js</code></a></li>
-  <li>Use the base styling in <a href="../../scss/plugins/_responsive-nav.scss"><code>scss/plugins/_responsive-nav.scss</code></a></li>
-  <li>Init the plugin with a nav ID reference: <code>var navigation = responsiveNav('#responsive-nav');</code></li>
-  <li>The breakpoint is defined in the CSS file. Default <code>40em/640px</code></li>
-</ol>
+Javascript: <a href="../../js/plugins/responsive-nav.min.js">responsive-nav.min.js</a><br>
+SASS: <a href="../../scss/plugins/_responsive-nav.scss">responsive-nav.scss</a>
+<p><a href="https://github.com/viljamis/responsive-nav.js">Read Documentation</a></p>
 
-<h2>Advanced usage with a custom button</h2>
-<code><pre>
-var navigation = responsiveNav('#responsive-nav', {
-  transition: 250,
-  label: 'Menu',
-  insert: 'before',
-  customToggle: '#menu',
-  openPos: 'relative',
-  open: function () {
-    var menu = document.getElementById("menu");
-    menu.className=menu.className.replace(/(^|\s)open(\s|$)/, 'close ');
-  },
-  close: function () {
-    var menu = document.getElementById("menu");
-    menu.className=menu.className.replace(/(^|\s)close(\s|$)/, 'open ');
-  }
-});
-</pre></code>
+<pre class="language-markup"><code>
+&lt;link rel="stylesheet" href="css/responsive-nav.css" type="text/css"&gt;
+&lt;script src="js/plugins/responsive-nav.min.js"&gt;&lt;/script&gt;
 
-<p><a href="https://github.com/viljamis/responsive-nav.js">View the documentation</a></p>
+&lt;!-- This hamburger button will show on mobile instead of the full menu: --&gt;
+&lt;button class=&quot;open nav-menu x&quot; type=&quot;button&quot; role=&quot;button&quot; id=&quot;menu&quot; aria-label=&quot;Toggle Navigation&quot;&gt;
+  &lt;span class=&quot;lines&quot;&gt;&lt;/span&gt;
+&lt;/button&gt;
 
+&lt;!-- Wrap the navigation in a list like so: --&gt;
+&lt;nav id=&quot;responsive-nav&quot; class=&quot;nav-collapse&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;script&gt;
+  // Basic usage - provides a Menu link
+  //var navigation = responsiveNav('#responsive-nav');
+
+  // Advanced usage with custom button
+  var navigation = responsiveNav('#responsive-nav', {
+    transition: 250,
+    label: 'Menu',
+    insert: 'before',
+    customToggle: '#menu',
+    openPos: 'relative',
+    open: function () {
+      var menu = document.getElementById("menu");
+      menu.className=menu.className.replace(/(^|\s)open(\s|$)/, 'close ');
+    },
+    close: function () {
+      var menu = document.getElementById("menu");
+      menu.className=menu.className.replace(/(^|\s)close(\s|$)/, 'open ');
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+  
+  
 <script src="../../js/plugins/responsive-nav.min.js"></script>
-
 <script>
   // Basic usage - provides a Menu link
   //var navigation = responsiveNav('#responsive-nav');
@@ -83,6 +102,6 @@ var navigation = responsiveNav('#responsive-nav', {
 
 </script>
 
-
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 </body>
 </html>

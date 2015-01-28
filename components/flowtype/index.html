@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
   </style>
-
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
 </head>
 
 <body>
@@ -21,13 +21,29 @@
 </div>
 <div class="clear"></div>
 
-<ol>
-  <li>Attach the script <a href="../../js/plugins/flowtype.native.js"><code>js/plugins/flowtype.native.js</code></a></li>
-  <li>Init the plugin with the target element: <code>window.flowtype(targetElem, {...});</code></li>
-  <li>Tweak values based on your font: <code>minFont: 16, maxFont: 48, fontRatio: 36</code></li>
-</ol>
+<h2>How to Use</h2>
+Javascript: <a href="../../js/plugins/flowtype.native.js">flowtype.native.js</a><br>
+<p><a href="http://simplefocus.com/flowtype">Read Documentation</a></p>
 
-<a href="http://simplefocus.com/flowtype">View the documentation</a>
+<pre class="language-markup"><code>
+&lt;script src="js/plugins/flowtype.native.js"&gt;&lt;/script&gt;
+
+&lt;div id="flowtype"&gt;
+  Text inside here will be resized accordingly.
+&lt;/div&gt;
+
+&lt;script&gt;
+  // Add Flowtype to the 'flowtype' element
+  var flowtypeElem = document.getElementById('flowtype');
+  window.flowtype( flowtypeElem, {
+    minFont : 16,
+    maxFont : 48,
+    fontRatio : 36
+  });
+&lt;/script&gt;
+</code></pre>
+
+
 
 <script src="../../js/plugins/flowtype.native.js"></script>
 
@@ -41,6 +57,8 @@
   });
 </script>
 
+
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 
 </body>
 </html>

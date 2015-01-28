@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
   </style>
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-equal-grid.css" type="text/css">
 </head>
 
@@ -66,9 +67,65 @@
 </div>
 
 <div class="clear"></div>
-<!--
-<p><a href="http://foundation.zurb.com/docs/components/grid.html">View the documentation</a></p>
--->
+
+<h2>How to Use</h2>
+SASS: <a href="../../scss/_equal-grid.scss">equal-grid.scss</a>
+
+<pre class="language-markup"><code>
+&lt;link rel="stylesheet" href="css/equal-grid.css" type="text/css"&gt;
+
+&lt;div class=&quot;half&quot;&gt;
+  &lt;a href=&quot;#section-grid&quot; class=&quot;inner&quot;&gt;
+    &lt;div class=&quot;v-align&quot;&gt;
+        &lt;h2&gt;Clickable Box 1&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;half two&quot; style=&quot;background: #ddd;&quot;&gt;
+  &lt;div class=&quot;inner&quot;&gt;
+    &lt;div class=&quot;v-align&quot;&gt;
+        &lt;h2&gt;Box 2&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;half two&quot; style=&quot;background: #ccc;&quot;&gt;
+  &lt;div class=&quot;inner&quot;&gt;
+    &lt;div class=&quot;v-align&quot;&gt;
+        &lt;h2&gt;Box 3&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;half two&quot; style=&quot;background: #ccc;&quot;&gt;
+  &lt;div class=&quot;inner&quot;&gt;
+    &lt;div class=&quot;v-align&quot;&gt;
+        &lt;h2&gt;Box 4&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;half four&quot;&gt;
+  &lt;div class=&quot;half&quot; style=&quot;background: #bbb;&quot;&gt;
+    &lt;div class=&quot;inner&quot;&gt;
+    &lt;div class=&quot;v-align&quot;&gt;
+        &lt;h2&gt;Box 5&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;half&quot;&gt;
+    &lt;div class=&quot;inner&quot; style=&quot;background: #aaa;&quot;&gt;
+    &lt;div class=&quot;v-align&quot;&gt;
+        &lt;h2&gt;Box 6&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 
 </body>
 </html>

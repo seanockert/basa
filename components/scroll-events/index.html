@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
 
     #anchor1, #anchor2, #anchor3 {
       height: 600px;
@@ -28,7 +28,7 @@
       color: #fff;
     }
   </style>
-
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
 </head>
 
 <body>
@@ -48,16 +48,40 @@
 <h3 id="anchor3">Anchor 3</h3>
 
 <h2>How to use</h2>
-<ol>
-  <li>Attach the dependency script <a href="../../js/vendors/classie.js"><code>js/vendors/classie.js</code></a></li>
-  <li>Attach the script <a href="../../js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
-  <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
-  <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
-</ol>
+Dependency: <a href="../../js/vendors/classie.js">classie.js</a><br>
+Javascript: <a href="../../js/plugins/scroll-events.js">scroll-events.js</a>
+
+<pre class="language-markup"><code>
+&lt;script src="js/vendors/classie.js"&gt;&lt;/script&gt;
+&lt;script src="js/plugins/scroll-events.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+  /* 
+  * Script appends class="scrolled" to the body when scrolling starts. 
+  * So we can fix the nav to the top of the page 
+  */
+  .scrolled .fixed {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+  }
+&lt;/style&gt;
+
+&lt;!-- Navigation links to anchors on the same page. Give it the id="main-nav" --&gt;
+&lt;ul class="fixed" id="main-nav"&gt;
+  &lt;li&gt;&lt;a href="#anchor1"&gt;Scroll to Anchor 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#anchor2"&gt;Scroll to Anchor 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#anchor3"&gt;Scroll to Anchor 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Split the page into sections --&gt;
+&lt;div id="anchor1"&gt;Anchor 1&lt;/div&gt;
+&lt;div id="anchor2"&gt;Anchor 2&lt;/div&gt;
+&lt;div id="anchor3"&gt;Anchor 3&lt;/div&gt;
+</code></pre>
 
 <script src="../../js/vendors/classie.js"></script>
 <script src="../../js/plugins/scroll-events.js"></script>
 
-
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 </body>
 </html>

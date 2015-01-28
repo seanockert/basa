@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
   </style>
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-modal.css" type="text/css">
 </head>
 
@@ -28,8 +29,36 @@
   <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
       data-dismiss="modal">?</a>
 </section>
+
+
+<h2>How to use</h2>
+Javascript: <a href="modal.js">modal.js</a><br>
+CSS: <a href="components-modal.css">components-modal.css</a>
+<p><a href="http://drublic.github.io/css-modal/">Read Documentation</a></p>
+
+<pre class="language-markup"><code>
+&lt;link rel="stylesheet" href="components-modal.css" type="text/css"&gt;
+&lt;script src="modal.js"&gt;&lt;/script&gt;
+
+&lt;!-- Add a link to open the modal with the anchor as the modal ID --&gt;
+&lt;a href=&quot;#modal-text&quot;&gt;Open Modal&lt;/a&gt;
+
+&lt;!-- Modal is hidden until link is clicked --&gt;
+&lt;section class=&quot;modal--fade&quot; id=&quot;modal-text&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;modal-label&quot; aria-hidden=&quot;true&quot;&gt;
+
+  &lt;div class=&quot;modal-inner&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      Modal content here
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Optional close button --&gt;
+  &lt;a href=&quot;#!&quot; class=&quot;modal-close&quot; title=&quot;Close this modal&quot; data-close=&quot;Close&quot; data-dismiss=&quot;modal&quot;&gt;?&lt;/a&gt;
+&lt;/section&gt;
+</code></pre>
+
 <script src="modal.js"></script>
 
-
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 </body>
 </html>

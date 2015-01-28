@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
 
     #swipe div {
       background: #eee;
@@ -21,7 +21,7 @@
       background: #999;
     }
   </style>
-
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-swipe.css" type="text/css">
 </head>
 
@@ -38,19 +38,43 @@
 </div>
 
 
-<ol>
-  <li>Attach the script <a href="../../js/plugins/swipe.min.js"><code>js/plugins/swipe.min.js</code></a></li>
-  <li>Add the styles <a href="../../css/plugins/_swipe.scss"><code>css/plugins/_swipe.scss</code></a></li>
-  <li>Attach to a list of elements: <code>var elem = document.getElementById('swipe');</code></li>
-  <li>Init the plugin with <code>window.slider = Swipe(elem, { ... }</code></li>
-</ol>
+<h2>How to Use</h2>
+Javascript: <a href="../../js/plugins/swipe.min.js">swipe.min.js</a><br>
+SASS: <a href="../../scss/plugins/_swipe.scss">swipe.scss</a><br>
+<p><a href="https://github.com/thebird/Swipe">Read Documentation</a></p>
 
-<a href="https://github.com/thebird/Swipe">View the documentation</a>
+<pre class="language-markup"><code>
+&lt;link rel="stylesheet" href="css/swipe.css" type="text/css"&gt;
+&lt;script src="js/plugins/swipe.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Wrap the slider component in a div like so: --&gt;
+&lt;div id="swipe" class="swipe"&gt;
+  &lt;div class="swipe-wrap"&gt;
+    &lt;div&gt;&lt;b&gt;1&lt;/b&gt;&lt;/div&gt; &lt;!-- Replace each of these with slide content --&gt;
+    &lt;div&gt;&lt;b&gt;2&lt;/b&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;b&gt;3&lt;/b&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  // Attach the plugin to the element with id='swipe'
+  var elem = document.getElementById('swipe');
+  window.slider = Swipe(elem, {
+    startSlide: 0,
+    auto: 1500,
+    continuous: true,
+    // disableScroll: true,
+    // stopPropagation: true,
+    // callback: function(index, element) {},
+    // transitionEnd: function(index, element) {}
+  });
+&lt;/script&gt;
+</code></pre>
+
 
 <script src="../../js/plugins/swipe.min.js"></script>
 
 <script>
-
 var elem = document.getElementById('swipe');
 window.slider = Swipe(elem, {
   startSlide: 0,
@@ -64,5 +88,7 @@ window.slider = Swipe(elem, {
 
 </script>
 
+
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 </body>
 </html>

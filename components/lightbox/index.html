@@ -4,8 +4,10 @@
   <title>Basa Components - Lightbox</title>
   <style>
     * { box-sizing: border-box }
-    html, body { margin: 0; padding: 0;}
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
+    a { text-decoration: none; }
   </style>
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-lightbox.css" type="text/css">
 
 </head>
@@ -13,18 +15,27 @@
 <body>
 
 <h1>Lightbox</h1>
-<a href="http://placehold.it/640x280" rel="lightbox"><img src="http://placehold.it/128x128/27B987/ffffff&text=Click+Me"></a>
-<a href="http://placehold.it/640x280" rel="lightbox"><img src="http://placehold.it/128x128/27B987/ffffff&text=Click+Me"></a>
+<a href="http://placehold.it/640x280" rel="lightbox">
+  <img src="http://placehold.it/128x128/27B987/ffffff&text=Click+Me">
+</a>
+<a href="http://placehold.it/640x280" rel="lightbox">
+  <img src="http://placehold.it/128x128/27B987/ffffff&text=Click+Me">
+</a>
 
 <h2>How to use</h2>
-<ol>
-  <li>Attach the script <a href="../../js/plugins/lightbox.js"><code>js/plugins/lightbox.js</code></a></li>
-  <li>For each picture you want to expand in a lightbox, attach to the anchor link: <code>rel="lightbox"</code></li>
-  <li>You can set a breakpoint. Below this lightbox will simply load the image. Default 568px.</li>
-</ol>
+Javascript: <a href="../../js/plugins/lightbox.js">lightbox.js</a><br>
+
+<pre class="language-markup"><code>
+&lt;script src="js/plugins/lightbox.js"&gt;&lt;/script&gt;
+
+&lt;!-- Add rel="lightbox" to the anchor link to open the full image in a lightbox: --&gt;
+&lt;a href="http://placehold.it/640x280" rel="lightbox"&gt;
+  &lt;img src="http://placehold.it/128x128"&gt;
+&lt;/a&gt;
+</code></pre>
 
 <script src="../../js/plugins/lightbox.js"></script>
 
-
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 </body>
 </html>
