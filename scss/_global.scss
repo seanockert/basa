@@ -117,14 +117,21 @@ a {
 
 body {
   &.scrolled {
-    .vertical-nav {
+    #nav {
       position: fixed;
       top: 0;
       left: 0;
+      bottom: auto;
       width: 100%;
-      z-index: 999;
       background: #e6e6e6;
+      z-index: 1001;
+
+      #logo { display: none; }
+
+      ul { border-top: 3px solid $color-base; }
     }
+
+    #content { padding-top: $base-padding*5; }
   }
 }
 

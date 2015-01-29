@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,700italic' rel='stylesheet' type='text/css'>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +21,12 @@
   <![endif]-->
 
   <style>
-    .nav a {
-      display: block;
+    .text-right {
+      text-align: right;
+    }
+  
+    #responsive-nav a, 
+    .nav-toggle {
       padding: 24px 12px;
     }
 
@@ -39,9 +42,13 @@
     }
 
     .hero h2 {
-      font-size: 4em;
+      font-size: 2em;
       line-height: 1.1;
     }
+    
+    .hero, #main {
+      text-align: center;
+    }    
 
     .dark {
       background: #242a33;
@@ -51,6 +58,18 @@
     .dark h3 {
       color: #fff;
     }
+    
+    
+    @media only screen and (min-width : 568px) {
+      .hero h2 {
+        font-size: 4em;
+        line-height: 1.1;
+      }
+      
+      .hero, #main {
+        text-align: left;
+      }
+    }    
   </style>
 
 </head>
@@ -61,17 +80,20 @@
 
   <div id="header">
     <div class="row clearfix">
-      <div class="columns large-2 medium-3">
+      <div class="columns large-2 medium-3 small-6">
         <h1><img src="http://placehold.it/300x130&text=Your+Logo"></h1>
       </div>
 
-      <div class="columns large-10">
-        <ul class="inline-list right nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+      <div class="columns large-10 medium-9 small-6 text-right">
+        
+        <nav id="responsive-nav" class="nav-collapse">
+          <ul class="inline-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -121,11 +143,11 @@
     <div class="section dark">
       <div class="row clearfix">
 
-        <div class="columns large-4 text-center">
+        <div class="columns large-4 medium-4 text-center">
           <img src="http://placehold.it/220x220/2e3642/999999&text=Another+Image">
         </div>
 
-        <div class="columns large-8">
+        <div class="columns large-8 medium-8">
           <h3>Join the Club</h3>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
           <form class="form-inline">
@@ -151,6 +173,12 @@
   <script src="../js/plugins/responsive-nav.min.js"></script>
   <script src="../js/plugins/smooth-scroll.js"></script>
   <script src="../js/plugins/social-buttons.js"></script>
-
+  <script>
+    var navigation = responsiveNav('#responsive-nav', {
+      transition: 250,
+      label: 'Menu',
+      insert: 'before'    
+    });
+  </script>
 </body>
 </html>

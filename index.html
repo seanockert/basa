@@ -144,7 +144,13 @@
           </div>
         </div>
 
-      <div class="clear"></div>
+        <div class="clear"></div>
+
+        <h3><em>1.3</em> Flexible Video</h3>
+        <div class="flex-video">
+          <iframe src="http://player.vimeo.com/video/59803444" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+
       </div>
       <hr>
 
@@ -192,13 +198,24 @@
 
           <blockquote>When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That's relativity.</blockquote>
 
-          <h3><em>2.4</em> Messages</h3>
+
+          <h3><em>2.4</em> Buttons</h3>
+
+          <a href="#" class="button">Normal button</a>
+          <a href="#" class="button base">Base colour button</a>
+          <a href="#" class="button red">Red button</a>
+          <a href="#" class="button blue">Blue button</a>
+          <button>Form button</button>
+
+          <p><a href="#" class="button block">Block button</a></p>
+
+          <h3><em>2.5</em> Messages</h3>
           <div class="msg">
             <strong>Alert headline!</strong>
             Message text
           </div>
 
-          <h3><em>2.5</em> Fancy Divider</h3><br>
+          <h3><em>2.6</em> Fancy Divider</h3><br>
           <div class="divider"></div>
 
         </div>
@@ -218,12 +235,16 @@
                   <label for="email">Your Email</label>
                   <input type="email" class="email" placeholder="Email address">
 
+                  <label>Gender</label>
+                  <input type="radio" name="sex" id="male" value="male" checked><label for="male">Male</label>
+                  <br>
+                  <input type="radio" name="sex" id="female" value="female"><label for="female">Female</label>
+
                   <label for="comment">Comment</label>
                   <textarea placeholder="Type your comment" name="comment"></textarea>
 
-                  <label for="agree">
-                    <input id="agree" type="checkbox"> I agree to the <a href="">terms &amp; conditions</a>
-                  </label>
+                  <br>
+                  <input id="agree" type="checkbox"> <label for="agree">I agree to the <a href="#">Terms &amp; Conditions</a></label>
 
                   <p><input type="submit" value="Send Form"></p>
               </form>

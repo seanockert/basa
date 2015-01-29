@@ -4,23 +4,23 @@
 
   body {
     &.scrolled {
-      #logo {
-        padding: $base-padding/2;
-        padding-bottom: $base-padding/1.5;
-        text-align: left;
 
-        h1 {
-          font-size: $font-size-xlarge;
+      #nav {
+        width: 220px;
+
+        #logo {
+          padding: $base-padding/2;
+          padding-bottom: $base-padding/1.5;
+          text-align: left;
+          display: block;
+
+          h1 { font-size: $font-size-xlarge; }
+
+          strong { display: none; }
         }
-
-        strong {
-          display: none;
-        }
-      }
-
-      .vertical-nav {
-        position: relative;
        }
+
+       #content { padding-top: 0; }
     }
   }
 

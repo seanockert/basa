@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <title>Homepage Layout | Basa - base framework</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <link rel="stylesheet" href="css/ie.css">
+  <![endif]-->
+
+  <style>
+    .text-right {
+      text-align: right;
+    }
+  
+    #header {
+      background: #333;
+    }
+
+      #logo {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        float: left;
+        font-size: 2em;
+      }
+      
+        #logo img {
+          width: auto;
+          height: 70px;  
+          line-height: 0; 
+          vertical-align: middle;       
+        }
+      
+      ul.nav {
+        padding: 0;
+      }
+      
+      ul.nav li {
+        padding: 0;
+      }
+      
+      ul.nav li a,
+      a.nav-toggle {
+        padding: 24px 12px;
+        text-decoration: none;
+        color: #eee;  
+        line-height: 1.4;      
+      }
+      
+      ul.nav li a {
+        display: block;
+      }
+  
+    #search {
+      padding: 14px;
+      float: none;
+    }
+    
+      #search input {
+        margin: 0;
+      }
+  
+      #search input[type="search"] {
+        width: 74%;
+        border-radius: 3px 0 0 3px;
+        margin-left: -3px;
+      }    
+      
+      #search #q {
+        width: 20%;
+        min-width: 46px;
+        border-radius: 0 3px 3px 0;
+        margin-left: -4px;
+        padding-bottom: 11px;
+      }
+
+
+    /* Dummy page content */
+    .dummy-content {
+      margin-bottom: 30px;
+    }
+    
+    .dummy-content p {
+      background: #ddd;
+      height: 1.3em;
+      width: 96%;
+    }  
+    
+    .dummy-content p:last-child { width: 60%; }  
+    .dummy-content p:first-child { width: 90%; }  
+    
+    @media only screen and (min-width : 568px) {
+      
+      .nav-collapse, 
+      #search {
+        float: left;
+      }
+       
+      ul.nav li a {
+        display: inline-block;
+      }
+        
+        #search input[type="search"] {
+          width: 160px;
+        }  
+        
+        #search #q {
+          width: 46px;
+        } 
+    } 
+       
+  </style>
+
+
+</head>
+
+<body>
+  <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+
+  <div id="header">
+    <h1 id="logo"><img src="http://placehold.it/300x130&text=Your+Logo" alt="Logo"></h1>
+
+    <nav id="responsive-nav" class="nav-collapse">
+      <ul class="inline-list nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    
+    
+    <form id="search">
+      <input type="search" placeholder="Search site...">
+      <input type="submit" value="Q" id="q">
+    </form>    
+    
+    <div class="clear"></div>
+  </div>
+
+  <div id="main">
+    <div class="row">
+      <div class="columns large-8">
+        <div class="dummy-content">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>        
+        <div class="dummy-content">
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>        
+        <div class="dummy-content">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/plugins/responsive-nav.min.js"></script>
+  <script>
+    var navigation = responsiveNav('#responsive-nav');
+  </script>
+</body>
+</html>

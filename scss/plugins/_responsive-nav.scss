@@ -43,7 +43,9 @@ $color-nav: #27b987;
   padding: 0;
 }   
 
-
+.nav-toggle {
+  display: inline-block;
+}
  
 @mixin line {
   display: inline-block;
