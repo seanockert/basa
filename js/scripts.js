@@ -11,19 +11,13 @@ $(document).ready( function() {
   detectDevice();
   checkSize();
 
-  var elem = document.getElementById('swipe');
-  window.slider = Swipe(elem, {
-    startSlide: 0,
-    auto: 1500,
-    continuous: true,
-  });
-
 
 });
 
 function checkSize() {
   // Set a flag for mobile or desktop size
-}
+};
+
 
 // Detects the device the visitor is using
 function detectDevice() {
@@ -41,10 +35,19 @@ function detectDevice() {
   }
 
   $('html').addClass(device);
-}
+};
 
 
-// Add Flowtype
+
+// Init Swipe slider plugin
+var elem = document.getElementById('swipe');
+window.slider = Swipe(elem, {
+  startSlide: 0,
+  auto: 1500,
+  continuous: true,
+});
+
+// Init Flowtype plugin
 var flowtypeElem = document.getElementById('flowtype-demo');
 window.flowtype( flowtypeElem, {
   minFont : 16,
@@ -53,7 +56,7 @@ window.flowtype( flowtypeElem, {
 });
 
 
-// For Responsive Navigation Plugin - js/plugins/responsive-nav.min.js
+// Init Responsive Navigation Plugin - js/plugins/responsive-nav.min.js
 var navigation = responsiveNav('#responsive-nav', {
   transition: 250,
   label: 'Menu',
@@ -62,11 +65,11 @@ var navigation = responsiveNav('#responsive-nav', {
   openPos: 'relative',
   open: function () {
     var menu = document.getElementById("menu");
-    menu.className=menu.className.replace(/(^|\s)open(\s|$)/, 'close ');
+    menu.className = menu.className.replace(/(^|\s)open(\s|$)/, 'close ');
   },
   close: function () {
     var menu = document.getElementById("menu");
-    menu.className=menu.className.replace(/(^|\s)close(\s|$)/, 'open ');
+    menu.className = menu.className.replace(/(^|\s)close(\s|$)/, 'open ');
   }
 });
 
@@ -86,7 +89,15 @@ $("#test-animate li a").click(function(e) {
     element.classList.add(anim);
 
   }
-
+  
   return false;
+});
+
+$(".loading").click(function(e) {
+  this.disabled = true;
+  this.children[0].className = 'hidden';
+  this.children[1].className = '';
+  
+  return true;
 });
 

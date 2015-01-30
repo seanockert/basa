@@ -55,6 +55,11 @@ $modules: () !default;
   @return $remValues;
 }
 
+/* Convert Hex colour to RGBA to add opacity - used for spinner */
+@function hex-to-rgba($color, $opacity: 0.5) {
+    @return rgba($color, $opacity);
+}
+
 
 /* Media Query Ranges */
 $small-range: (0em, 32em) !default;

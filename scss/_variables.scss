@@ -88,7 +88,6 @@ $strong: 700;
 
 .no-list { @include blank-list; }
 
-
 .inline-list {
   @include blank-list;
 
@@ -97,6 +96,7 @@ $strong: 700;
   }
 }
 
+/* For creating vertically center aligned elements */
 @mixin vertical-align {
   position: relative;
   top: 50%;

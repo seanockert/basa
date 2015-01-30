@@ -1,63 +1,42 @@
 
 /* Animations */
 
-
 @include keyframes(targetFade) {
   0%    { background-color: rgba(255,250,217,1); }
   100%  { background-color: rgba(255,250,217,0); }  
 }
 
 @include keyframes(bounce) {
-    0% { @include transform(scale(1,1)); }
-    40% { @include transform(scale(1.1,0.9)); }
-    65% { @include transform(scale(0.95,1.05)); }
-    100% { @include transform(scale(1,1)); }
+  0%    { @include transform(scale(1,1)); }
+  40%   { @include transform(scale(1.1,0.9)); }
+  65%   { @include transform(scale(0.95,1.05)); }
+  100%  { @include transform(scale(1,1)); }
 }
 
 @include keyframes(flyIn) {
-  0%, 60%, 75%, 100% {
-    @include vendor-prefix(transition-timing-function, cubic-bezier(0.215, 0.610, 0.355, 1.000));
-  }
-
-  0% {
-    opacity: 0;
-    @include transform(translate3d(-3000px, 0, 0))
-  }
-
-  60% {
-    opacity: 1;
-    @include transform(translate3d(25px, 0, 0))
-  }
-
-  75% {
-    @include transform(translate3d(-10px, 0, 0))
-  }
-
-  100% {
-    @include transform(none)
-  }
+  0%, 60%, 75%, 100% { @include vendor-prefix(transition-timing-function, cubic-bezier(0.215, 0.610, 0.355, 1.000)); }
+  0%    { opacity: 0; @include transform(translate3d(-3000px, 0, 0)) }
+  60%   { opacity: 1; @include transform(translate3d(25px, 0, 0)) }
+  75%   { @include transform(translate3d(-10px, 0, 0)) }
+  100%  { @include transform(none) }
 }
 
 @include keyframes(flyOut) {
-  20% {
-    opacity: 1;
-    @include transform(translate3d(20px, 0, 0))
-  }
+  20%   { opacity: 1; @include transform(translate3d(20px, 0, 0)) }
+  100%  { opacity: 0; @include transform(translate3d(-2000px, 0, 0)) }
+}
 
-  100% {
-    opacity: 0;
-    @include transform(translate3d(-2000px, 0, 0))
-  }
+@include keyframes(spinner) {
+  0%    { @include transform(rotate(0deg)); }
+  100%  { @include transform(rotate(359deg)); }
 }
 
 .amim {
-  @include vendor-prefix(transition, all 450ms cubic-bezier(0.650, 0.045, 0.405, 1.000));
+  @include vendor-prefix(transition, all 0.45s cubic-bezier(0.650, 0.045, 0.405, 1.000));
 }
 
-.hide {
-  opacity: 0;
-}
 
+/* Apply these classes to trigger animation */
 .bounce {
   @include vendor-prefix(animation, bounce 0.35s );
 }
@@ -75,4 +54,32 @@
 .fly-in,
 .fly-out {
   @include vendor-prefix(fill-mode, forwards);
+}
+
+/* Loading spinner */
+.spinner {
+  height: 30px;
+  width: 30px;
+  vertical-align: bottom;
+  margin: 0px auto;
+  position: relative;
+  border-style: solid;
+  border-width: 4px;
+  border-color: hex-to-rgba($color-base, .15);
+  border-top-color: $color-base;
+  border-radius: 100%; 
+  @include vendor-prefix(animation, spinner .6s infinite ease-out);
+  
+  &.light {
+    border-color: hex-to-rgba(#fff, .15);
+    border-top-color: #fff;    
+  }
+}
+
+.button .spinner {
+  height: 1em;
+  width: 1em;
+  top: -2px;
+  border-width: 3px;
+  display: inline-block;
 }

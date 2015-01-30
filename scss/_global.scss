@@ -35,11 +35,12 @@ a {
 /* Common Classes  ---------------------- */
 
 .hidden-large { display: block !important; }
-.hidden-small { display: none !important; }
+.hidden, .hidden-small { display: none !important; }
 
 .left         { float: left; }
 .right        { float: right; }
 .text-center  { text-align: center; }
+.hide         { opacity: 0; }
 
 :target {
   @include vendor-prefix(animation, targetFade 2s);

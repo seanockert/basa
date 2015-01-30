@@ -1,4 +1,4 @@
-/* Typography and more  ---------------------- */
+/* Typography and buttons  ---------------------- */
 
 p   { line-height: 1.5;}
 
@@ -103,14 +103,22 @@ blockquote {
   font-weight: bold;
   text-decoration: none !important;
   margin-bottom: $base-padding/2;
+  @include vendor-prefix(transition, width 0.2s);
 
   &:hover, &:focus {
     color: #fff;
     background: tint($color-mute, 10%);
+    box-shadow: none;
   }
 
   &:active {
     background: shade($color-mute, 10%);
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,0.3);
+  }
+  
+  &:disabled {
+    background: #bbb !important;
+    box-shadow: none !important;
   }
 
   &.red {
@@ -122,6 +130,30 @@ blockquote {
 
     &:active {
       background: shade($color-red, 10%);
+    }
+  }
+  
+  &.base {
+    color: #fff;
+    background: $color-base;
+    &:hover, &:focus {
+      background: tint($color-base, 10%);
+    }
+
+    &:active {
+      background: shade($color-base, 10%);
+    }
+  } 
+   
+  &.blue {
+    color: #fff;
+    background: $color-blue;
+    &:hover, &:focus {
+      background: tint($color-blue, 10%);
+    }
+
+    &:active {
+      background: shade($color-blue, 10%);
     }
   }
 }
