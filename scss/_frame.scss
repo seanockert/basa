@@ -1,0 +1,67 @@
+/* Safari frame  ---------------------- */
+
+$color-frame-close: #D90000;
+$color-frame-min: #FFBF00;
+$color-frame-max: #00B285;
+$color-frame-border: #ccc;
+$color-frame-nav: #eee;
+
+.browser-frame {
+  border-radius: 5px 5px 3px 3px;
+  border: 2px solid $color-frame-border;
+  display: inline-block;
+
+  .chrome {
+    padding: $base-padding/4;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+
+    .dot, .dot:before, .dot:after {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 7px;
+      margin-left: 18px;
+      border-radius: 50%;
+      position: relative;
+      background: $color-frame-min;
+      float: left;
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+      }
+
+      &:before { background: $color-frame-close; left: -16px; }
+      &:after { background: $color-frame-max; left: 16px; }
+    }
+
+    .bar {
+      margin-left: 58px;
+
+      b {
+        height: 24px;
+        width: 100%;
+        padding: 4px 8px;
+        display: block;
+        background: $color-frame-nav;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    padding: 0;
+    line-height: 0;
+    border-radius: 0 0 2px 2px;
+  }
+}

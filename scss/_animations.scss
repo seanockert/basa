@@ -61,18 +61,17 @@
   height: 30px;
   width: 30px;
   vertical-align: bottom;
-  margin: 0px auto;
   position: relative;
   border-style: solid;
   border-width: 4px;
   border-color: hex-to-rgba($color-base, .15);
   border-top-color: $color-base;
-  border-radius: 100%; 
+  border-radius: 100%;
   @include vendor-prefix(animation, spinner .6s infinite ease-out);
-  
+
   &.light {
     border-color: hex-to-rgba(#fff, .15);
-    border-top-color: #fff;    
+    border-top-color: #fff;
   }
 }
 

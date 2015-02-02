@@ -53,14 +53,14 @@ textarea {
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: bottom;
-  cursor: pointer; 
+  cursor: pointer;
   margin: $base-padding/4 $base-padding/6 $base-padding/6 0;
-  
+
   & + label {
     display: inline-block;
     font-size: $font-size-base;
-  }  
-  
+  }
+
   &:checked + label {  /* Style the label of the selected or checked item */ }
 }
 
