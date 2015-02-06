@@ -4,24 +4,26 @@ Site URI:     	http://balsamade.com/projects/basa
 Description:    Sean's Base Framework
 Author:         Sean Ockert @seanockert
 Author URI:     http://balsamade.com
-Version:        0.5
+Version:        0.6
 */
 
 // Base Config
 @import "reset"; /* Browser resets - no need to edit */
 @import "settings"; /* Mixins and Media queries - no need to edit */
 @import "variables"; /* Set the base colours and fonts here */
-@import "grid"; /* Zurb Foundation grid */
-@import "equal-grid";
-@import "block-grid";
-@import "flex-video"; /* Embed responsive videos */
+
+@import "grid/grid"; /* Zurb Foundation grid */
+@import "grid/block-grid"; /* Zurb Foundation block grid */
+@import "grid/equal-grid"; 
+@import "grid/flex-video"; /* Embed responsive videos */
 
 // Styling
 @import "global"; /* Replace code in here with your own */
-@import "forms";
-@import "type";
-@import "buttons";
-@import "frame"; /* Browser frame for displaying portfolio items */
+
+@import "modules/forms";
+@import "modules/type";
+@import "modules/buttons";
+@import "modules/frame"; /* Browser frame for displaying portfolio items */
 
 // Media Queries
 @import "small";
@@ -36,5 +38,5 @@ Version:        0.5
 @import "plugins/swipe";
 
 // Animations
-@import "bourbon-animation.scss";
+@import "animation-mixins.scss";
 @import "animations";
