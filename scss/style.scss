@@ -23,7 +23,8 @@ Version:        0.6
 @import "modules/forms";
 @import "modules/type";
 @import "modules/buttons";
-@import "modules/frame"; /* Browser frame for displaying portfolio items */
+@import "modules/browser-frame"; /* Browser frame for displaying portfolio items */
+@import "modules/pricing-plans"; /* For displaying tiered pricing */
 
 // Media Queries
 @import "small";
