@@ -1,621 +1,104 @@
-/**
- * CSS Modal
- * http://drublic.github.com/css-modal
- *
- * @author Hans Christian Reinl - @drublic
- */
+﻿/* Basa Modal */
 
+.modal {
+  position: fixed;
+  top: 50px;
+  left: 2%;
+  width: 96%;
+  background: #fff;
+  color: #444;
+  border-radius: 6px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.8);
+  padding: 20px;
+  font-size: 16px;
+  text-align: left;
+  z-index: 10001;
+  display: none;
 
-/**
- * CSS Modal Configuration
- * http://drublic.github.com/css-modal
- *
- * @author Hans Christian Reinl - @drublic
- */
-
-// Modal General Styles
-$modal-max-width: 650px !default;
-$modal-border-radius: 2px !default;
-$modal-small-breakpoint: 30em !default;
-
-// Modal Plain Screen Styles
-$modal-plain-screen-overlay: #fff !default;
-
-// Set high z-index to appear above all other content
-$modal-layer: 999 !default;
-
-// Color configuration
-$modal-border-color: #ddd !default;
-$modal-inner-background: #fff !default;
-$modal-color: #222 !default;
-$modal-mobile-header: #27aae2 !default;
-
-
-// Prevent overflow on HTML element
-html {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; // Native scroll momentum
-}
-
-// To prevent jumping <body> should not have any margin on top or bottom
-
-.has-overlay {
-  overflow: hidden;
-
-  > body {
-    height: 100%;
-    overflow: hidden;
+  h2, h3 {
+      margin-top: 0;
   }
+
+  &.open { display: block; }
 }
 
-%modal {
-  // Hide initially
-  -webkit-transform: translate(0, 100%);
-     -moz-transform: translate(0, 100%);
-       -o-transform: translate(0, 100%);
-      -ms-transform: translate(0, 100%);
-          transform: translate(0, 100%);
-  -webkit-transform: translate3d(0, 100%, 0); // iOS
-          transform: translate3d(0, 100%, 0);
 
-  // Maintain a fixed position
+#modal-overlay {
+  background: rgba(0,0,0,0.3);
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   bottom: 0;
-  z-index: $modal-layer;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
+  z-index: 10000;
+  display: none;
 
-  // Show modal when requested
-  &:target,
-  &.is-active {
-    -webkit-transform: translate(0, 0);
-       -moz-transform: translate(0, 0);
-         -o-transform: translate(0, 0);
-        -ms-transform: translate(0, 0);
-            transform: translate(0, 0);
+  &.open { display: block;}
+}
 
-    width: auto;
-    height: auto;
 
-    opacity: 1;
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  color: #888;
+  font-size: 26px;
+  text-decoration: none;
+  line-height: 1;
+  padding: 12px;
+  padding-top: 8px;
+}
+
+  .close:hover {
+    color: #000;
   }
 
-  // Internet Explorer 8
-  display: none\9;
 
-  &.is-active {
-    display: block\9;
-    height: 100%\9;
-    width: 100%\9;
-  }
+@media only screen and (min-width: 40em) {
 
-  // Overwrite IE8 hack for IE9 and IE10
-  &:target,
-  &.is-active {
-    display: block\9;
-  }
-
-  // Content Area
-  .modal-inner {
-    position: absolute;
-    top: 60px;
+  .modal {
     left: 50%;
-    z-index: 20;
-    margin-left: ($modal-max-width / 2) * -1;
-    width: $modal-max-width;
-    overflow-x: hidden;
-
-    -webkit-overflow-scrolling: touch; // Native style momentum scrolling
-
-    > img,
-    > video,
-    > iframe {
-      width: 100%;
-      height: auto;
-      min-height: 300px;
-    }
-
-    > img {
-      width: auto;
-      max-width: 100%;
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      border: 0;
-    }
+    width: 600px;
+    margin-left: -300px;
   }
 
-  // Content
-  .modal-content {
-    position: relative;
-    max-height: 400px;
-    max-height: 60vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-    > * {
-      max-width: 100%;
-    }
-  }
-
-  // Footer
-  footer {
-    border-top: 1px solid lighten($modal-border-color, 20);
-    padding: 0 1.2em 18px;
-    background: #f0f0f0;
-    border-radius: 2px;
-  }
-
-  // A close button
-  .modal-close {
-    display: block;
-    height: 1px; // Prevent close element to appear
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    overflow: hidden;
-
-    &:focus:after {
-      outline: 1px dotted;
-      outline: -webkit-focus-ring-color auto 5px;
-    }
-
-    // Background as close
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 10;
-    }
-
-    // Actual close button on modal
-    &:after {
-      content: '\00d7';
-      position: absolute;
-      top: 35px;
-      right: 50%;
-      z-index: 20;
-      margin-right: -($modal-max-width / 2);
-    }
-  }
-
-
-  // When screen isn't as wide as the modal anymore
-  @media screen and (max-width: $modal-max-width + 40) {
-    .modal-inner {
-      width: auto;
-      left: 20px;
-      right: 20px;
-      margin-left: 0;
-    }
-
-    .modal-close {
-      &:after {
-        margin-right: 0 !important;
-        right: 20px;
-      }
-    }
-  }
-
-  // For small screens adjust the modal
-  @media screen and (max-width: $modal-small-breakpoint) {
-    -webkit-transform: translate(0, 400px); // Use px to work around Android 2.3 bug
-    -webkit-transform: translate3d(0, 100%, 0); // And overwrite px if 3D transforms are supported
-            transform: translate3d(0, 100%, 0);
-
-    -webkit-transition: opacity 1ms .25s;
-       -moz-transition: opacity 1ms .25s;
-         -o-transition: opacity 1ms .25s;
-        -ms-transition: opacity 1ms .25s;
-            transition: opacity 1ms .25s;
-
-    display: block;
-    right: auto;
-    bottom: auto;
-
-    &:target,
-    &.is-active {
-      width: 100%;
-      height: 100%;
-
-      // For IE we need to hide the close element to prevent overlay of other elements
-      .modal-close {
-        display: block;
-      }
-    }
-
-    .modal-inner {
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      overflow: auto;
-    }
-
-    .modal-content {
-      max-height: none;
-
-      // Prevent text from breaking modal in mobile view
-      -ms-word-break: break-all;
-        word-break: break-all;
-        word-break: break-word; // Non-standard for WebKit
-      -webkit-hyphens: auto;
-         -moz-hyphens: auto;
-              hyphens: auto;
-    }
-
-    .modal-close {
-      display: none;
-      right: auto;
-
-      &:before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 20;
-      }
-
-      &:after {
-        top: 5px !important;
-        right: 5px;
-        left: auto;
-        margin-left: 0;
-      }
-    }
-  }
-
-
-  // For small heights
-  @media screen and (max-height: 46em) and (min-width: $modal-small-breakpoint) {
-    .modal-content {
-      max-height: 340px;
-      max-height: 50vh;
-    }
-  }
-
-
-  @media screen and (max-height: 36em) and (min-width: $modal-small-breakpoint) {
-    .modal-content {
-      max-height: 265px;
-      max-height: 40vh;
-    }
-  }
-
-
-  // Stackable Modals
-  &.is-stacked {
-    -webkit-transform: translate(0, 0) scale(1, 1);
-       -moz-transform: translate(0, 0) scale(1, 1);
-         -o-transform: translate(0, 0) scale(1, 1);
-        -ms-transform: translate(0, 0) scale(1, 1);
-            transform: translate(0, 0) scale(1, 1);
-
-    opacity: 1;
-
-
-    .modal-inner {
-      -webkit-animation: scaleDown .7s ease both;
-         -moz-animation: scaleDown .7s ease both;
-              animation: scaleDown .7s ease both;
-    }
-
-
-    // Hide overlay and close button
-    .modal-close {
-      opacity: 0;
-    }
-
-
-    // On small screens
-    @media screen and (max-width: $modal-small-breakpoint) {
-      -webkit-animation: scaleDown .7s ease both;
-         -moz-animation: scaleDown .7s ease both;
-              animation: scaleDown .7s ease both;
-
-
-      .modal-inner {
-        -webkit-animation: none;
-           -moz-animation: none;
-                animation: none;
-      }
-
-
-      .modal-close {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 
-/**
- * All animations for CSS Modal
- *
- * Available:
- * - %modal--transition-fade (fade)
- * - %modal--transition-zoomIn (zooms in)
- * - %modal--transition-plainScreen (hides background)
- *
- * Usage:
- *
- * .selector {
- *    @extend %modal--transition-fade;
- * }
- *
- */
 
-// Configuration:
-$transition-duration: 0.4s !default;
-$transition-size-start: scale(0) !default;
-$transition-size-end: scale(1) !default;
+/* Animation */
 
-// Fade in the modal
-%modal--transition-fade {
-  @media screen and (min-width: $modal-small-breakpoint) {
-    transition: opacity $transition-duration;
-  }
-
-  @extend %modal;
-  @extend %modal-theme;
+@keyframes modalIn {
+  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
+  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
+  75%   { -webkit-transform: translate3d(0, -10px, 0) }
+  100%  { -webkit-transform: none }
 }
 
-// Fade in and zoom in the modal
-%modal--transition-zoomIn {
-  @extend %modal;
-  @extend %modal-theme;
-
-  // Scale to zero
-  .modal-inner {
-    -webkit-transform: $transition-size-start;
-            transform: $transition-size-start;
-    opacity: 0;
-    -webkit-transition: all $transition-duration;
-            transition: all $transition-duration;
-  }
-
-  .modal-close:before {
-    -webkit-transition: all $transition-duration;
-            transition: all $transition-duration;
-    opacity: 0;
-  }
-  .modal-close:after {
-    -webkit-transform: $transition-size-start;
-            transform: $transition-size-start;
-    -webkit-transition: all $transition-duration;
-            transition: all $transition-duration;
-    opacity: 0;
-  }
-
-  // Show modal when requested
-  &:target,
-  &.is-active {
-    .modal-inner {
-      -webkit-transform: $transition-size-end;
-              transform: $transition-size-end;
-      opacity: 1;
-    }
-
-    .modal-close:before {
-      opacity: 1;
-    }
-    .modal-close:after {
-      -webkit-transform: $transition-size-end;
-              transform: $transition-size-end;
-      opacity: 1;
-      // Move back to proper position
-      top: 25px;
-
-      @media screen and (max-width: $modal-small-breakpoint) {
-        top: 5px;
-        right: 5px;
-        left: auto;
-      }
-    }
-  }
+@-webkit-keyframes modalIn {
+  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
+  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
+  75%   { -webkit-transform: translate3d(0, -10px, 0) }
+  100%  { -webkit-transform: none }
 }
 
-// Fade in, zoom in and hide backgrund in the modal
-%modal--transition-plainScreen {
-  @extend %modal;
-  @extend %modal-theme;
-  @extend %modal-theme-plainScreen;
-  @extend %modal--transition-zoomIn;
-
-  .modal-inner {
-    box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.25);
-  }
-
-  .modal-close:before {
-    -webkit-transition: all $transition-duration;
-            transition: all $transition-duration;
-    background: $modal-inner-background;
-    opacity: 0;
-  }
-  .modal-close:after {
-    box-shadow: 0 -1px 10px -2px rgba(0, 0, 0, 0.2);
-  }
-
-  // Show modal when requested
-  &:target,
-  &.is-active {
-    .modal-close:before {
-      opacity: 1;
-    }
-    .modal-close:after {
-      top: 23px;
-
-      @media screen and (max-width: $modal-small-breakpoint) {
-        top: 5px;
-      }
-    }
-  }
+@-moz-keyframes modalIn {
+  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
+  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
+  75%   { -webkit-transform: translate3d(0, -10px, 0) }
+  100%  { -webkit-transform: none }
 }
 
-
-/**
- * CSS Modal Themes
- * http://drublic.github.com/css-modal
- *
- * @author Hans Christian Reinl - @drublic
- */
-
-/*
- * Global Theme Styles
- */
-
-%modal-theme {
-  color: $modal-color;
-  line-height: 1.3;
-
-
-  // Content Area
-  .modal-inner {
-    border-radius: $modal-border-radius;
-    background: $modal-inner-background;
-    -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.6);
-            box-shadow: 0 0 30px rgba(0,0,0,0.6);
-
-    max-width: 100%;
-
-    -webkit-transition: max-width 0.25s linear,
-                        margin-left 0.125s linear;
-            transition: max-width 0.25s linear,
-                        margin-left 0.125s linear;
-  }
-
-
-  // Header
-  header {
-    border-bottom: 1px solid $modal-border-color;
-    padding: 0 1.2em;
-
-    > h2 {
-      margin: 0.5em 0;
-    }
-  }
-
-
-  // Content
-  .modal-content {
-    border-bottom: 1px solid $modal-border-color;
-    padding: 15px 1.2em;
-  }
-
-
-  // Footer
-  footer {
-    border-top: 1px solid lighten($modal-border-color, 20);
-    padding: 0 1.2em 18px;
-    background: #f0f0f0;
-    border-radius: $modal-border-radius;
-  }
-
-
-  // A close button
-  .modal-close {
-    text-indent: -100px;
-
-    // Background as close
-    &:before {
-      // Background for overlay: Data URI because of IE8 not supporting rgba
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAEUlEQVQoz2NgeEYAjioYSQoAzOTmAXhPhyoAAAAASUVORK5CYII=');
-    }
-
-    // Actual close button on modal
-    &:after {
-      content: '\00d7';
-
-      background: $modal-inner-background;
-
-      border-radius: $modal-border-radius;
-      padding: 2px 8px;
-
-      font-size: 1.2em;
-      text-decoration: none;
-      text-indent: 0;
-    }
-  }
-
-
-  // For small screens adjust the modal
-  @media screen and (max-width: $modal-small-breakpoint) {
-    .modal-close:before {
-      background:  $modal-mobile-header;
-
-      height: 3em;
-      -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.6);
-              box-shadow: 0 0 5px rgba(0,0,0,0.6);
-    }
-
-    .modal-inner {
-      padding-top: 3em;
-      -webkit-box-shadow: none;
-              box-shadow: none;
-    }
-
-    .modal-close {
-      text-decoration: none;
-
-      &:after {
-        content: attr(data-close);
-        font-size: 1em;
-        padding: 0.5em 1em;
-      }
-    }
-  }
-}
-
-
-/*
- * Plain Screen Theme Styles
- */
-%modal-theme-plainScreen {
-
-  .modal-inner {
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  }
-
-  // A close button
-  .modal-close {
-    // Background as close
-    &:before {
-      background: $modal-plain-screen-overlay;
-    }
-
-    &:after {
-      -webkit-box-shadow: 0px -4px 8px -1px rgba(0, 0, 0, 0.25);
-              box-shadow: 0px -4px 8px -1px rgba(0, 0, 0, 0.25);
-    }
-  }
-}
-
-
-/**
- * Apply the desired modal behavior to your container selector
- */
-.modal--show {
-  @extend %modal;
-  @extend %modal-theme;
-}
-
-.modal--fade {
-  @extend %modal--transition-fade;
-  @extend %modal-theme;
+.modal.open {
+  opacity: 1;
+  transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -webkit-transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -moz-transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  animation: modalIn 0.45s;
+  -webkit-animation: modalIn 0.45s;
+  -moz-animation: modalIn 0.45s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
 }

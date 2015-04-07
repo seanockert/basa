@@ -1,7 +1,8 @@
-// scrollEvents function attaches a class="scrolled" to the body when scrolling the page so you can hook into that class
-// Also looks for a navigation list named #main-nav and adds class="active" to the nav item that is currently scrolled to
-// Sean Ockert 2014
-// v1
+/* scrollEvents function attaches a class="scrolled" to the body when scrolling the page so you can hook into that class
+* Also looks for a navigation list named #main-nav and adds class="active" to the nav item that is currently scrolled to
+* Sean Ockert 2014
+* v1
+*/
 
 // Generic onResize listener - replace if using a framework
 var addEvent = function(elem, type, eventHandle) {
