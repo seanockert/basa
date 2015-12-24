@@ -1,0 +1,70 @@
+﻿/* Tabs required styles - https://24ways.org/2015/how-tabs-should-work/ */
+
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  display: none;
+}
+
+	ul.tabs a,
+	.tabs-panel a.tab {
+	  float: left;
+	  display: block;
+	  text-decoration: none;
+	}
+
+	ul.tabs a.selected,
+	ul.tabs a[aria-selected='true'],
+	.tabs-panel a.tab.selected,
+	.tabs-panel a.tab[aria-selected='true'] {
+	  background-color: #ccc !important;
+	}
+
+.tabs-panel a.tab {
+	width: 100%;
+}
+
+	.tabs-panel a.tab:after {
+		display: block;
+		content: '+';
+		float: right;
+	}
+
+	.tabs-panel a.tab[aria-selected='true']:after,
+	.tabs-panel a.tab.selected:after {
+		content: '-';
+	}
+
+div[aria-hidden='true'] { display: none; }
+
+@media only screen and (min-width: 40em) {
+	ul.tabs { display: block; }
+
+	.tabs-panel a.tab { display: none; }
+}
+
+/* End required styles */
+
+	ul.tabs a,
+	.tabs-panel a.tab {
+	  border: 1px solid #ccc;
+	  padding: 12px;
+	  margin-right: 6px;
+	  color: #000;
+	  line-height: 1;
+	}
+
+		ul.tabs a { border-bottom: none; }
+		.tabs-panel a.tab { margin-bottom: 12px; }
+
+		ul.tabs a:hover,
+		.tabs-panel a.tab:hover { background-color: #eee; }
+
+@media only screen and (min-width: 40em) {
+	.tabs-panel {
+	  border-top: 1px solid #ccc;
+	  padding: 12px;
+	}
+}

@@ -1,0 +1,45 @@
+﻿/* Tabs required styles - https://24ways.org/2015/how-tabs-should-work/ */
+
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+
+  li { 
+    float: left;
+    padding: 0;
+  }
+
+  a {
+    float: left;
+    display: block;
+    text-decoration: none;
+
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: #ccc; /* Move hover style above selected style */
+    }
+  }
+}
+
+div[aria-hidden='true'] { display: none; }
+
+/* End required styles */
+
+	ul.tabs a {
+	  border: 1px solid #ccc;
+	  border-bottom: 0;
+	  padding: 12px;
+	  margin-right: 6px;
+	  color: #000;
+	  line-height: 1;
+
+    &:hover { background-color: #eee; }
+	}
+
+.tabs-panel {
+  border-top: 1px solid #ccc;
+  padding: 12px;
+}
+

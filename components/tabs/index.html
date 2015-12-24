@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Smooth Scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
+  </style>
+  <link rel="stylesheet" href="components-tabs.css" type="text/css">
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
+</head>
+
+<body>
+
+<h1>Tabs</h1>
+<p>Proper responsive tabs, with ARIA roles and back button support. Transforms to accordion below 576px (set breakpoint with media queries). <a href="https://24ways.org/2015/how-tabs-should-work/">More explanation here</a></p>
+
+<ul role="tablist" class="tabs">
+  <li><a href="#first" class="tab" role="tab" aria-controls="first">First tab</a></li>
+  <li><a href="#second" class="tab" role="tab" aria-controls="second">Second Tab</a></li>
+  <li><a href="#third" class="tab" role="tab" aria-controls="third">Third Tab</a></li>
+</ul>
+<div class="tabs-panel">
+  <a href="#first" class="tab" role="tab" aria-controls="first">First tab</a>
+  <div role="tabpanel" id="first">
+    <h3>First tab content here</h3>
+  </div>
+  <a href="#second" class="tab" role="tab" aria-controls="second">Second tab</a>
+  <div role="tabpanel" id="second">
+    <h3>Second tab content here</h3>
+  </div>
+  <a href="#third" class="tab" role="tab" aria-controls="third">Third tab</a>
+  <div role="tabpanel" id="third">
+    <h3>Third tab content here</h3>
+  </div>
+</div>
+
+<h2>How to use</h2>
+SCSS: <a href="../../scss/plugins/_tabs.scss">tabs.scss</a><br>
+Javascript: <a href="../../js/plugins/tabs.js">tabs.js</a>
+
+<pre class="language-markup"><code>
+&lt;script src="js/plugins/tabs.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+/* Tabs required styles - https://24ways.org/2015/how-tabs-should-work/ */
+
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  display: none;
+}
+
+  ul.tabs a,
+  .tabs-panel a.tab {
+    float: left;
+    display: block;
+    text-decoration: none;
+  }
+
+  ul.tabs a.selected,
+  ul.tabs a[aria-selected='true'],
+  .tabs-panel a.tab.selected,
+  .tabs-panel a.tab[aria-selected='true'] {
+    background-color: #ccc !important;
+  }
+
+.tabs-panel a.tab {
+  width: 100%;
+}
+
+  .tabs-panel a.tab:after {
+    display: block;
+    content: '+';
+    float: right;
+  }
+
+  .tabs-panel a.tab[aria-selected='true']:after,
+  .tabs-panel a.tab.selected:after {
+    content: '-';
+  }
+
+div[aria-hidden='true'] { display: none; }
+
+@media only screen and (min-width: 40em) {
+  ul.tabs { display: block; }
+
+  .tabs-panel a.tab { display: none; }
+}
+
+/* End required styles */
+
+  ul.tabs a,
+  .tabs-panel a.tab {
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin-right: 6px;
+    color: #000;
+    line-height: 1;
+  }
+
+    ul.tabs a { border-bottom: none; }
+    .tabs-panel a.tab { margin-bottom: 12px; }
+
+    ul.tabs a:hover,
+    .tabs-panel a.tab:hover { background-color: #eee; }
+
+@media only screen and (min-width: 40em) {
+  .tabs-panel {
+    border-top: 1px solid #ccc;
+    padding: 12px;
+  }
+}
+&lt;/style&gt;
+
+&lt;!-- Add the corresponding anchor links to the tabs to link them to the sections --&gt;
+&lt;ul role="tablist" class="tabs"&gt;
+  &lt;li&gt;&lt;a href="#first" class="tab" role="tab" aria-controls="first">First Tab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#second" class="tab" role="tab" aria-controls="second">Second Tab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#third" class="tab" role="tab" aria-controls="third">Third Tab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Tabbed sections --&gt;
+&lt;div class="tabs-panel"&gt;
+  &lt;a href="#first" class="tab" aria-controls="first"&gt;First tab&lt;/a&gt; &lt;!-- Accordion headers only visible for mobile --&gt;
+  &lt;div role="tabpanel" id="first"&gt;
+    &lt;h3&gt;First tab content here&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;a href="#second" class="tab" aria-controls="second"&gt;Second tab&lt;/a&gt;
+  &lt;div role="tabpanel" id="second"&gt;
+    &lt;h3&gt;Second tab content here&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;a href="#third" class="tab" aria-controls="third"&gt;Third tab&lt;/a&gt;
+  &lt;div role="tabpanel" id="third"&gt;
+    &lt;h3&gt;Third tab content here&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<script src="../../js/plugins/tabs.js"></script>
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
+</body>
+</html>

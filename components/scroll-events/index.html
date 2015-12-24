@@ -36,6 +36,8 @@
 
 <h1>Scroll Events</h1>
 
+<p>Fixed menu highlights the active item. Appends <code>class="scrolled"</code> to the body when scrolling starts.</p>
+
 <ul class="fixed" id="main-nav">
   <li><a href="#anchor1">Scroll to Anchor 1</a></li>
   <li><a href="#anchor2">Scroll to Anchor 2</a></li>
@@ -43,7 +45,7 @@
 </ul>
 
 
-<h3 id="anchor1">Anchor 1. Fixed menu highlights the active item.</h3>
+<h3 id="anchor1">Anchor 1</h3>
 <h3 id="anchor2">Anchor 2</h3>
 <h3 id="anchor3">Anchor 3</h3>
 
@@ -55,9 +57,9 @@ Javascript: <a href="../../js/plugins/scroll-events.js">scroll-events.js</a>
 &lt;script src="js/vendors/classie.js"&gt;&lt;/script&gt;
 &lt;script src="js/plugins/scroll-events.js"&gt;&lt;/script&gt;
 &lt;style&gt;
-  /* 
-  * Script appends class="scrolled" to the body when scrolling starts. 
-  * So we can fix the nav to the top of the page 
+  /*
+  * Script appends class="scrolled" to the body when scrolling starts.
+  * So we can fix the nav to the top of the page
   */
   .scrolled .fixed {
     position: fixed;

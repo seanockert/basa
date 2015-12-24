@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Tooltip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 20px; padding: 0; font-family: sans-serif; }
+    .tooltip {margin-left: 100px;}
+  </style>
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
+  <link rel="stylesheet" href="components-tooltip.css" type="text/css">
+</head>
+
+<body>
+
+
+<h1>Tooltip</h1>
+<p>A simple, bloated tooltip.</p>
+
+<a class="tooltip" href="#">Hover me
+  <span class="tooltip-content">You can easily navigate the city by car.</span>
+</a>
+
+
+<h2>How to use</h2>
+CSS: <a href="components-tooltip.css">components-tooltip.css</a><br>
+
+<pre class="language-markup"><code>
+&lt;link rel="stylesheet" href="components-tooltip.css" type="text/css"&gt;
+
+&lt;a class="tooltip" href="#"&gt;
+  Label here
+  &lt;span class="tooltip-content"&gt;Content of tooltip here&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+
+<script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
+
+<script src="../../js/vendors/classie.js"></script>
+<script src="../../js/plugins/basa-modal.js"></script>
+
+
+</body>
+</html>

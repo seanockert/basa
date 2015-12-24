@@ -89,7 +89,7 @@ $("#test-animate li a").click(function(e) {
     element.classList.add(anim);
 
   }
-  
+
   return false;
 });
 

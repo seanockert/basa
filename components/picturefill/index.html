@@ -17,15 +17,34 @@
 <body>
 
 <h1>Picture Fill - Responsive Images</h1>
-Resize this page to see the image source change.<br><br>
+<p>Resize this page to see the image source change.</p>
 
-<img src="http://placehold.it/640x320/0099C7/ffffff&text=Small" sizes="(min-width: 40em) 100vw, 100vw" srcset="http://placehold.it/640x320/0099C7/ffffff&text=Small 640w, http://placehold.it/768x384/E8117F/ffffff&text=Medium 768w, http://placehold.it/840x420/27B987/ffffff&text=Large 840w" alt="">
+<img 
+alt=""
+src="http://placehold.it/640x320/0099C7/ffffff&text=Small" 
+sizes="(min-width: 40em) 100vw, 100vw"
+  srcset="http://placehold.it/768x384/0099C7/ffffff&text=Small 540w,
+          http://placehold.it/768x384/E8117F/ffffff&text=Medium 768w,
+          http://placehold.it/840x420/27B987/ffffff&text=Large 840w">
 
 <h2>How to use</h2>
 <ol>
-  <li>Attach the script <a href="../../js/plugins/picture-fill.min.js"><code>js/plugins/picture-fill.min.js</code></a></li>
-  <li>Create a <code>picture</code> element in the header: <code>document.createElement( "picture" );</code></li>
-  <li>Add your image and define breakpoints for each version (see source)</li>
+  <li>Attach the script <a href="../../js/plugins/picture-fill.min.js">js/plugins/picture-fill.min.js</a></li>
+  <li>Create a <code>picture</code> element in the header:
+<pre class="language-markup"><code>
+&lt;script&gt;document.createElement( "picture" );&lt;/script&gt;
+</code></pre>
+  </li>
+  <li>Add your image and define breakpoints for each version (see source)
+<pre class="language-markup"><code>
+&lt;img alt="" 
+src="http://placehold.it/640x320/0099C7/ffffff&text=Small" 
+sizes="(min-width: 40em) 100vw, 100vw" 
+srcset="http://placehold.it/640x320/0099C7/ffffff&text=Small 540w, 
+http://placehold.it/768x384/E8117F/ffffff&text=Medium 768w, 
+http://placehold.it/840x420/27B987/ffffff&text=Large 840w"&gt;
+</code></pre>
+  </li>
 </ol>
 
 <p><a href="https://github.com/scottjehl/picturefill/tree/1.2">View the documentation</a></p>
