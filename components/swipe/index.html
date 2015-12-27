@@ -17,9 +17,13 @@
       color: #666;
     }
 
-    #swipe div:nth-child(even) {
-      background: #999;
-    }
+    #swipe div:nth-child(2) { background: #aaa; }
+    #swipe div:nth-child(3) { background: #ccc; }
+
+    .text-center { text-align: center; }
+
+    button { outline: none;}
+    button.active { background: #eee; }
   </style>
   <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
   <link rel="stylesheet" href="components-swipe.css" type="text/css">
@@ -36,6 +40,15 @@
     <div><b>3</b></div>
   </div>
 </div>
+<p class="text-center">
+  <button id="prev">Prev</button>
+  <span id="swipe-nav">
+    <button data-slide="0" class="active">1</button>
+    <button data-slide="1">2</button>
+    <button data-slide="2">3</button>
+  </span>
+  <button id="next">Next</button>
+</p>
 
 
 <h2>How to Use</h2>
@@ -55,36 +68,102 @@ SASS: <a href="../../scss/plugins/_swipe.scss">swipe.scss</a><br>
     &lt;div&gt;&lt;b&gt;3&lt;/b&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+&lt;button id="prev"&gt;Prev&lt;/button&gt;
+&lt;button id="next"&gt;Next&lt;/button&gt;
 
 &lt;script&gt;
   // Attach the plugin to the element with id='swipe'
-  var elem = document.getElementById('swipe');
+  var elem = document.getElementById('swipe'),
+    prevBtn = document.getElementById('prev'),
+    nextBtn = document.getElementById('next');
+
   window.slider = Swipe(elem, {
     startSlide: 0,
-    auto: 1500,
+    auto: 2000,
+    draggable: true,
     continuous: true,
-    // disableScroll: true,
-    // stopPropagation: true,
-    // callback: function(index, element) {},
-    // transitionEnd: function(index, element) {}
   });
+
+  // Attach previous and next buttons
+  prevBtn.onclick = slider.prev;
+  nextBtn.onclick = slider.next;
 &lt;/script&gt;
 </code></pre>
 
+<p>You can also add slide counter controls:</p>
+
+<pre class="language-markup"><code>
+&lt;!-- Add slider controls: --&gt;
+&lt;div id="swipe-nav"&gt;
+  &lt;button data-slide="0" class="active"&gt;1&lt;/button&gt;
+  &lt;button data-slide="1"&gt;2&lt;/button&gt;
+  &lt;button data-slide="2"&gt;3&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var swipeNav = document.getElementById('swipe-nav').getElementsByTagName('button');
+
+// Callback on the sider adds an 'active' class to the currently active control
+window.slider = Swipe(elem, {
+  ...,
+  callback: function(index, elem) {
+    for (var i = 0, len = swipeNav.length; i < len; i++) {
+      var thisSlide = swipeNav[i];
+      if (thisSlide.getAttribute('data-slide') != index) {
+        swipeNav[i].className = '';
+      } else {
+        swipeNav[i].className = 'active';
+      }
+    }
+  }
+});
+
+// Add click events to each slide control buttons
+for (var i = 0, len = swipeNav.length; i < len; i++) {
+  swipeNav[i].onclick = function() {
+    slider.slide(this.getAttribute('data-slide'));
+  };
+}
+&lt;/script&gt;
+</code></pre>
 
 <script src="../../js/plugins/swipe.min.js"></script>
 
 <script>
-var elem = document.getElementById('swipe');
+// Attach the plugin to the element with id='swipe'
+var elem = document.getElementById('swipe'),
+    swipeNav = document.getElementById('swipe-nav').getElementsByTagName('button'),
+    prevBtn = document.getElementById('prev'),
+    nextBtn = document.getElementById('next');
+
+// Init the slider
 window.slider = Swipe(elem, {
   startSlide: 0,
-  auto: 1500,
+  auto: 2000,
+  draggable: true,
   continuous: true,
-  // disableScroll: true,
-  // stopPropagation: true,
-  // callback: function(index, element) {},
-  // transitionEnd: function(index, element) {}
+  callback: function(index, elem) {
+    for (var i = 0, len = swipeNav.length; i < len; i++) {
+      var thisSlide = swipeNav[i];
+      if (thisSlide.getAttribute('data-slide') != index) {
+        swipeNav[i].className = '';
+      } else {
+        swipeNav[i].className = 'active';
+      }
+    }
+  }
 });
+
+// Attach click events to previous and next buttons
+prevBtn.onclick = slider.prev;
+nextBtn.onclick = slider.next;
+
+// Add click events to each slide control buttons
+for (var i = 0, len = swipeNav.length; i < len; i++) {
+  swipeNav[i].onclick = function() {
+    slider.slide(this.getAttribute('data-slide'));
+  };
+}
 
 </script>
 

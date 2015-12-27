@@ -1,3 +1,9 @@
+/*
+* Scripts to initialise plugins
+* Includes device detection
+*/
+
+
 var mobile = false;
 var device = 'pc';
 
@@ -10,7 +16,6 @@ $(document).ready( function() {
 
   detectDevice();
   checkSize();
-
 
 });
 
@@ -40,12 +45,39 @@ function detectDevice() {
 
 
 // Init Swipe slider plugin
-var elem = document.getElementById('swipe');
+var elem = document.getElementById('swipe'),
+    swipeNav = document.getElementById('swipe-nav').getElementsByTagName('button'),
+    prevBtn = document.getElementById('prev'),
+    nextBtn = document.getElementById('next');
+
 window.slider = Swipe(elem, {
   startSlide: 0,
-  auto: 1500,
+  auto: 2000,
+  draggable: true,
   continuous: true,
+  callback: function(index, elem) {
+    for (var i = 0, len = swipeNav.length; i < len; i++) {
+      var thisSlide = swipeNav[i];
+      if (thisSlide.getAttribute('data-slide') != index) {
+        swipeNav[i].className = '';
+      } else {
+        swipeNav[i].className = 'active';
+      }
+    }
+  }
 });
+
+// Attach click events to previous and next buttons
+prevBtn.onclick = slider.prev;
+nextBtn.onclick = slider.next;
+
+// Add click events to each slide control buttons
+for (var i = 0, len = swipeNav.length; i < len; i++) {
+  swipeNav[i].onclick = function() {
+    slider.slide(this.getAttribute('data-slide'));
+  };
+}
+
 
 // Init Flowtype plugin
 var flowtypeElem = document.getElementById('flowtype-demo');
@@ -97,7 +129,6 @@ $(".loading").click(function(e) {
   this.disabled = true;
   this.children[0].className = 'hidden';
   this.children[1].className = '';
-  
   return true;
 });
 
