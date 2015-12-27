@@ -17,22 +17,23 @@
 <h1>Modal Popup</h1>
 <p>A responsive modal box with overlay and close button.</p>
 
-<a href="#" onclick="basaModal.toggle('open', 'modal-1');">Open Modal 1</a><br>
-<a href="#" onclick="basaModal.toggle('open', 'modal-2');">Open Modal 2</a>
+<a href="#modal-1" class="modal-link">Open Modal 1</a><br>
+<a href="#modal-2" class="modal-link">Open Modal 2</a>
 
 <!-- Modal -->
 <div id="modal-1" class="modal" aria-hidden="true">
   <h2>New Stuff</h2>
-  <p><strong>1. Click 'View Features' to see past Features.</strong><br> Features are grouped by Game. A marker indicates how many places that game was featured. Hover over each game for more details. <em>If you see any of our games being featured, please add them to the spreadsheet.</em></p>
-  <p><strong>2. Drag and drop a project on the calendar to change its day.</strong><br>Drop on previous or next month links to move project between month. <br><strong>NEEDS TESTING</strong> <em>if someone else is editing the spreadsheet when you drag and drop a project, your changes might be saved over.</em></p>
-  <a href="#" class="close" onclick="basaModal.toggle('close');">&#x2715;</a>
+  <p><strong>1. Click 'View Features' to see past Features.</strong><br> Features are grouped by game. A marker indicates how many places that game was featured. Hover over each game for more details. <em>If you see any of our games being featured, please add them to the spreadsheet.</em></p>
+  <p><strong>2. Drag and drop a project on the calendar to change its day.</strong><br>Drop on previous or next month links to move project between month.</p>
+  <a href="#" class="modal-close close">&#x2715;</a>
 </div>
 
 <div id="modal-2" class="modal" aria-hidden="true">
   <h2>Modal 2</h2>
-  <a href="#" class="close" onclick="basaModal.toggle('close');">&#x2715;</a>
+  <p>Content here</p>
+  <a href="#" class="modal-close close">&#x2715;</a>
 </div>
-<div id="modal-overlay" onclick="basaModal.toggle('close');"></div>
+<div id="modal-overlay" class="modal-close"></div>
 <!-- /Modal -->
 
 
@@ -43,42 +44,21 @@ JS dependency: <a href="../../js/vendors/classie.js">js/vendors/classie.js</a>
 
 <pre class="language-markup"><code>
 &lt;link rel="stylesheet" href="components-modal.css" type="text/css"&gt;
+&lt;script src="js/plugins/basa-modal.js"&gt;&lt;/script&gt;
 
 &lt;!-- Add a link to open the modal with the anchor as the modal ID --&gt;
-&lt;a href="#" onclick="basaModal.toggle('open','modal-1');"&gt;Open Modal&lt;/a&gt;
+&lt;a href="#modal-1" class="modal-link"&gt;Open Modal&lt;/a&gt;
 
 &lt;!-- Modal is hidden until link is clicked --&gt;
 &lt;div id="modal-1" class="modal" aria-hidden="true"&gt;
   &lt;p&gt;Content&lt;/p&gt;
-  &lt;a href="#" class="close" onclick="basaModal.toggle('close');"&gt;&#x2715;&lt;/a&gt;
+  &lt;a href="#" class="modal-close close"&gt;&#x2715;&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;div class="modal-overlay" onclick="basaModal.toggle('close');"&gt;&lt;/div&gt;
+&lt;div class="modal-overlay" class="modal-close&gt;&lt;/div&gt;
 
 &lt;script src="js/vendors/classie.js"&gt;&lt;/script&gt;
 &lt;!-- Add the following script to control opening and closing --&gt;
-&lt;script&gt;
-  (function(modal){
-
-    var allModals = document.getElementsByClassName('modal');
-    var overlay = document.getElementById('modal-overlay');
-
-    modal.toggle = function(type, id){
-      if (id && type == 'open') {
-        var modal = document.getElementById(id);
-        classie.addClass(modal, 'open');
-        classie.addClass(overlay, 'open');
-      } else {
-        Array.prototype.forEach.call(allModals, function(elem) {
-            classie.removeClass(elem, 'open');
-        });
-        classie.removeClass(overlay, 'open');
-      }
-      return false;
-    };
-
-  }(this.basaModal = this.basaModal || {}));
-&lt;/script&gt;
 </code></pre>
 
 <script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->

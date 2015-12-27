@@ -7,7 +7,7 @@
 */
 
 (function(tabs){
-// adapted from http://git.io/blingjs
+// adapted from http://git.io/blingjs - not supported on Android 2.3
 var _$ = document.querySelectorAll.bind(document);
 
 Node.prototype.on = window.on = function (name, fn) {
@@ -23,7 +23,7 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
   });
   return this;
 };
-// end of bling.js ----
+// end bling.js
 
 // a temp value to cache *what* we're about to show
 var target = null;

@@ -149,17 +149,25 @@ h3 {
   }
 }
 
-.columns-padded {
-  .columns {
-    background: #eee;
-    border: 1px solid #ddd;
-    border-right: none;
+.columns-padded,
+.flex-row {
+  .columns, .item {
+    background: $color-base;
+    color: #fff;
+    border-left: 1px solid $color-off-white;
+    border-right: 1px solid transparent;
     padding: $base-padding/2;
+    margin-bottom: $base-padding/2;
 
     &:last-child {
-      border-right: 1px solid #ddd;
+      border-right: 1px solid $color-off-white;
     }
   }
+}
+
+.row .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 body {

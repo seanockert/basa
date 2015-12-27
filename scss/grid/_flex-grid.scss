@@ -40,7 +40,7 @@ $fg-breakpoints: (
   (xs),
   (sm, 768px),
   (md, 992px),
-  (lg, 1200px)
+  (lg, 1280px)
 ) !default;
 
 
@@ -69,7 +69,7 @@ $fg-breakpoints: (
 /**
  * Row wrapper class, flex box parent.
  */
-.row {
+.flex-row {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
