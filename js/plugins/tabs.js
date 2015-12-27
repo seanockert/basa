@@ -1,4 +1,10 @@
-﻿/* Tabs with ARIA roles and back button - https://24ways.org/2015/how-tabs-should-work/ */
+﻿/*
+* Responsive tabs 1.0
+* with ARIA roles and back button support
+* (c) 2015 Remy Sharp
+* https://24ways.org/2015/how-tabs-should-work
+* Required styles in /scss/plugins/_tabs.scss
+*/
 
 (function(tabs){
 // adapted from http://git.io/blingjs

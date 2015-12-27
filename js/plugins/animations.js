@@ -1,3 +1,9 @@
+/*
+* CSS Animation Triggers
+* (c) 2015 Sean Ockert
+* To trigger queued CSS animations in demo - modify as needed.
+*/
+
 var queueAnim = function() {
 
   var element = document.getElementById("list-animate");

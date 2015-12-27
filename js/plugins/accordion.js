@@ -1,5 +1,8 @@
-// Simple Accordion with no dependencies
-// Sean Ockert 2014
+/*
+* Simple Accordion with no dependencies
+* (c) 2015 Sean Ockert
+* Required styles in /scss/plugins/_accordion.scss
+*/
 
 var accordionItems = new Array();
 

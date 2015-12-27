@@ -1,7 +1,7 @@
-/* basaModal
+/*
+* basaModal
 * Simple modal window
-* Sean Ockert 2015
-* v1
+* (c) 2015 Sean Ockert
 
 * Usage:
 * <a href="#" onclick="basaModal.toggle('open', 'modal-1');">Open Modal 1</a>
