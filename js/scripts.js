@@ -40,6 +40,32 @@ function detectDevice() {
   }
 
   $('html').addClass(device);
+
+  // For triggering animations
+  $("#test-animate li a").click(function(e) {
+    e.preventDefault();
+
+    var anim = $(this).data('anim');
+
+    if (anim == 'fill-list') {
+      queueAnim();
+    } else {
+      var element = document.getElementById("box-animate");
+      element.className = '';
+      element.offsetWidth = element.offsetWidth;
+      element.classList.add(anim);
+
+    }
+
+    return false;
+  });
+
+  $(".loading").click(function(e) {
+    this.disabled = true;
+    this.children[0].className = 'hidden';
+    this.children[1].className = '';
+    return true;
+  });
 };
 
 
@@ -106,29 +132,18 @@ var navigation = responsiveNav('#responsive-nav', {
 });
 
 
-// For triggering animations
-$("#test-animate li a").click(function(e) {
-  e.preventDefault();
-
-  var anim = $(this).data('anim');
-
-  if (anim == 'fill-list') {
-    queueAnim();
-  } else {
-    var element = document.getElementById("box-animate");
-    element.className = '';
-    element.offsetWidth = element.offsetWidth;
-    element.classList.add(anim);
-
+echo.init({
+  offset: 100,
+  throttle: 250,
+  unload: false,
+  callback: function (element, op) {
+    element.onerror = function() {
+      var ele = element;
+      var notFoundClass = 'image-404';
+      if (ele.className.indexOf(notFoundClass) == -1) {
+        ele.src = 'data:image/png;base64,';
+        ele.className = ele.className + ' ' + notFoundClass;
+      }
+    }
   }
-
-  return false;
 });
-
-$(".loading").click(function(e) {
-  this.disabled = true;
-  this.children[0].className = 'hidden';
-  this.children[1].className = '';
-  return true;
-});
-

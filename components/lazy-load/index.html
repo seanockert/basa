@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basa Components - Echo Lazy Load</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0; width: 100%; font-family: sans-serif; }
+    body { padding: 20px; }
+    section { margin: 0 auto; }
+
+    p, li, h1, dd {
+      max-width: 35em;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    section img {
+      max-width: 100%;
+      height: auto;
+      background: #f7f7f7;
+    }
+
+    @keyframes pulse {
+      0%   { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
+    section img.lazy { animation: pulse 2.5s ease-out infinite forwards; }
+  </style>
+  <link rel="stylesheet" href="../../css/prism.css" type="text/css"> <!-- For code highlighting only -->
+</head>
+
+<body>
+
+  <h1>Echo - Lazy Load Images</h1>
+
+  <section>
+    <p>Artisan 90's shabby chic, blog art party brunch VHS Vice normcore you probably haven't heard of them.</p>
+    <p>Readymade Godard pour-over, PBR lumbersexual cliche selvage pug bespoke. Cornhole Shoreditch typewriter four dollar toast. DIY vegan tote bag sartorial, beard biodiesel four dollar toast blog. Sriracha roof party church-key, artisan McSweeney's cronut XOXO before they sold out dreamcatcher tote bag pickled. Scenester fanny pack beard kogi, Carles PBR&B mlkshk keytar. Before they sold out selvage Intelligentsia iPhone direct trade cornhole. Single-origin coffee chia master cleanse, scenester Williamsburg Etsy pickled freegan lo-fi street art bitters pour-over.</p>
+    <p>Pour-over single-origin coffee gluten-free High Life squid brunch. Tumblr Portland brunch, forage four dollar toast bespoke sriracha yr viral cred organic wolf.</p>
+
+    <img src="nature_thumb.png" data-echo="nature.png" height="300" width="500">
+
+    <p>Direct trade skateboard Banksy, chambray pickled actually drinking vinegar hoodie dreamcatcher wolf Thundercats pour-over Intelligentsia plaid Odd Future.</p>
+    <p>Readymade Godard pour-over, PBR lumbersexual cliche selvage pug bespoke. Cornhole Shoreditch typewriter four dollar toast. DIY vegan tote bag sartorial, beard biodiesel four dollar toast blog. Sriracha roof party church-key, artisan McSweeney's cronut XOXO before they sold out dreamcatcher tote bag pickled. Scenester fanny pack beard kogi, Carles PBR&B mlkshk keytar. Before they sold out selvage Intelligentsia iPhone direct trade cornhole. Single-origin coffee chia master cleanse, scenester Williamsburg Etsy pickled freegan lo-fi street art bitters pour-over.</p>
+    <p>Pour-over single-origin coffee gluten-free High Life squid brunch. Tumblr Portland brunch, forage four dollar toast bespoke sriracha yr viral cred organic wolf.</p>
+    <img src="img.png" data-echo="https://placeimg.com/500/300/nature" height="300" width="500">
+    <p>Direct trade skateboard Banksy, chambray pickled actually drinking vinegar hoodie dreamcatcher wolf Thundercats pour-over Intelligentsia plaid Odd Future.</p>
+    <img src="img.png" data-echo="https://placeimg.com/500/300/nature" height="300" width="500">
+
+  </section>
+
+<h2>How to use</h2>
+Javascript: <a href="../../js/plugins/echo.js">echo.js</a><br>
+
+<pre class="language-markup"><code>
+&lt;script src="js/plugins/echo.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+echo.init({
+  offset: 100,
+  throttle: 250,
+  unload: false,
+  callback: function (element, op) {
+    element.onerror = function() {
+      var ele = element;
+      var notFoundClass = 'image-404';
+      if (ele.className.indexOf(notFoundClass) == -1) {
+        ele.src = 'data:image/png;base64,';
+        ele.className = ele.className + ' ' + notFoundClass;
+      }
+    }
+  }
+&lt;/script&gt;
+
+&lt;!-- Add the image in the data-echo attribute instead of src --&gt;
+&lt;img src="img.png" data-echo="https://placeimg.com/500/300/nature" height="300" width="500"&gt;
+</code></pre>
+
+  <script src="../../js/plugins/echo.js"></script>
+  <script>
+    echo.init({
+      offset: 100,
+      throttle: 250,
+      unload: false,
+      callback: function (element, op) {
+        element.onerror = function() {
+          var ele = element;
+          var notFoundClass = 'image-404';
+          if (ele.className.indexOf(notFoundClass) == -1) {
+            ele.src = 'data:image/png;base64,';
+            ele.className = ele.className + ' ' + notFoundClass;
+          }
+        }
+      }
+    });
+  </script>
+  <script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
+</body>
+</html>

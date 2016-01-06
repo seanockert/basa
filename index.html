@@ -498,7 +498,6 @@
 
           <a href="https://github.com/scottjehl/picturefill/tree/1.2" class="button" data-no-instant>Documentation</a> <a href="components/picturefill/" class="button red" data-no-instant>Demo</a>
 
-
           <h3><em>4.3</em> Responsive Nav</h3>
 
           <button class="open nav-menu x" type="button" role="button" id="menu" aria-label="Toggle Navigation">
@@ -575,119 +574,131 @@
           <a href="http://instantclick.io/" class="button" data-no-instant>Documentation</a> <a href="components/instantclick/" class="button red">Demo</a>
 
           <h3><em>4.8</em> Accordion</h3>
-            <br>
-            <ul id="accordion">
-              <li class="q">
-                <dt id="question-1">
-                  <h2>Question 1</h2>
-                </dt>
-                <dd>
-                  <p>Answer 1</p>
-                  <small><a href="#question-1">Permalink</a></small>
-                </dd>
-              </li>
-              <li class="q">
-                <dt id="question-2">
-                  <h2>Question 2</h2>
-                </dt>
-                <dd>
-                  <p>Answer 2</p>
-                  <small><a href="#question-2">Permalink</a></small>
-                </dd>
-              </li>
-            </ul>
+          <br>
+          <ul id="accordion">
+            <li class="q">
+              <dt id="question-1">
+                <h2>Question 1</h2>
+              </dt>
+              <dd>
+                <p>Answer 1</p>
+                <small><a href="#question-1">Permalink</a></small>
+              </dd>
+            </li>
+            <li class="q">
+              <dt id="question-2">
+                <h2>Question 2</h2>
+              </dt>
+              <dd>
+                <p>Answer 2</p>
+                <small><a href="#question-2">Permalink</a></small>
+              </dd>
+            </li>
+          </ul>
 
-            <ol>
-              <li>Attach the script <a href="js/plugins/accordion.js"><code>js/plugins/accordion.js</code></a></li>
-              <li>Use the accordion style in <a href="scss/plugins/_accordion.scss"><code>scss/plugins/_accordion.scss</code></a></li>
-              <li>Create a list with the ID: <code>accordion</code></li>
-              <li>Add list items like this:
-              <code>
-              &lt;li class="q"&gt;&lt;dt id="question-1"&gt;&lt;h2&gt;Question 1&lt;/h2&gt;&lt;/dt&gt;&lt;dd&gt;Answer 1&lt;/dd&gt;&lt;/li&gt;...
-              </code>
-              </li>
-            </ol>
+          <ol>
+            <li>Attach the script <a href="js/plugins/accordion.js"><code>js/plugins/accordion.js</code></a></li>
+            <li>Use the accordion style in <a href="scss/plugins/_accordion.scss"><code>scss/plugins/_accordion.scss</code></a></li>
+            <li>Create a list with the ID: <code>accordion</code></li>
+            <li>Add list items like this:
+            <code>
+            &lt;li class="q"&gt;&lt;dt id="question-1"&gt;&lt;h2&gt;Question 1&lt;/h2&gt;&lt;/dt&gt;&lt;dd&gt;Answer 1&lt;/dd&gt;&lt;/li&gt;...
+            </code>
+            </li>
+          </ol>
 
-            <a href="components/accordion/" class="button red" data-no-instant>Demo</a>
+          <a href="components/accordion/" class="button red" data-no-instant>Demo</a>
 
 
-            <h3><em>4.9</em> Scroll Events</h3>
+          <h3><em>4.9</em> Scroll Events</h3>
 
-            <ol>
-              <li>Attach the dependency script <a href="js/vendors/classie.js"><code>js/vendors/classie.js</code></a></li>
-              <li>Attach the script <a href="js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
-              <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
-              <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
-            </ol>
+          <ol>
+            <li>Attach the dependency script <a href="js/vendors/classie.js"><code>js/vendors/classie.js</code></a></li>
+            <li>Attach the script <a href="js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
+            <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
+            <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
+          </ol>
 
-            <a href="components/scroll-events/" class="button red" data-no-instant>Demo</a>
+          <a href="components/scroll-events/" class="button red" data-no-instant>Demo</a>
 
-            <h3><em>4.10</em> Modal Popup</h3>
-            <p>This is rare modal plugin that doesn't rely on jQuery. Alternatively, try <a href="http://basicmodal.electerious.com/" data-no-instant>Basic Modal</a>.</p>
-            <a href="#" class="button" onclick="basaModal.toggle('open', 'modal-signin');">Open a Modal</a><br>
-            <div id="modal-signin" class="modal" aria-hidden="true">
-              <h2>You Opened a Modal</h2>
-              <form class="form-mobile2">
-                <label>Username:</label>
-                <input type="text" placeholder="Username" value="admin">
-                <label>Password:</label>
-                <input type="password" placeholder="Password" value="xxxxxx">
-                <br><button class="button blue loading">
-                  <span>Sign In</span>
-                  <span class="hidden"><div class="spinner light"></div> &nbsp;Signing In...</span>
-                </button>
-              </form>
-              <a href="#" class="close" onclick="basaModal.toggle('close');">&#x2715;</a>
+          <h3><em>4.10</em> Modal Popup</h3>
+          <p>This is rare modal plugin that doesn't rely on jQuery. Alternatively, try <a href="http://basicmodal.electerious.com/" data-no-instant>Basic Modal</a>.</p>
+          <a href="#" class="button" onclick="basaModal.toggle('open', 'modal-signin');">Open a Modal</a><br>
+          <div id="modal-signin" class="modal" aria-hidden="true">
+            <h2>You Opened a Modal</h2>
+            <form class="form-mobile2">
+              <label>Username:</label>
+              <input type="text" placeholder="Username" value="admin">
+              <label>Password:</label>
+              <input type="password" placeholder="Password" value="xxxxxx">
+              <br><button class="button blue loading">
+                <span>Sign In</span>
+                <span class="hidden"><div class="spinner light"></div> &nbsp;Signing In...</span>
+              </button>
+            </form>
+            <a href="#" class="close" onclick="basaModal.toggle('close');">&#x2715;</a>
+          </div>
+          <div id="modal-overlay" onclick="basaModal.toggle('close');"></div>
+
+          <a href="components/modal/" class="button red" data-no-instant>Demo</a>
+
+          <h3><em>4.11</em> Swipe Slider</h3>
+          <p>If using jQuery, the best alternative is <a href="http://kenwheeler.github.io/slick/">Slick slider</a>.</p>
+
+          <div id="swipe" class="swipe">
+            <div class="swipe-wrap">
+              <div><b>1</b></div>
+              <div><b>2</b></div>
+              <div><b>3</b></div>
             </div>
-            <div id="modal-overlay" onclick="basaModal.toggle('close');"></div>
+          </div>
+          <style>#swipe-nav button {min-width:auto} #swipe-nav button.active {background:#27b987;}</style>
+          <button id="prev">Prev</button>
+          <span id="swipe-nav">
+            <button data-slide="0" class="active">1</button>
+            <button data-slide="1">2</button>
+            <button data-slide="2">3</button>
+          </span>
+          <button id="next">Next</button><br><br>
 
-            <a href="components/modal/" class="button red" data-no-instant>Demo</a>
+          <a href="https://github.com/thebird/Swipe" class="button" data-no-instant>Documentation</a> <a href="components/swipe/" class="button red" data-no-instant>Demo</a>
 
-            <h3><em>4.11</em> Swipe Slider</h3>
-            <p>If using jQuery, the best alternative is <a href="http://kenwheeler.github.io/slick/">Slick slider</a>.</p>
+          <h3><em>4.12</em> Smart Underline</h3>
+          <p>This snippet improves the underline on links by clearing the descenders eg:</p>
+          <ul>
+            <li><a href="#" class="su">Click here to get in touch</a></li>
+            <li><a href="#" class="su">I'm begging you to stop</a></li>
+            <li><a href="#" class="su">What are you doing with just one leg?</a></li>
+          </ul>
+          <a href="https://eager.io/blog/smarter-link-underlines/" class="button" data-no-instant>Documentation</a> <a href="components/smart-underline/" class="button red" data-no-instant>Demo</a>
 
-            <div id="swipe" class="swipe">
-              <div class="swipe-wrap">
-                <div><b>1</b></div>
-                <div><b>2</b></div>
-                <div><b>3</b></div>
-              </div>
-            </div>
-            <style>#swipe-nav button {min-width:auto} #swipe-nav button.active {background:#27b987;}</style>
-            <button id="prev">Prev</button>
-            <span id="swipe-nav">
-              <button data-slide="0" class="active">1</button>
-              <button data-slide="1">2</button>
-              <button data-slide="2">3</button>
-            </span>
-            <button id="next">Next</button><br><br>
+          <h3><em>4.13</em> Tabs</h3>
+          <p>Proper responsive tabs, with ARIA roles and back button support</p>
+          <p class="alert">Conflicts with smooth scroll plugin on this page. See the demo instead.</p>
+          <a href="https://24ways.org/2015/how-tabs-should-work/" class="button" data-no-instant>Documentation</a> <a href="components/tabs/" class="button red" data-no-instant>Demo</a>
 
-            <a href="https://github.com/thebird/Swipe" class="button" data-no-instant>Documentation</a> <a href="components/swipe/" class="button red" data-no-instant>Demo</a>
+          <h3><em>4.13</em> Type Improvements</h3>
+          <p>Allows you to write new CSS properties to take finer typographic control of type styles on the web.</p>
 
-            <h3><em>4.12</em> Smart Underline</h3>
-            <p>This snippet improves the underline on links by clearing the descenders eg:</p>
-            <ul>
-              <li><a href="#" class="su">Click here to get in touch</a></li>
-              <li><a href="#" class="su">I'm begging you to stop</a></li>
-              <li><a href="#" class="su">What are you doing with just one leg?</a></li>
-            </ul>
-            <a href="https://eager.io/blog/smarter-link-underlines/" class="button" data-no-instant>Documentation</a> <a href="components/smart-underline/" class="button red" data-no-instant>Demo</a>
+          <a href="http://typejs.org/" class="button" data-no-instant>Documentation</a> <a href="components/type-improvements/" class="button red" data-no-instant>Demo</a>
 
-            <h3><em>4.13</em> Tabs</h3>
-            <p>Proper responsive tabs, with ARIA roles and back button support</p>
-            <p class="alert">Conflicts with smooth scroll plugin on this page. See the demo instead.</p>
-            <a href="https://24ways.org/2015/how-tabs-should-work/" class="button" data-no-instant>Documentation</a> <a href="components/tabs/" class="button red" data-no-instant>Demo</a>
+          <h3><em>4.14</em> Tooltip</h3>
+          <p>A simple, bloated tooltip. <a class="tooltip" href="#">Hover me
+            <span class="tooltip-content">You can easily navigate the city by car.</span>
+          </a></p>
+          <a href="http://tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/" class="button" data-no-instant>Documentation</a> <a href="components/tooltip/" class="button red" data-no-instant>Demo</a>
 
-            <h3><em>4.13</em> Type Improvements</h3>
-            <p>Allows you to write new CSS properties to take finer typographic control of type styles on the web.</p>
+          <h3><em>4.15</em> Lazy Loading</h3>
 
-            <a href="http://typejs.org/" class="button" data-no-instant>Documentation</a> <a href="components/type-improvements/" class="button red" data-no-instant>Demo</a>
+          <img src="images/img.png" data-echo="https://placeimg.com/500/300/nature" height="300" width="500">
+          <ol>
+            <li>Attach the script <a href="js/plugins/echo.js"><code>js/plugins/echo.js</code></a></li>
+            <li>Create an <code>img</code> with a <code>data-echo</code> attribute instead of <code>src</code></li>
+            <li>Image will load when the page is scrolled within 100px of it</li>
+          </ol>
 
-            <h3><em>4.14</em> Tooltip</h3>
-            <p>A simple, bloated tooltip. <a class="tooltip" href="#">Hover me
-              <span class="tooltip-content">You can easily navigate the city by car.</span>
-            </a></p>
-            <a href="http://tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/" class="button" data-no-instant>Documentation</a> <a href="components/tooltip/" class="button red" data-no-instant>Demo</a>
+          <a href="https://github.com/toddmotto/echo" class="button" data-no-instant>Documentation</a> <a href="components/lazy-load/" class="button red" data-no-instant>Demo</a>
+
 
         </div>
 
@@ -766,6 +777,7 @@
   <script src="js/plugins/basa-modal.js"></script>
   <!--<script src="js/plugins/tabs.js"></script>-->
   <script src="js/plugins/basa-modal.js"></script>
+  <script src="js/plugins/echo.js"></script>
 
   <script src="js/plugins/scroll-events.js"></script>
   <script src="js/plugins/animations.js"></script>

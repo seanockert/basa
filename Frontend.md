@@ -2,6 +2,8 @@ source/
 |
 |  |- index.html _____________________ # Examples of all the contained styles and plugins
 |  |- config.rb _____________________ # Compass required to compile SASS
+|  |- gulpfile.js _____________________ # Gulp build configuration
+|  |- package.json _____________________ # Defines gulp dependencies
 |
 |- scss/
 |  |- global.scss _____________________ # Custom website styles
@@ -37,6 +39,7 @@ source/
 |  |- plugins/
 |    |- accordion.js _______________ # Toggle open/close accordion
 |    |- animations.js _______________ # Helper for queued CSS animations
+|    |- echo.js _______________ # Lazy load images
 |    |- fastclick.min.js _______________ # Eliminate tap delay on mobiles
 |    |- flowtype.native.js _______________ # Resize text to maintain readable line lengths
 |    |- instantclick.min.js _______________ # Preload content behind a link before clicking
@@ -59,6 +62,7 @@ source/
 |
 |- images/
 |  |- favicon.png _______________ # Replace with your own favicon
+|  |- img.png _______________ # Used as placeholder image for Echo lazy load
 |  |- star.svg _______________ # Used for 2.6 Fancy Divider
 |  |- spinner.gif _______________ # Used for Lightbox plugin
 |  |- tooltip.svg _______________ # Used for the Tooltip background
