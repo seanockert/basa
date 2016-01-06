@@ -102,11 +102,11 @@ gulp.task('critical', function (cb) {
 gulp.task('watch', function() {
     gulp.watch('scss/**/*.scss', ['css', 'rev', 'critical']);
     gulp.watch('js/**/*.js', ['js', 'rev']); //'lint',
-    //gulp.watch('*.html', ['html']);
+    gulp.watch('*.html', ['html']);
 });
 
 // Default Task
-gulp.task('default', ['css', 'js', 'rev', 'critical', 'watch']); //'lint',
+gulp.task('default', ['css', 'js', 'rev', 'html', 'critical', 'watch']); //'lint',
 
 function swallowError (error) {
   console.log(error.toString());
