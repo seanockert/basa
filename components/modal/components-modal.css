@@ -41,7 +41,13 @@ html {
   display: none;
 }
 
-  #modal-overlay.open { display: block; cursor: zoom;}
+body.modal-open {
+  position: relative;
+  overflow: hidden;
+}
+
+body.modal-open #modal-overlay { display: block;}
+
 
 .close {
   position: absolute;
@@ -75,27 +81,22 @@ html {
 
 /* Animation */
 
-@keyframes modalIn {
-  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
-  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
-  75%   { -webkit-transform: translate3d(0, -10px, 0) }
-  100%  { -webkit-transform: none }
-}
-
 @-webkit-keyframes modalIn {
-  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
-  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
-  75%   { -webkit-transform: translate3d(0, -10px, 0) }
-  100%  { -webkit-transform: none }
+  0%    { opacity: 0; -webkit-transform: scale(0.8)}
+  50%   { opacity: 1; -webkit-transform: scale(1.03)}
+  75%   { -webkit-transform: scale(0.98)}
+  100%  { -webkit-transform: scale(1)}
 }
 
+@keyframes modalIn {
+  0%    { opacity: 0; transform: scale(0.8)}
+  50%   { opacity: 1; transform: scale(1.03)}
+  75%   { transform: scale(0.98)}
+  100%  { transform: scale(1)}
+}
 
 .modal.open {
   opacity: 1;
-  transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  animation: modalIn 0.45s;
-  -webkit-animation: modalIn 0.45s;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
+  -webkit-animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
+  animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
 }

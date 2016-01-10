@@ -31,6 +31,7 @@
   };
   // end bling.js
 
+  var body = document.body;
   var allModals = document.getElementsByClassName('modal');
   var overlay = document.getElementById('modal-overlay');
 
@@ -38,20 +39,30 @@
   modal.toggle = function(type, id){
     if (id && type == 'open') {
       var modal = document.getElementById(id);
-      classie.addClass(modal, 'open');
-      classie.addClass(overlay, 'open');
+      addClass(modal, 'open');
+      addClass(body, 'modal-open');
     } else {
       Array.prototype.forEach.call(allModals, function(elem) {
-          classie.removeClass(elem, 'open');
+          removeClass(elem, 'open');
       });
-      classie.removeClass(overlay, 'open');
+      removeClass(body, 'modal-open');
+      history.pushState('', document.title, window.location.pathname + window.location.search); // Remove hash
     }
     return false;
   };
 
+  var addClass = function(id, className) {
+    id.className = id.className += ' ' + className;
+  }
+
+  var removeClass = function(id, className) {
+    var findClass = new RegExp('(^|\\s+)' + className + '(\\s+|$)');
+    id.className = id.className.replace(findClass, '');
+  }
+
   // Check for links with 'modal-link' class and assign them to open the modal with the ID in their href
   var modals = _$('.modal-link').on('click', function (e) {
-    e.preventDefault();
+    e.stopImmediatePropagation();
     var id = this.getAttribute('href').substr(1);
     basaModal.toggle('open', id);
   });
@@ -61,6 +72,12 @@
     e.preventDefault();
     basaModal.toggle('close');
   });
+
+  window.onhashchange = function() {
+    if (!location.hash){
+      basaModal.toggle('close');
+    }
+  }
 
 }(this.basaModal = this.basaModal || {}));
 

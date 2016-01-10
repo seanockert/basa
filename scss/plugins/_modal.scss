@@ -1,5 +1,18 @@
 ﻿/* Basa Modal */
 
+#modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  z-index: 10001;
+  display: block;
+  pointer-events: none;
+}
+
 .modal {
   position: fixed;
   top: 50px;
@@ -22,7 +35,6 @@
   &.open { display: block; }
 }
 
-
 #modal-overlay {
   background: rgba(0,0,0,0.3);
   position: fixed;
@@ -32,8 +44,14 @@
   bottom: 0;
   z-index: 10000;
   display: none;
+  overflow: hidden;
+}
 
-  &.open { display: block;}
+body.modal-open {
+  position: relative;
+  overflow: hidden;
+
+  #modal-overlay { display: block;}
 }
 
 
@@ -69,36 +87,22 @@
 
 /* Animation */
 
-@keyframes modalIn {
-  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
-  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
-  75%   { -webkit-transform: translate3d(0, -10px, 0) }
-  100%  { -webkit-transform: none }
-}
-
 @-webkit-keyframes modalIn {
-  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
-  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
-  75%   { -webkit-transform: translate3d(0, -10px, 0) }
-  100%  { -webkit-transform: none }
+  0%    { opacity: 0; -webkit-transform: scale(0.8)}
+  50%   { opacity: 1; -webkit-transform: scale(1.03)}
+  75%   { -webkit-transform: scale(0.98)}
+  100%  { -webkit-transform: scale(1)}
 }
 
-@-moz-keyframes modalIn {
-  0%    { opacity: 0; -webkit-transform: translate3d(0, -200%, 0) }
-  50%   { opacity: 1; -webkit-transform: translate3d(0, 20px, 0) }
-  75%   { -webkit-transform: translate3d(0, -10px, 0) }
-  100%  { -webkit-transform: none }
+@keyframes modalIn {
+  0%    { opacity: 0; transform: scale(0.8)}
+  50%   { opacity: 1; transform: scale(1.03)}
+  75%   { transform: scale(0.98)}
+  100%  { transform: scale(1)}
 }
 
 .modal.open {
   opacity: 1;
-  transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -moz-transition: all 0.45s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  animation: modalIn 0.45s;
-  -webkit-animation: modalIn 0.45s;
-  -moz-animation: modalIn 0.45s;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
+  -webkit-animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
+  animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
 }
