@@ -38,6 +38,7 @@ textarea {
   width: 100%;
   max-width: 320px;
   background: #fff;
+  cursor: pointer;
 
   &.short { max-width: 160px !important; }
   &.med   { max-width: 240px !important; }
@@ -68,6 +69,9 @@ input[type="checkbox"] { -webkit-appearance: checkbox;}
 input[type="radio"] { -webkit-appearance: radio; border-radius: 50%; }
 
 select {
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAYElEQVR4AWMYDCCtPe0/HtjOkMaYtgSXNFCGEWQGW9pebNJAUTaYNfxpl9ClgSL8yC6RSXuMLA3kyaA7VjftA0wayNLF5h+ntG9g6Z9pTri87Jf2Bwj98YVKZlom3aMCAGvtaoty8rBWAAAAAElFTkSuQmCC)
+  no-repeat 97% 50%;
+  background-size: 12px 12px;
   &:disabled { color: $color-mute; }
 }
 
