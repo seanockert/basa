@@ -1,0 +1,28 @@
+/* Media object  ---------------------- */
+
+.media {
+  margin: $base-padding/2 0;
+
+  figure {
+    margin-right: $base-padding/2;
+    float: left;
+
+    img {
+      width: 60px;
+    }
+  }
+
+  .media-content {
+    overflow: hidden;
+    line-height: 1.5;
+  }
+
+  small {
+    color: #666;
+  }
+  
+  textarea {
+    max-width: 100%;
+    min-height: 2em;
+  }
+}

@@ -9,7 +9,7 @@
 *   <h2>Modal 1</h2>
 *   <a href="#" class="modal-close close">&#x2715;</a>
 * </div>
-* <div class="modal-overlay" class="modal-close"></div>
+* <div class="modal-overlay modal-close"></div>
 */
 
 (function(modal){
@@ -43,10 +43,14 @@
       addClass(body, 'modal-open');
     } else {
       Array.prototype.forEach.call(allModals, function(elem) {
-          removeClass(elem, 'open');
+          addClass(elem, ' closing');
+          setTimeout(function() {
+            removeClass(elem, 'closing');
+            removeClass(elem, 'open');
+            removeClass(body, 'modal-open');
+            history.pushState('', document.title, window.location.pathname + window.location.search); // Remove hash
+          }, 150);
       });
-      removeClass(body, 'modal-open');
-      history.pushState('', document.title, window.location.pathname + window.location.search); // Remove hash
     }
     return false;
   };

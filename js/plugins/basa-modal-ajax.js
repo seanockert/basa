@@ -9,7 +9,7 @@
 *   <h2>Modal 1</h2>
 *   <a href="#" class="modal-close close">&#x2715;</a>
 * </div>
-* <div class="modal-overlay" class="modal-close"></div>
+* <div class="modal-overlay modal-close"></div>
 */
 
 /*! atomic v1.0.0 | (c) 2015 @toddmotto | https://github.com/toddmotto/atomic */
@@ -56,10 +56,13 @@
         addClass(body, 'modal-open');
       });
     } else if (type == 'close') {
-      removeClass(modalDiv, 'open');
-      removeClass(body, 'modal-open');
-      modalContent.innerHTML = '<div class="loading">Loading...</div>';
-      history.pushState('', document.title, window.location.pathname + window.location.search); // Remove hash
+      addClass(modalDiv, ' closing');
+      setTimeout(function() {
+        removeClass(modalDiv, 'open');
+        modalContent.innerHTML = '<div class="loading">Loading...</div>';
+        removeClass(body, 'modal-open');
+        history.pushState('', document.title, window.location.pathname + window.location.search); // Remove hash
+      }, 150);
     }
     return false;
   };

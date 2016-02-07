@@ -4,6 +4,7 @@
 html {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; 
+  position: relative;
 }
 
 .modal {
@@ -44,9 +45,12 @@ html {
 body.modal-open {
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
-body.modal-open #modal-overlay { display: block;}
+body.modal-open #modal-overlay { 
+  display: block;
+}
 
 
 .close {
@@ -95,8 +99,26 @@ body.modal-open #modal-overlay { display: block;}
   100%  { transform: scale(1)}
 }
 
+@-webkit-keyframes modalOut {
+  0%  { opacity: 1; -webkit-transform: scale(1)}
+  40%, 60% { opacity: 1; -webkit-transform: scale(1.05)}
+  100%  { -webkit-transform: scale(0.8)}
+}
+
+@keyframes modalOut {
+  0%  { opacity: 1; transform: scale(1)}
+  40%, 60% { opacity: 1; transform: scale(1.05)}
+  100%  { transform: scale(0.8)}
+}
+
 .modal.open {
   opacity: 1;
   -webkit-animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
   animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
+}
+
+.modal.closing {
+  opacity: 0;
+  -webkit-animation: modalOut 0.15s cubic-bezier(.56,0,.3,1) forwards;
+  animation: modalOut 0.15s cubic-bezier(.56,0,.3,1) forwards;
 }

@@ -1,18 +1,5 @@
 ﻿/* Basa Modal */
 
-#modal-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  overflow-y: scroll;
-  height: 100%;
-  width: 100%;
-  z-index: 10001;
-  display: block;
-  pointer-events: none;
-}
-
 .modal {
   position: fixed;
   top: 50px;
@@ -25,12 +12,8 @@
   padding: 20px;
   font-size: 16px;
   text-align: left;
-  z-index: 10001;
+  z-index: 1000;
   display: none;
-
-  h2, h3 {
-      margin-top: 0;
-  }
 
   &.open { display: block; }
 }
@@ -42,14 +25,13 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 10000;
+  z-index: 999;
   display: none;
   overflow: hidden;
 }
 
 body.modal-open {
   position: relative;
-  overflow: hidden;
 
   #modal-overlay { display: block;}
 }
@@ -66,6 +48,8 @@ body.modal-open {
   line-height: 1;
   padding: 12px;
   padding-top: 8px;
+  cursor: zoom-out;
+  text-decoration: none !important;
 }
 
   .close:hover {
@@ -101,8 +85,26 @@ body.modal-open {
   100%  { transform: scale(1)}
 }
 
+@-webkit-keyframes modalOut {
+  0%  { opacity: 1; -webkit-transform: scale(1)}
+  40%, 60% { opacity: 1; -webkit-transform: scale(1.05)}
+  100%  { -webkit-transform: scale(0.8)}
+}
+
+@keyframes modalOut {
+  0%  { opacity: 1; transform: scale(1)}
+  40%, 60% { opacity: 1; transform: scale(1.05)}
+  100%  { transform: scale(0.8)}
+}
+
 .modal.open {
   opacity: 1;
   -webkit-animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
   animation: modalIn 0.25s cubic-bezier(.56,0,.3,1) forwards;
+}
+
+.modal.closing {
+  opacity: 0;
+  -webkit-animation: modalOut 0.15s cubic-bezier(.56,0,.3,1) forwards;
+  animation: modalOut 0.15s cubic-bezier(.56,0,.3,1) forwards;
 }

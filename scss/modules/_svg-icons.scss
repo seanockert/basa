@@ -2,6 +2,8 @@
 SVG Icons - svgicons.sparkk.fr
 ----- */
 
+$color-base: #27B987;
+
 .svg-icon {
   width: 2em;
   height: 2em;
@@ -11,10 +13,10 @@ SVG Icons - svgicons.sparkk.fr
 .svg-icon path,
 .svg-icon polygon,
 .svg-icon rect {
-  fill: #4691f6;
+  fill: $color-base;
 }
 
 .svg-icon circle {
-  stroke: #4691f6;
+  stroke: $color-base;
   stroke-width: 1;
 }
