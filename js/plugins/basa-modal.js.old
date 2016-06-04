@@ -34,7 +34,6 @@
   var body = document.body;
   var allModals = document.getElementsByClassName('modal');
   var overlay = document.getElementById('modal-overlay');
-  var container = document.getElementById('container');
 
   // Exposed function
   modal.toggle = function(type, id){
@@ -42,17 +41,13 @@
       var modal = document.getElementById(id);
       addClass(modal, 'open');
       addClass(body, 'modal-open');
-      if (container) {
-        addClass(container, 'blur');
-      }
     } else {
       Array.prototype.forEach.call(allModals, function(elem) {
-          //addClass(elem, 'closing');
+          addClass(elem, ' closing');
           setTimeout(function() {
-            //removeClass(elem, 'closing');
+            removeClass(elem, 'closing');
             removeClass(elem, 'open');
             removeClass(body, 'modal-open');
-            removeClass(container, 'blur');
             history.pushState('', document.title, window.location.pathname + window.location.search); // Remove hash
           }, 150);
       });

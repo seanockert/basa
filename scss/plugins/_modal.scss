@@ -1,4 +1,4 @@
-﻿/* Basa Modal */
+/* Basa Modal */
 
 .modal {
   position: fixed;
@@ -10,10 +10,12 @@
   border-radius: 6px;
   box-shadow: 0 0 7px rgba(0,0,0,0.8);
   padding: 20px;
+  margin-bottom: 30px;
   font-size: 16px;
   text-align: left;
   z-index: 1000;
   display: none;
+  overflow: auto;
 
   &.open { display: block; }
 }
@@ -25,13 +27,49 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 98;
   display: none;
   overflow: hidden;
 }
 
 body.modal-open {
   position: relative;
+  height: 100%;
+  overflow: hidden;
+
+  .modal-wrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    top: 0;
+    
+    > span {
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      z-index: 999;
+      display: block;
+      
+    }
+    
+    .modal {
+      z-index: 999;
+      position: absolute;
+    }
+  }
+  
+  .overlay {
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 98;
+    cursor: pointer;
+  }
 
   #modal-overlay { display: block;}
 }

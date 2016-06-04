@@ -21,16 +21,20 @@
 <a href="ajax.html" class="modal-ajax button" data-no-instant>Open an AJAX Modal</a><br>
 
 <!-- Modal -->
-<div id="modal-1" class="modal" aria-hidden="true">
-  <h2>New Stuff</h2>
-  <p><strong>1. Click 'View Features' to see past Features.</strong><br> Features are grouped by game. A marker indicates how many places that game was featured. Hover over each game for more details. <em>If you see any of our games being featured, please add them to the spreadsheet.</em></p>
-  <p><strong>2. Drag and drop a project on the calendar to change its day.</strong><br>Drop on previous or next month links to move project between month.</p>
-  <a href="#" class="modal-close close">&#x2715;</a>
-</div>
+<div class="modal-wrap"><span>
+  <div id="modal-1" class="modal" aria-hidden="true">
+    <a href="#" class="modal-close close">&#x2715;</a>
+    <h2>New Stuff</h2>
+    <p><strong>1. Click 'View Features' to see past Features.</strong><br> Features are grouped by game. A marker indicates how many places that game was featured. Hover over each game for more details. <em>If you see any of our games being featured, please add them to the spreadsheet.</em></p>
+    <p><strong>2. Drag and drop a project on the calendar to change its day.</strong><br>Drop on previous or next month links to move project between month.</p>
+  </div>
+</span></div>
 
-<div id="modal-ajax" class="modal" aria-hidden="true">
-  <a href="#" class="modal-close close">&#x2715;</a><div id="modal-content"><div class="loading">Loading...</div></div>
-</div>
+<div class="modal-wrap"><span>
+  <div id="modal-ajax" class="modal" aria-hidden="true">
+    <a href="#" class="modal-close close">&#x2715;</a><div id="modal-content"><div class="loading">Loading...</div></div>
+  </div>
+</span></div>
 
 <div id="modal-overlay" class="modal-close"></div>
 <!-- /Modal -->

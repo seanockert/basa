@@ -1,11 +1,13 @@
-/**
- * CSS Modal
- */
-html {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; 
-  position: relative;
-}
+/* Basa Modal */
+
+/*
+*  <div class="modal-wrap"><span>
+*    <div id="modal-1" class="modal" aria-hidden="true">
+*    ...
+*    </div>
+*  </span></div>
+*/
+
 
 .modal {
   position: fixed;
@@ -23,15 +25,9 @@ html {
   z-index: 1000;
   display: none;
   overflow: auto;
+
+  &.open { display: block; }
 }
-
-  .modal h2 {
-      margin-top: 0;
-  }
-
-  .modal.open {
-    display: block;
-  }
 
 #modal-overlay {
   background: rgba(0,0,0,0.3);
@@ -47,36 +43,32 @@ html {
 
 body.modal-open {
   position: relative;
+  height: 100%;
   overflow: hidden;
-  margin-top: 0;
-  height: 100%;
-}
 
-body.modal-open #modal-overlay { 
-  display: block;
-}
+  .modal-wrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    top: 0;
 
-body.modal-open .modal-wrap {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 99;
-  bottom: 0;
-  top: 0;
-  pointer-events: none;
-}
+    > span {
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      z-index: 999;
+      display: block;
+    }
 
-body.modal-open .modal-wrap > span {
-  position: relative;
-  height: 100%;
-  overflow-y: auto;
-  z-index: -1;
-  display: block;
-}
+    .modal {
+      z-index: 999;
+      position: absolute;
+    }
+  }
 
-body.modal-open .modal-wrap .modal {
-  z-index: 101;
-  position: absolute;
+  #modal-overlay { display: block;}
 }
 
 
@@ -91,8 +83,8 @@ body.modal-open .modal-wrap .modal {
   line-height: 1;
   padding: 12px;
   padding-top: 8px;
-  z-index: 9999;
-  cursor: pointer;
+  cursor: zoom-out;
+  text-decoration: none !important;
 }
 
   .close:hover {
