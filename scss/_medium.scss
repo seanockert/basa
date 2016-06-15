@@ -2,6 +2,8 @@
 /* Tablet and up media queries  ---------------------- */
 @media #{$medium-up} {
 
+  .hidden-small { display: block !important; }
+
   body {
     &.scrolled {
 
