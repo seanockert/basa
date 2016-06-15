@@ -1,20 +1,25 @@
 /*
-* basaModal
-* Simple modal window
+* basaModal Ajax
+* Ajax modal window
 * (c) 2015 Sean Ockert
 
 * Usage:
-* <a href="#modal-1" class="modal-link">Open Modal 1</a>
-* <div id="modal-1" class="modal" aria-hidden="true">
-*   <h2>Modal 1</h2>
+* <a href="ajax-content.html" class="modal-ajax button" data-no-instant>Open AJAX Modal</a><br>
+* <div id="modal-ajax" class="modal" aria-hidden="true">
 *   <a href="#" class="modal-close close">&#x2715;</a>
+*   <div id="modal-content">
+*     <div class="loading">Loading...</div>
+*   </div>
 * </div>
-* <div class="modal-overlay modal-close"></div>
 */
+
+/*! classie v1.0.1 | bonzo | https://github.com/ded/bonzo | MIT license */
+!function(s){"use strict";function e(s){return new RegExp("(^|\\s+)"+s+"(\\s+|$)")}function n(s,e){var n=t(s,e)?c:a;n(s,e)}var t,a,c;"classList"in document.documentElement?(t=function(s,e){return s.classList.contains(e)},a=function(s,e){s.classList.add(e)},c=function(s,e){s.classList.remove(e)}):(t=function(s,n){return e(n).test(s.className)},a=function(s,e){t(s,e)||(s.className=s.className+" "+e)},c=function(s,n){s.className=s.className.replace(e(n)," ")});var o={hasClass:t,addClass:a,removeClass:c,toggleClass:n,has:t,add:a,remove:c,toggle:n};"function"==typeof define&&define.amd?define(o):"object"==typeof exports?module.exports=o:s.classie=o}(window);
 
 /*! atomic v1.0.0 | (c) 2015 @toddmotto | https://github.com/toddmotto/atomic */
 /* Required for AJAX calls */
 !function(a,b){"function"==typeof define&&define.amd?define(b):"object"==typeof exports?module.exports=b:a.atomic=b(a)}(this,function(a){"use strict";var b={},c={contentType:"application/x-www-form-urlencoded"},d=function(a){var b;try{b=JSON.parse(a.responseText)}catch(c){b=a.responseText}return[b,a]},e=function(b,e,f){var g={success:function(){},error:function(){},always:function(){}},h=a.XMLHttpRequest||ActiveXObject,i=new h("MSXML2.XMLHTTP.3.0");i.open(b,e,!0),i.setRequestHeader("Content-type",c.contentType),i.onreadystatechange=function(){var a;4===i.readyState&&(a=d(i),i.status>=200&&i.status<300?g.success.apply(g,a):g.error.apply(g,a),g.always.apply(g,a))},i.send(f);var j={success:function(a){return g.success=a,j},error:function(a){return g.error=a,j},always:function(a){return g.always=a,j}};return j};return b.get=function(a){return e("GET",a)},b.put=function(a,b){return e("PUT",a,b)},b.post=function(a,b){return e("POST",a,b)},b["delete"]=function(a){return e("DELETE",a)},b.setContentType=function(a){c.contentType=a},b});
+
 
 (function(modalAjax){
   // adapted from http://git.io/blingjs - not supported on Android 2.3

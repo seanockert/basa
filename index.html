@@ -64,7 +64,7 @@
       <li><a href="#section-plugins">Plugins</a></li>
       <li><a href="#section-animations">Animations</a></li>
     </ul>
-    <ul class="vertical-nav" style="border:none">
+    <ul class="vertical-nav hidden-small" style="border:none">
       <li><a href="https://github.com/seanockert/basa">Download</a></li>
     </ul>
 
@@ -508,10 +508,10 @@
             <a href="#" class="modal-close close">&#x2715;</a>
           </div>
 
-          <a href="components/modal/ajax.html" class="modal-ajax button" data-no-instant>Open an AJAX Modal</a><br>
+          <!--<a href="components/modal/ajax.html" class="modal-ajax button" data-no-instant>Open an AJAX Modal</a><br>
           <div id="modal-ajax" class="modal" aria-hidden="true">
             <a href="#" class="modal-close close">&#x2715;</a><div id="modal-content"><div class="loading">Loading...</div></div>
-          </div>
+          </div>-->
           <div id="modal-overlay" class="modal-close"></div>
 
           <a href="components/modal/" class="button red" data-no-instant>Demo</a>
@@ -773,16 +773,15 @@
 
   <div id="footer">
     <div class="row clearfix text-center"> 
-      <p>&copy; 2015 Basa Framework. Work in Progress by <a href="http://seanockert.com">Seano</a>. <a href="https://github.com/seanockert/basa">Download on Github</a></p>
+      <p>&copy; 2016 Basa Framework. Work in Progress by <a href="http://seanockert.com">Seano</a>. <a href="https://github.com/seanockert/basa">Download on Github</a></p>
     </div>
   </div>
 
   <div id="overlay"></div>
 
-  <script src="js/vendors/jquip.min.js"></script> <!-- Plugins don't require dependencies but using for extra functions -->
-  <script src="js/vendors/classie.js"></script> <!-- Required for scroll-events.js and modal.js -->
+  <script src="js/vendors/jquip.min.js"></script> <!-- Plugins don't require dependencies but using for extra functionality ins scripts.js -->
+  
   <script src="js/plugins/fastclick.min.js"></script>
-
   <script src="js/plugins/lightbox.js"></script>
   <script src="js/plugins/responsive-nav.min.js"></script>
   <script src="js/plugins/smooth-scroll.js"></script>
@@ -794,10 +793,8 @@
   <script src="js/plugins/basa-modal-ajax.js"></script>
   <!--<script src="js/plugins/tabs.js"></script>-->
   <script src="js/plugins/echo.js"></script>
-
   <script src="js/plugins/scroll-events.js"></script>
   <script src="js/plugins/animations.js"></script>
-
   <script src="js/plugins/instantclick.min.js"></script>
   <script data-no-instant>InstantClick.init();</script>
 

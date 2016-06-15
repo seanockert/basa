@@ -44,16 +44,17 @@
   }
 
   .vertical-nav {
+    text-align: left;
 
-     li {
+    li {
       float: none;
       display: block;
-     }
+    }
 
-     a {
+    a {
       padding: $base-padding/2;
       font-size: $font-size-base;
-     }
+    }
 
   }
 

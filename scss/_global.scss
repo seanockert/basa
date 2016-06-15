@@ -89,10 +89,12 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 
   li {
-    float: left;
+    float: none;
     padding: 0;
+    display: inline-block;
   }
 
   a {
@@ -125,7 +127,7 @@ body {
       bottom: auto;
       width: 100%;
       background: #e6e6e6;
-      z-index: 1001;
+      z-index: 10;
 
       #logo { display: none; }
 
