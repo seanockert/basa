@@ -1,4 +1,10 @@
-/*! Simple Twitter button that displays tweet count */
+/*! Simple Twitter and Facebook buttons */
+
+/* Example
+<a href="#" class="social facebook"><span>Share</span></a>
+<a href="https://twitter.com/home?status=Your%20tweet%20%23awesome" class="social twitter"><span>Tweet</span></a>
+*/
+
 
 $social-facebook-blue: #3b5997;
 $social-twitter-blue: #32ccfe;

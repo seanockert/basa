@@ -1,5 +1,19 @@
 /* Pricing Plans ---------------------- */
 
+/* Example
+<ul class="pricing-plans large-block-grid-3">
+  <li>
+    <a href="#">
+      <div class="pricing-plans_title">Basa Commercial</div>
+      <h4>Bronze <small>License</small></h4>
+      <div class="pricing-plans_for">for 1 developer</div>
+      <div class="pricing-plans_price"><sup>$</sup>25</div>
+    </a>
+  </li>
+</ul>
+*/
+
+
 $color-red: #E74C3C;
 $color-pricing: $color-base;
 

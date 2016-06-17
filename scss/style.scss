@@ -28,7 +28,8 @@ Version:        0.6
 @import "modules/browser-frame"; /* Browser frame for displaying portfolio items */
 @import "modules/pricing-plans"; /* For displaying tiered pricing */
 @import "modules/slanted"; /* Slanted div layout */
-@import "modules/svg-icons"; /* Icons */
+@import "modules/svg-icons";
+@import "modules/social-buttons";
 
 // Media Queries
 @import "small";
@@ -38,7 +39,6 @@ Version:        0.6
 // Plugins
 @import "plugins/lightbox";
 @import "plugins/responsive-nav";
-@import "plugins/social-buttons";
 @import "plugins/accordion";
 @import "plugins/swipe";
 @import "plugins/modal";

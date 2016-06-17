@@ -1,5 +1,23 @@
 /* Media object  ---------------------- */
 
+/* Sample layout
+
+<div class="media">
+  <figure><img src="https://placehold.it/100x100/27B987/ffffff"></figure>
+  <div class="media-content">
+    <strong>Media Title</strong><br>
+    <p>Media content</p>
+
+    <div class="media">
+      <figure><img src="https://placehold.it/100x100/27B987/ffffff"></figure>
+      <div class="media-content">
+        <strong>Nested media content</strong>
+      </div>
+    </div>
+  </div>
+</div>
+*/
+
 .media {
   margin: $base-padding/2 0;
 

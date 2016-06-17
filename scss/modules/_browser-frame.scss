@@ -1,4 +1,14 @@
-/* Safari frame  ---------------------- */
+/* Web browser frame  ---------------------- */
+
+/* Example
+<div class="browser-frame">
+  <div class="chrome">
+    <div class="dot"></div><div class="bar"><b>http://mysite.com</b></div>
+  </div>
+  <img src="https://placehold.it/640x330/E8117F/ffffff">
+</div>
+*/
+
 
 $color-frame-close: #D90000;
 $color-frame-min: #FFBF00;

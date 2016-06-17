@@ -7,7 +7,7 @@
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +49,7 @@
 </head>
 
 <body>
-  <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+  <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
   <div id="nav">
     <div id="logo">
@@ -58,7 +58,7 @@
     </div>
 
     <ul class="vertical-nav" id="main-nav">
-      <li><a href="#section-grid">Grid</a></li>
+      <li><a href="#section-layout">Layout</a></li>
       <li><a href="#section-type">Type</a></li>
       <li><a href="#section-forms">Forms</a></li>
       <li><a href="#section-plugins">Plugins</a></li>
@@ -75,12 +75,12 @@
 
       <div class="columns large-10 large-centered">
 
-        <div id="section-grid" class="section">
-          <h2>1 - The Grid</h2>
+        <div id="section-layout" class="section">
+          <h2>1 - Layout</h2>
           <h3><em>1.1</em> Foundation Grid</h3>
 
           <p>Basa uses Foundation 5 grid. This is a powerful 12-column, mobile-first, re-orderable, nestable grid layout. Supports IE9+</p>
-          <p><a href="http://foundation.zurb.com/docs/components/grid.html" data-no-instant>View the documentation</a></p>
+          <p><a href="//foundation.zurb.com/docs/components/grid.html" data-no-instant class="button">View the documentation</a></p>
 
           <div class="row">
             <div class="columns-padded">
@@ -106,8 +106,8 @@
           <div class="clear"></div>
 
           <h3><em>1.2</em> Flexbox Grid</h3>
-          <p>Simple grid implementation using flexbox. Requires <a href="http://caniuse.com/#feat=flexbox">flexbox support</a> (IE10+).</p>
-          <p><a href="https://matthewsimo.github.io/scss-flex-grid/" data-no-instant>View the documentation</a></p>
+          <p>Simple grid implementation using flexbox. Requires <a href="//caniuse.com/#feat=flexbox">flexbox support</a> (IE10+).</p>
+          <p><a href="https://matthewsimo.github.io/scss-flex-grid/" data-no-instant class="button">View the documentation</a></p>
 
           <div class="flex-row">
 
@@ -201,7 +201,7 @@
           <h3><em>1.4</em> Flexible Video</h3>
           <p>Allows embedded videos to scale to fit the device</p>
           <div class="flex-video">
-            <iframe src="http://player.vimeo.com/video/59803444" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <iframe src="//player.vimeo.com/video/59803444" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
           </div>
 
           <h3><em>1.5</em> Slanted Box</h3>
@@ -212,6 +212,65 @@
               <p>Allows embedded videos to scale to fit the device</p>
             </div>
           </div>
+
+          <h3><em>1.6</em> Browser Web Frame</h3><br>
+          <div class="browser-frame">
+            <div class="chrome">
+              <div class="dot"></div><div class="bar"><b>http://mysite.com</b></div>
+            </div>
+            <img src="//placehold.it/640x330/E8117F/ffffff">
+          </div>
+
+          <h3><em>1.7</em> Pricing Plans</h3><br>
+          <ul class="pricing-plans large-block-grid-3">
+            <li>
+              <a href="#">
+                <div class="pricing-plans_title">Basa Commercial</div>
+                <h4>Bronze <small>License</small></h4>
+                <div class="pricing-plans_for">for 1 developer</div>
+                <div class="pricing-plans_price"><sup>$</sup>25</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="pricing-plans_title">Basa Commercial</div>
+                <h4>Silver <small>License</small></h4>
+                <div class="pricing-plans_for">for 6 developers</div>
+                <div class="pricing-plans_price"><sup>$</sup>90</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="pricing-plans_title">Basa Commercial</div>
+                <h4>Gold <small>License</small></h4>
+                <div class="pricing-plans_for">for Unlimited developers</div>
+                <div class="pricing-plans_price"><sup>$</sup>190</div>
+              </a>
+            </li>
+          </ul>
+
+          <h3><em>1.8</em> Media Object</h3>
+          <div class="media">
+            <figure><img src="//placehold.it/100x100/27B987/ffffff"></figure>
+            <div class="media-content">
+              <strong>Media Title</strong><br>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum.<br>
+              <small><a href="">Like</a> &middot; <a href="">Reply</a> &middot; 6 hrs ago</small>
+
+              <div class="media">
+                <figure><img src="//placehold.it/100x100/27B987/ffffff"></figure>
+                <div class="media-content">
+                  <strong>A Nested Media Object</strong>
+                  <form>
+                    <textarea placeholder="Add your comment..."></textarea><br>
+                    <button class="button red">Post</button>
+                    <small> or <a href="">Cancel</a></small>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
         </div>
         <hr>
@@ -283,43 +342,7 @@
           <h3><em>2.6</em> Simple Divider</h3><br>
           <div class="divider"></div>
 
-          <h3><em>2.7</em> Browser Web Frame</h3><br>
-          <div class="browser-frame">
-            <div class="chrome">
-              <div class="dot"></div><div class="bar"><b>http://mysite.com</b></div>
-            </div>
-            <img src="http://placehold.it/640x330/E8117F/ffffff">
-          </div>
-
-          <h3><em>2.8</em> Pricing Plans</h3><br>
-          <ul class="pricing-plans large-block-grid-3">
-            <li>
-              <a href="#">
-                <div class="pricing-plans_title">Basa Commercial</div>
-                <h4>Bronze <small>License</small></h4>
-                <div class="pricing-plans_for">for 1 developer</div>
-                <div class="pricing-plans_price"><sup>$</sup>25</div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="pricing-plans_title">Basa Commercial</div>
-                <h4>Silver <small>License</small></h4>
-                <div class="pricing-plans_for">for 6 developers</div>
-                <div class="pricing-plans_price"><sup>$</sup>90</div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="pricing-plans_title">Basa Commercial</div>
-                <h4>Gold <small>License</small></h4>
-                <div class="pricing-plans_for">for Unlimited developers</div>
-                <div class="pricing-plans_price"><sup>$</sup>190</div>
-              </a>
-            </li>
-          </ul>
-
-          <h3><em>2.9</em> SVG Icons</h3>
+          <h3><em>2.7</em> SVG Icons</h3>
           <p>Button styles</p>
 
           <!-- Tick -->
@@ -371,30 +394,15 @@
             <path fill="none" d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z"></path>
           </svg>
 
-          <p><a href="http://svgicons.sparkk.fr/" class="button" data-no-instant>More Icons</a>
+          <p><a href="//svgicons.sparkk.fr/" class="button" data-no-instant>More Icons</a>
           <a href="components/svg-icons/" class="button red" data-no-instant>Demo</a></p>
 
-          <h3><em>2.10</em> Media Object</h3>
-          <div class="media">
-            <figure><img src="http://placehold.it/100x100/27B987/ffffff"></figure>
-            <div class="media-content">
-              <strong>Media Title</strong><br>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum.<br>
-              <small><a href="">Like</a> &middot; <a href="">Reply</a> &middot; 6 hrs ago</small>
+          <h3><em>2.8</em> Social Buttons</h3>
 
-              <div class="media">
-                <figure><img src="http://placehold.it/100x100/27B987/ffffff"></figure>
-                <div class="media-content">
-                  <strong>A Nested Media Object</strong>
-                  <form>
-                    <textarea placeholder="Add your comment..."></textarea><br>
-                    <button class="button red">Post</button>
-                    <small> or <a href="">Cancel</a></small>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p>
+            <a href="#" class="social facebook" data-no-instant><span>Share</span></a>
+            <a href="https://twitter.com/home?status=Your%20tweet%20%23awesome" class="social twitter" data-no-instant><span>Tweet</span></a>
+          </p>
 
         </div>
 
@@ -500,7 +508,7 @@
           <h2>4 - Plugins</h2>
 
           <h3><em>4.1</em> Modal Popup</h3>
-          <p>This is rare modal plugin that doesn't rely on jQuery. Alternatively, try <a href="http://basicmodal.electerious.com/" data-no-instant>Basic Modal</a>.</p>
+          <p>This is rare modal plugin that doesn't rely on jQuery. Alternatively, try <a href="//basicmodal.electerious.com/" data-no-instant>Basic Modal</a>.</p>
           <a href="#modal-inline" class="modal-link button">Open a Modal</a>
           <div id="modal-inline" class="modal" aria-hidden="true">
             <h2>You opened a modal</h2>
@@ -518,7 +526,7 @@
 
           <h3><em>4.2</em> Picture Fill</h3>
 
-          <img src="http://placehold.it/640x320/0099C7/ffffff&text=Small" sizes="(min-width: 40em) 100vw, 100vw" srcset="http://placehold.it/640x320/0099C7/ffffff&text=Small 640w, http://placehold.it/768x384/E8117F/ffffff&text=Medium 768w, http://placehold.it/840x420/27B987/ffffff&text=Large 840w" alt="">
+          <img src="//placehold.it/640x320/0099C7/ffffff&text=Small" sizes="(min-width: 40em) 100vw, 100vw" srcset="//placehold.it/640x320/0099C7/ffffff&text=Small 640w, //placehold.it/768x384/E8117F/ffffff&text=Medium 768w, //placehold.it/840x420/27B987/ffffff&text=Large 840w" alt="">
           <ol>
             <li>Attach the script <a href="js/plugins/picture-fill.min.js"><code>js/plugins/picture-fill.min.js</code></a></li>
             <li>Create a <code>picture</code> element in the header: <code>document.createElement( "picture" );</code></li>
@@ -556,7 +564,7 @@
           </ol>
 
           <h3><em>4.5</em> Lightbox</h3>
-          <a href="http://placehold.it/640x280" rel="lightbox"><img src="http://placehold.it/128x128/27B987/ffffff&text=Click+Me"></a>
+          <a href="//placehold.it/640x280" rel="lightbox"><img src="//placehold.it/128x128/27B987/ffffff&text=Click+Me"></a>
 
           <ol>
             <li>Attach the script <a href="js/plugins/lightbox.js"><code>js/plugins/lightbox.js</code></a></li>
@@ -566,21 +574,8 @@
 
           <a href="components/lightbox/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.6</em> Social Buttons</h3>
-          <p>
-            <a href="#" class="social facebook" data-no-instant><span>Share</span><b></b></a>
-            <a href="https://twitter.com/home?status=Your%20tweet%20%23awesome" class="social twitter" data-no-instant><span>Tweet</span><b></b></a>
-          </p>
-          <ol>
-            <li>Attach the script <a href="js/plugins/social-buttons.js"><code>js/plugins/social-buttons.js</code></a></li>
-            <li>Use the button style in <a href="scss/plugins/_social-buttons.scss"><code>scss/plugins/_social-buttons.scss</code></a></li>
-            <li>Change the target URL in the script to your site. This grabs number of tweets [deprecated] and shares for that URL.</li>
-            <li>Add the buttons: <code>&lt;a href="" class="social twitter/facebook"&gt;&lt;span&gt;Tweet/Share&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;</code></li>
-          </ol>
 
-          <a href="components/social-buttons/" class="button red" data-no-instant>Demo</a>
-
-          <h3><em>4.7</em> Flowtype</h3>
+          <h3><em>4.5</em> Flowtype</h3>
           <div class="row">
             <div id="flowtype-demo" class="columns large-10">
               <h4>What does FlowType.JS do?</h4>
@@ -595,9 +590,9 @@
             <li>Tweak values based on your font: <code>minFont: 16, maxFont: 48, fontRatio: 36</code></li>
           </ol>
 
-          <a href="http://simplefocus.com/flowtype" class="button" data-no-instant>Documentation</a> <a href="components/flowtype/" class="button red" data-no-instant>Demo</a>
+          <a href="//simplefocus.com/flowtype" class="button" data-no-instant>Documentation</a> <a href="components/flowtype/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.8</em> InstantClick</h3>
+          <h3><em>4.6</em> InstantClick</h3>
 
           <p>
             <a href="components/instantclick/second-page.html">Click me for a fast load</a>
@@ -608,9 +603,9 @@
             <li>Init the plugin <code>InstantClick.init();</code></li>
           </ol>
 
-          <a href="http://instantclick.io/" class="button" data-no-instant>Documentation</a> <a href="components/instantclick/" class="button red">Demo</a>
+          <a href="//instantclick.io/" class="button" data-no-instant>Documentation</a> <a href="components/instantclick/" class="button red">Demo</a>
 
-          <h3><em>4.9</em> Accordion</h3>
+          <h3><em>4.7</em> Accordion</h3>
           <br>
           <ul id="accordion">
             <li class="q">
@@ -647,10 +642,9 @@
           <a href="components/accordion/" class="button red" data-no-instant>Demo</a>
 
 
-          <h3><em>4.10</em> Scroll Events</h3>
+          <h3><em>4.8</em> Scroll Events</h3>
 
           <ol>
-            <li>Attach the dependency script <a href="js/vendors/classie.js"><code>js/vendors/classie.js</code></a></li>
             <li>Attach the script <a href="js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
             <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
             <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
@@ -658,8 +652,13 @@
 
           <a href="components/scroll-events/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.11</em> Swipe Slider</h3>
-          <p>If using jQuery, the best alternative is <a href="http://kenwheeler.github.io/slick/">Slick slider</a>.</p>
+          <h3><em>4.9</em> Swipe Slider</h3>
+          <ol>
+            <li>Attach the script <a href="js/plugins/swipe.min.js"><code>js/plugins/swipe.min.js</code></a></li>
+            <li>Use the swipe slider style in <a href="scss/plugins/_swipe.scss"><code>scss/plugins/_swipe.scss</code></a></li>
+            <li>Set up the HTML (see demo)</li>
+            <li>Init the plugin with <code>window.slider = Swipe()</code></li>
+          </ol>          
 
           <div id="swipe" class="swipe">
             <div class="swipe-wrap">
@@ -677,9 +676,11 @@
           </span>
           <button id="next">Next</button><br><br>
 
+          <p><em>If you need a carousel layout instead, try <a href="//kenwheeler.github.io/slick/">Slick slider</a></em></p>
+
           <a href="https://github.com/thebird/Swipe" class="button" data-no-instant>Documentation</a> <a href="components/swipe/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.12</em> Smart Underline</h3>
+          <h3><em>4.10</em> Smart Underline</h3>
           <p>This snippet improves the underline on links by clearing the descenders eg:</p>
           <ul>
             <li><a href="#" class="su">Click here to get in touch</a></li>
@@ -688,23 +689,23 @@
           </ul>
           <a href="https://eager.io/blog/smarter-link-underlines/" class="button" data-no-instant>Documentation</a> <a href="components/smart-underline/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.13</em> Tabs</h3>
+          <h3><em>4.11</em> Tabs</h3>
           <p>Proper responsive tabs, with ARIA roles and back button support</p>
-          <p class="alert">Conflicts with smooth scroll plugin on this page. See the demo instead.</p>
+          <p class="alert">Conflicts with smooth scroll plugin on this page. See the <a href="components/tabs/" data-no-instant>demo</a> instead.</p>
           <a href="https://24ways.org/2015/how-tabs-should-work/" class="button" data-no-instant>Documentation</a> <a href="components/tabs/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.13</em> Type Improvements</h3>
+          <h3><em>4.12</em> Type Improvements</h3>
           <p>Allows you to write new CSS properties to take finer typographic control of type styles on the web.</p>
 
-          <a href="http://typejs.org/" class="button" data-no-instant>Documentation</a> <a href="components/type-improvements/" class="button red" data-no-instant>Demo</a>
+          <a href="//typejs.org/" class="button" data-no-instant>Documentation</a> <a href="components/type-improvements/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.14</em> Tooltip</h3>
+          <h3><em>4.13</em> Tooltip</h3>
           <p>A simple, bloated tooltip. <a class="tooltip" href="#">Hover me
             <span class="tooltip-content">You can easily navigate the city by car.</span>
           </a></p>
-          <a href="http://tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/" class="button" data-no-instant>Documentation</a> <a href="components/tooltip/" class="button red" data-no-instant>Demo</a>
+          <a href="//tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/" class="button" data-no-instant>Documentation</a> <a href="components/tooltip/" class="button red" data-no-instant>Demo</a>
 
-          <h3><em>4.15</em> Lazy Loading</h3>
+          <h3><em>4.14</em> Lazy Loading</h3>
 
           <img src="images/img.png" data-echo="https://placeimg.com/500/300/nature" height="300" width="500">
           <ol>
@@ -729,7 +730,7 @@
           <p>Click the buttons below to play the animation.</p>
           <div class="row">
             <div class="columns large-6">
-              <img src="http://placehold.it/150x150/27B987/ffffff" id="box-animate" class="">
+              <img src="//placehold.it/150x150/27B987/ffffff" id="box-animate" class="">
             </div>
 
             <div class="columns large-6">
@@ -753,7 +754,7 @@
           <div class="clear"></div>
 
           <h3><em>5.2</em> Spinners</h3>
-          <p><a href="http://tobiasahlin.com/spinkit/">More Spinners here</a></p>
+          <p><a href="//tobiasahlin.com/spinkit/">More Spinners here</a></p>
           <p><div class="spinner"></div></p>
           <button class="button red">
             <div class="spinner light"></div> &nbsp;Saving...
@@ -773,7 +774,7 @@
 
   <div id="footer">
     <div class="row clearfix text-center"> 
-      <p>&copy; 2016 Basa Framework. Work in Progress by <a href="http://seanockert.com">Seano</a>. <a href="https://github.com/seanockert/basa">Download on Github</a></p>
+      <p>&copy; 2016 Basa Framework. Work in Progress by <a href="//seanockert.com">Seano</a>. <a href="https://github.com/seanockert/basa">Download on Github</a></p>
     </div>
   </div>
 
