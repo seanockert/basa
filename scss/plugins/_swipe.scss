@@ -26,7 +26,7 @@
   max-width: 300px;
 
   div {
-    background: #eee;
+    background: #222;
     text-align: center;
     height: 200px;
     line-height: 200px;
@@ -34,10 +34,19 @@
     font-family: sans-serif;
     color: #666;
     margin-bottom: 12px;
+    
+    b {
+      color: #fff;
+    }
 
-    &:nth-child(2) { background: #ccc; }
-    &:nth-child(3) { background: #aaa; }
+    &:nth-child(1) { background: #0099C7; }
+    &:nth-child(2) { background: #E8117F; }
+    &:nth-child(3) { background: #27B987; }
   }
+}
+
+#prev, #next, #swipe-nav button {
+  background: #aaa;
 }
 
 /* END demo styles */

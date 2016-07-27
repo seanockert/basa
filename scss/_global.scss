@@ -160,6 +160,11 @@ h3 {
     border-right: 1px solid transparent;
     padding: $base-padding/2;
     margin-bottom: $base-padding/2;
+    border-radius: $base-padding/4;
+
+    &:nth-child(n) { background: #27B987; }
+    &:nth-child(2n) { background: tint(#27B987,15%); }
+    &:nth-child(3n) { background: tint(#27B987,30%); }
 
     &:last-child {
       border-right: 1px solid $color-off-white;
