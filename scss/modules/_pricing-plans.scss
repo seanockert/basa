@@ -38,15 +38,15 @@ $color-pricing: $color-base;
     &:hover,
     &:focus,
     &:active {
-      color: $color-red;
-      border-color: $color-red;
+      color: darken($color-pricing, 15%);
+      border-color: darken($color-pricing, 15%);
 
       h4 {
-        color: $color-red;
+        color: darken($color-pricing, 15%);
       }
 
       .pricing-plans_price {
-        background: $color-red;
+        background: darken($color-pricing, 15%);
       }
     }
   }

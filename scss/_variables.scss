@@ -18,8 +18,6 @@ $social-twitter-blue: #32ccfe;
 $social-googleplus-red: #f23c26;
 $social-pinterest-red: #CC2229;
 
-
-
 /* Fonts  ---------------------- */
 
 $typeface-primary: 'Open Sans', sans-serif;
@@ -35,8 +33,6 @@ $font-size-xxlarge: 3.625em;
 $normal: 400;
 $strong: 700;
 
-
-
 /* Mixins ---------------------- */
 
 .no-list { @include blank-list; }
@@ -46,6 +42,34 @@ $strong: 700;
 
   li {
     display: inline-block;
+  }
+}
+
+/*
+Set the aspect ratio of an object before it loads. Example:
+.ratio-sixteen-nine {
+  @include aspect-ratio(1600, 900);
+  background: #eee url(img.svg) no-repeat center center;
+}
+
+<figure class="ratio-sixteen-nine">
+  <img src="image.jpg" alt="">
+</figure>
+*/
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  padding-bottom: ($height / $width) * 100%;
+  img,
+  video,
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 

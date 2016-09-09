@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sean Ockert",
-  "homepage": "https://balsamade.com/projects/basa",
+  "homepage": "https://seanockert.com/projects/basa",
   "devDependencies": {
     "critical": "^0.7.0",
     "gulp": "^3.9.0",
