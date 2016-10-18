@@ -1,0 +1,35 @@
+/* Rainbow colour swatches  ---------------------- */
+
+$color-rainbow-red: #DD2C00;
+$color-rainbow-darkorange: #FF5722;
+$color-rainbow-orange: #FF9800;
+$color-rainbow-yellow: #FFC107;
+$color-rainbow-lemon: #F5DC00;
+$color-rainbow-lightgreen: #CDDC39;
+$color-rainbow-green: #8BC34A;
+$color-rainbow-midgreen: #4CAF50;
+$color-rainbow-darkgreen: #43A047;
+
+.r-red { background: $color-rainbow-red }
+.r-darkorange { background: $color-rainbow-darkorange }
+.r-orange { background: $color-rainbow-orange }
+.r-yellow { background: $color-rainbow-yellow }
+.r-lemon { background: $color-rainbow-lemon }
+.r-lightgreen { background: $color-rainbow-lightgreen }
+.r-green { background: $color-rainbow-green }
+.r-midgreen { background: $color-rainbow-midgreen }
+.r-darkgreen { background: $color-rainbow-darkgreen }
+
+/* For demo only */
+.swatch {
+  display: inline-block;
+  width: 11.1%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+}

@@ -30,6 +30,9 @@ a {
   }
 }
 
+p {
+  margin: 1em 0;
+}
 
 
 /* Common Classes  ---------------------- */
@@ -72,7 +75,7 @@ a {
   background: $color-base;
   color: #fff;
   text-align: center;
-  @include vendor-prefix(transition, all 0.2s);
+  @include vendor-prefix(transition, all 0.15s);
 
   h1 {
     margin: 0;
