@@ -59,13 +59,13 @@
 
     <ul class="vertical-nav" id="main-nav">
       <li><a href="#section-layout">Layout</a></li>
-      <li><a href="#section-type">Type</a></li>
+      <li><a href="#section-type">Elements</a></li>
       <li><a href="#section-forms">Forms</a></li>
       <li><a href="#section-plugins">Plugins</a></li>
-      <li><a href="#section-animations">Animations</a></li>
+      <li><a href="#section-animations">Animate</a></li>
     </ul>
-    <ul class="vertical-nav hidden-small" style="border:none">
-      <li><a href="https://github.com/seanockert/basa">Download</a></li>
+    <ul class="vertical-nav hidden-small download-link">
+      <li><a href="https://github.com/seanockert/basa">Download (Github)</a></li>
     </ul>
 
   </div>
@@ -105,6 +105,10 @@
 
           <div class="clear"></div>
 
+          <p><code><a href="scss/grid/_grid-grid.scss">_grid-grid.scss</a></code></p>
+          <br>
+
+
           <h3><em>1.2</em> Flexbox Grid</h3>
           <p>Simple grid implementation using flexbox. Requires <a href="//caniuse.com/#feat=flexbox">flexbox support</a> (IE10+).</p>
           <p><a href="https://matthewsimo.github.io/scss-flex-grid/" data-no-instant class="button">View the documentation</a></p>
@@ -142,6 +146,9 @@
             </div>
 
           </div>
+
+          <p><code><a href="scss/grid/_flex-grid.scss">_flex-grid.scss</a></code></p>
+          <br>
 
           <h3><em>1.3</em> Equal Grid</h3>
           <p>A full-width grid layout, useful for laying out images or portfolio items.
@@ -198,20 +205,33 @@
 
           <div class="clear"></div>
 
+          <p><code><a href="scss/grid/_equal-grid.scss">_equal-grid.scss</a></code></p>
+          <br>
+
           <h3><em>1.4</em> Flexible Video</h3>
           <p>Allows embedded videos to scale to fit the device</p>
           <div class="flex-video">
             <iframe src="//player.vimeo.com/video/59803444" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
           </div>
+                 
+          <p><code><a href="scss/grid/_flex-video.scss">_flex-video.scss</a></code></p>
+          <br>
 
-          <h3><em>1.5</em> Slanted Box</h3>
 
-          <div class="slanted-box">
-            <div class="slanted-box_content">
-              <h2>A Slanted box</h2>
-              <p>Allows embedded videos to scale to fit the device</p>
+          <h3><em>1.5</em> Slanted Box / Angled Edges</h3>
+          
+          <div class="slanted-section-bottom">
+            <div class="slanted-inner">
+              <p>A pure SASS way of creating angled edges on sections by dynamically encoding SVGs</p>
             </div>
-          </div>
+          </div> 
+          <div class="clear"></div>
+          
+          <p><a href="https://github.com/josephfusco/angled-edges" class="button" data-no-instant>Documentation</a> <a href="http://angled-edges.josephfus.co/" class="button red" data-no-instant>Demo</a></p>
+
+          <p><code><a href="scss/grid/_angled-edges.scss">_angled-edges.scss</a></code></p>
+          <br>
+
 
           <h3><em>1.6</em> Browser Web Frame</h3><br>
           <div class="browser-frame">
@@ -221,6 +241,9 @@
             <img src="//placehold.it/640x330/E8117F/ffffff">
           </div>
 
+          <p><code><a href="scss/grid/_angled-edges.scss">_angled-edges.scss</a></code></p>
+          <br>
+          
           <h3><em>1.7</em> Pricing Plans</h3><br>
           <ul class="pricing-plans large-block-grid-3">
             <li>
@@ -249,6 +272,10 @@
             </li>
           </ul>
 
+          <p><code><a href="scss/grid/_pricing-plans.scss">_pricing-plans.scss</a></code></p>
+          <br>
+
+
           <h3><em>1.8</em> Media Object</h3>
           <div class="media">
             <figure><img src="//placehold.it/100x100/27B987/ffffff"></figure>
@@ -271,15 +298,21 @@
             </div>
           </div>
 
+          <p><code><a href="scss/grid/_media-object.scss">_media-object.scss</a></code></p>
+          <br>
+
+
           <h3><em>1.9</em> Fullwidth Image in Fixed Container</h3>
           <p>Stretch an image the full width of the page while keeping the text in a centered column.</p>
           <a href="https://css-tricks.com/full-width-containers-limited-width-parents/" class="button" data-no-instant>Documentation</a> <a href="components/fullwidth-image/" class="button red" data-no-instant>Demo</a>
+
+          <p><code><a href="scss/grid/_fullwidth-image.scss">_fullwidth-image.scss</a></code></p>
 
         </div>
         <hr>
 
         <div id="section-type" class="section">
-          <h2>2 - Typography</h2>
+          <h2>2 - Elements</h2>
 
           <h3><em>2.1</em> Headings</h3>
 
@@ -321,8 +354,20 @@
 
           <blockquote>When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That's relativity.</blockquote>
 
+          <h3><em>2.4</em> Simple Divider</h3>
+          <p><div class="divider"></div></p>
+          <br>
+          
+          <h3><em>2.5</em> Messages</h3>
+          <div class="alert">
+            <strong>Alert headline!</strong>
+            This is a simple message box style
+          </div>
 
-          <h3><em>2.4</em> Buttons</h3>
+          <p><code><a href="scss/grid/_type.scss">_type.scss</a></code></p>
+          <br>
+
+          <h3><em>2.6</em> Buttons</h3>
           <p>Button styles</p>
 
           <ul class="no-list">
@@ -335,15 +380,9 @@
 
             <li><p><a href="#" class="button block">.button.block</a></p></li>
           </ul>
-
-          <h3><em>2.5</em> Messages</h3>
-          <div class="alert">
-            <strong>Alert headline!</strong>
-            Message text
-          </div>
-
-          <h3><em>2.6</em> Simple Divider</h3><br>
-          <div class="divider"></div>
+          
+          <p><code><a href="scss/modules/_buttons.scss">_buttons.scss</a></code></p>
+          <br>
 
           <h3><em>2.7</em> SVG Icons</h3>
           <p>Button styles</p>
@@ -399,6 +438,7 @@
 
           <p><a href="//svgicons.sparkk.fr/" class="button" data-no-instant>More Icons</a>
           <a href="components/svg-icons/" class="button red" data-no-instant>Demo</a></p>
+          <br>
 
           <h3><em>2.8</em> Social Buttons</h3>
 
@@ -407,8 +447,22 @@
             <a href="https://twitter.com/home?status=Your%20tweet%20%23awesome" class="social twitter" data-no-instant><span>Tweet</span></a>
           </p>
           
+          <p><code><a href="scss/modules/_social-buttons.scss">_social-buttons.scss</a></code></p>
+          <br>
           
-          <h3><em>2.9</em> Color Swatches</h3>
+          <h3><em>2.9</em> Box Shadows</h3>
+          
+          <p>A more performant way to animate box shadows.</p>
+
+          <div class="box shadow">
+            Hover over this box to cast a shadow.
+          </div>
+          
+          <p><code><a href="scss/modules/_box-shadow.scss">_box-shadow.scss</a></code></p>
+          <br>
+          
+          
+          <h3><em>2.10</em> Color Swatches</h3>
           <p>Rainbow color grading for alerts, buttons or other elements</p> 
 
           <ol class="nolist" style="margin:0;padding:0">
@@ -425,6 +479,8 @@
           </ol>
           
           <small><code>.r-red .r-darkorange .r-orange .r-yellow .r-lemon .r-lightgreen .r-green .r-midgreen .r-darkgreen</code></small>
+
+          <p><code><a href="scss/modules/_color-swatches.scss">_color-swatches.scss</a></code></p>
 
         </div>
 
@@ -456,6 +512,7 @@
 
                   <p><input type="submit" value="Send Form"></p>
               </form>
+              <br>
 
               <form class="form-inline">
                 <h3><em>3.2</em> Inline Form</h3>
@@ -463,6 +520,7 @@
                 <input type="password" placeholder="Password" value="xxxxxx">
                 <input type="submit" value="Sign In">
               </form>
+              <br>
 
               <form class="form-mobile large-8">
                 <h3><em>3.3</em> Mobile Form</h3>
@@ -521,6 +579,8 @@
                 </tbody>
             </table>
 
+            <p><code><a href="scss/modules/_forms.scss">_forms.scss</a></code></p>
+            
         </div>
 
         <div class="clear"></div>
@@ -550,7 +610,7 @@
 
           <img src="//placehold.it/640x320/0099C7/ffffff&text=Small" sizes="(min-width: 40em) 100vw, 100vw" srcset="//placehold.it/640x320/0099C7/ffffff&text=Small 640w, //placehold.it/768x384/E8117F/ffffff&text=Medium 768w, //placehold.it/840x420/27B987/ffffff&text=Large 840w" alt="">
           <ol>
-            <li>Attach the script <a href="js/plugins/picture-fill.min.js"><code>js/plugins/picture-fill.min.js</code></a></li>
+            <li>Attach the script <a href="js/plugins/picture-fill.min.js"><code>picture-fill.min.js</code></a></li>
             <li>Create a <code>picture</code> element in the header: <code>document.createElement( "picture" );</code></li>
           </ol>
 
@@ -572,8 +632,8 @@
           </nav>
 
           <ol>
-            <li>Attach the script <a href="js/plugins/responsive-nav.min.js"><code>js/plugins/responsive-nav.min.js</code></a></li>
-            <li>Use the base styling in <a href="scss/plugins/_responsive-nav.scss"><code>scss/plugins/_responsive-nav.scss</code></a></li>
+            <li>Attach the script <a href="js/plugins/responsive-nav.min.js"><code>responsive-nav.min.js</code></a></li>
+            <li>Use the base styling in <a href="scss/plugins/_responsive-nav.scss"><code>_responsive-nav.scss</code></a></li>
             <li>Init the plugin with a nav ID reference: <code>var navigation = responsiveNav('#responsive-nav');</code></li>
           </ol>
 
@@ -581,7 +641,7 @@
 
           <h3><em>4.4</em> Smooth Scroll</h3>
           <ol>
-            <li>Attach the script <a href="js/plugins/smooth-scroll.js"><code>js/plugins/smooth-scroll.js</code></a></li>
+            <li>Attach the script <a href="js/plugins/smooth-scroll.js"><code>smooth-scroll.js</code></a></li>
             <li>Voila! Anchor links will now scroll smoothly.</li>
           </ol>
 
@@ -589,7 +649,7 @@
           <a href="//placehold.it/640x280" rel="lightbox"><img src="//placehold.it/128x128/27B987/ffffff&text=Click+Me"></a>
 
           <ol>
-            <li>Attach the script <a href="js/plugins/lightbox.js"><code>js/plugins/lightbox.js</code></a></li>
+            <li>Attach the script <a href="js/plugins/lightbox.js"><code>lightbox.js</code></a></li>
             <li>For each picture you want to expand in a lightbox, attach to the anchor link: <code>rel="lightbox"</code></li>
             <li>You can set a breakpoint. Below this lightbox will simply load the image. Default 568px.</li>
           </ol>
@@ -651,8 +711,8 @@
           </ul>
 
           <ol>
-            <li>Attach the script <a href="js/plugins/accordion.js"><code>js/plugins/accordion.js</code></a></li>
-            <li>Use the accordion style in <a href="scss/plugins/_accordion.scss"><code>scss/plugins/_accordion.scss</code></a></li>
+            <li>Attach the script <a href="js/plugins/accordion.js"><code>accordion.js</code></a></li>
+            <li>Use the accordion style in <a href="scss/plugins/_accordion.scss"><code>_accordion.scss</code></a></li>
             <li>Create a list with the ID: <code>accordion</code></li>
             <li>Add list items like this:
             <code>
@@ -667,7 +727,7 @@
           <h3><em>4.8</em> Scroll Events</h3>
 
           <ol>
-            <li>Attach the script <a href="js/plugins/scroll-events.js"><code>js/plugins/scroll-events.js</code></a></li>
+            <li>Attach the script <a href="js/plugins/scroll-events.js"><code>scroll-events.js</code></a></li>
             <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
             <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
           </ol>
@@ -676,8 +736,8 @@
 
           <h3><em>4.9</em> Swipe Slider</h3>
           <ol>
-            <li>Attach the script <a href="js/plugins/swipe.min.js"><code>js/plugins/swipe.min.js</code></a></li>
-            <li>Use the swipe slider style in <a href="scss/plugins/_swipe.scss"><code>scss/plugins/_swipe.scss</code></a></li>
+            <li>Attach the script <a href="js/plugins/swipe.min.js"><code>swipe.min.js</code></a></li>
+            <li>Use the swipe slider style in <a href="scss/plugins/_swipe.scss"><code>_swipe.scss</code></a></li>
             <li>Set up the HTML (see demo)</li>
             <li>Init the plugin with <code>window.slider = Swipe()</code></li>
           </ol>          
@@ -731,13 +791,12 @@
 
           <img src="images/img.png" data-echo="https://placeimg.com/500/300/nature" height="300" width="500">
           <ol>
-            <li>Attach the script <a href="js/plugins/echo.js"><code>js/plugins/echo.js</code></a></li>
+            <li>Attach the script <a href="js/plugins/echo.js"><code>echo.js</code></a></li>
             <li>Create an <code>img</code> with a <code>data-echo</code> attribute instead of <code>src</code></li>
             <li>Image will load when the page is scrolled within 100px of it</li>
           </ol>
 
           <a href="https://github.com/toddmotto/echo" class="button" data-no-instant>Documentation</a> <a href="components/lazy-load/" class="button red" data-no-instant>Demo</a>
-
 
         </div>
 
@@ -746,8 +805,6 @@
 
         <div id="section-animations" class="section">
           <h2>5 - Animations</h2>
-
-          <div class="box"></div>
 
           <p>Click the buttons below to play the animation.</p>
           <div class="row">

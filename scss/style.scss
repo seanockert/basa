@@ -12,26 +12,30 @@ Version:        0.6
 @import "settings"; /* Mixins and Media queries - no need to edit */
 @import "variables"; /* Set the base colours and fonts here */
 
+@import "modules/angled-edges"; /* A better slanted div layout */
+
 @import "grid/grid"; /* Zurb Foundation grid */
 @import "grid/block-grid"; /* Zurb Foundation block grid */
 @import "grid/equal-grid";
 @import "grid/flex-video"; /* Embed responsive videos */
 @import "grid/flex-grid"; /* Flexbox grid */
 
-// Styling
-@import "global"; /* Replace code in here with your own */
-
 @import "modules/forms";
 @import "modules/type";
 @import "modules/buttons";
-@import "modules/media";
+@import "modules/media-object";
 @import "modules/browser-frame"; /* Browser frame for displaying portfolio items */
 @import "modules/pricing-plans"; /* For displaying tiered pricing */
-@import "modules/slanted"; /* Slanted div layout */
+//@import "modules/slanted"; /* Slanted div layout */
 @import "modules/svg-icons";
+@import "modules/box-shadow"; /* A more performant box shadow animation */
 @import "modules/social-buttons";
 @import "modules/fullwidth-image"; /* For a full width image in a fixed container */
-@import "modules/rainbow"; /* Colour swatches */
+@import "modules/color-swatches"; /* Rainbow colour swatches */
+
+// Styling
+@import "global"; /* Replace code in here with your own */
+
 
 // Media Queries
 @import "small";
@@ -44,7 +48,6 @@ Version:        0.6
 @import "plugins/accordion";
 @import "plugins/swipe";
 @import "plugins/modal";
-@import "plugins/box-shadow";
 @import "plugins/smart-underline";
 @import "plugins/tabs";
 @import "plugins/tooltip";
