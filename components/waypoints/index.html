@@ -34,7 +34,7 @@
 <body>
 
 
-<h1>Scroll Events</h1>
+<h1>Waypoints</h1>
 
 <p>Fixed menu highlights the active item. Appends <code>class="scrolled"</code> to the body when scrolling starts.</p>
 
@@ -51,10 +51,10 @@
 
 <h2>How to use</h2>
 Dependency: <a href="../../js/vendors/classie.js">classie.js</a><br>
-Javascript: <a href="../../js/plugins/scroll-events.js">scroll-events.js</a>
+Javascript: <a href="../../js/plugins/waypoints.min.js">waypoints.min.js</a>
 
 <pre class="language-markup"><code>
-&lt;script src="js/plugins/scroll-events.js"&gt;&lt;/script&gt;
+&lt;script src="js/plugins/waypoints.min.js"&gt;&lt;/script&gt;
 &lt;style&gt;
   /*
   * Script appends class="scrolled" to the body when scrolling starts.
@@ -78,9 +78,79 @@ Javascript: <a href="../../js/plugins/scroll-events.js">scroll-events.js</a>
 &lt;div id="anchor1"&gt;Anchor 1&lt;/div&gt;
 &lt;div id="anchor2"&gt;Anchor 2&lt;/div&gt;
 &lt;div id="anchor3"&gt;Anchor 3&lt;/div&gt;
+
+&lt;script&gt;
+// Apply a 'scrolled' class to the body when the page starts scrolling
+var wScrolled = new Waypoint({
+  element: document.querySelector('body'),
+  handler: function(direction) {
+    if (direction == 'down') {
+      body.className = ' scrolled';
+    } else {
+      body.className = ''; 
+    }
+  },
+  offset: -80 
+})
+
+// Apply an 'active' class when scrolled to that anchor
+var wAnchor1 = new Waypoint({
+  element: document.getElementById('anchor1'),
+  handler: function(direction) {
+    this.element.className = ' active';
+  },
+  offset: 20 
+})
+&lt;/script&gt;
 </code></pre>
 
-<script src="../../js/plugins/scroll-events.js"></script>
+<script src="../../js/plugins/waypoints.min.js"></script>
+<script>
+var body = document.querySelector('body');
+var mainNav = document.getElementById('main-nav');
+
+var wScrolled = new Waypoint({
+  element: body,
+  handler: function(direction) {
+    if (direction == 'down') {
+      body.className = ' scrolled';
+    } else {
+      body.className = ''; 
+    }
+  },
+  offset: -80 
+})
+
+var wAnchor1 = new Waypoint({
+  element: document.getElementById('anchor1'),
+  handler: function(direction) {
+    var nav = mainNav.children;
+    nav[1].className = nav[2].className = '';
+    nav[0].className = ' active';
+  },
+  offset: 20 
+})
+
+var wAnchor2 = new Waypoint({
+  element: document.getElementById('anchor2'),
+  handler: function(direction) {
+    var nav = mainNav.children;
+    nav[0].className = nav[2].className = '';
+    nav[1].className = ' active';
+  },
+  offset: 20 
+})
+
+var wAnchor3 = new Waypoint({
+  element: document.getElementById('anchor3'),
+  handler: function(direction) {
+    var nav = mainNav.children;
+    nav[0].className = nav[1].className = '';
+    nav[2].className = ' active';
+  },
+  offset: 20 
+})
+</script>
 
 <script src="../../js/vendors/prism.js"></script>  <!-- For code highlighting only -->
 </body>

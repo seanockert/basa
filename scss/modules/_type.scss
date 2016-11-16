@@ -70,7 +70,7 @@ menu, ol, ul {
 
 /* Blockquote ---------------------- */
 
-blockquote {
+q, blockquote {
   line-height: 1.45;
   margin: $base-padding/2;
   padding: $base-padding/4;
@@ -78,6 +78,20 @@ blockquote {
   border-left: 3px solid $color-base;
   font-size: $font-size-medium;
   color: $color-light-grey;
+  
+  &:before,
+  &:after {
+    font-family: Baskerville, Palatino, sans-serif;
+    font-size: 1.2em;
+  }
+  
+  &:before {
+    content: open-quote;
+  }  
+  
+  &:after {
+    content: close-quote;
+  }
 }
 
 /* Custom message ---------------------- */

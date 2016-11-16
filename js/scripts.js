@@ -69,7 +69,6 @@ function detectDevice() {
 };
 
 
-
 // Init Swipe slider plugin
 var elem = document.getElementById('swipe'),
     swipeNav = document.getElementById('swipe-nav').getElementsByTagName('button'),
@@ -147,3 +146,55 @@ echo.init({
     }
   }
 });
+
+// Custom waypoints
+var body = document.querySelector('body');
+var mainNav = document.getElementById('main-nav');
+//var anchorIds = ['section-layout', 'section-elements', 'section-forms', 'section-plugins', 'section-animations'];
+
+var wScrolled = new Waypoint({
+  element: body,
+  handler: function(direction) {
+    if (direction == 'down') {
+      body.className = ' scrolled';
+    } else {
+      body.className = ''; 
+    }
+  },
+  offset: -80 
+})
+
+function toggleActive(id) {
+  var nav = mainNav.children;
+  console.log(id);
+  for (var i = 0; i < nav.length; i++) {
+    if (i != id) {
+      nav[i].className = '';
+    } else {
+      nav[i].className = ' active';
+    }
+  }
+}
+
+new Waypoint({
+  element: document.getElementById('section-layout'),
+  handler: function(direction) { toggleActive(0) },
+  offset: -5
+})
+new Waypoint({
+  element: document.getElementById('section-elements'),
+  handler: function(direction) { toggleActive(1) }
+})
+new Waypoint({
+  element: document.getElementById('section-forms'),
+  handler: function(direction) { toggleActive(2) }
+})
+new Waypoint({
+  element: document.getElementById('section-plugins'),
+  handler: function(direction) { toggleActive(3) }
+})
+new Waypoint({
+  element: document.getElementById('section-animations'),
+  handler: function(direction) { toggleActive(4) },
+  offset: 'bottom-in-view'
+})

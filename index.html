@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-  <title>Basa - base framework</title>
+  <title>Basa - base CSS and JS library</title>
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -54,12 +54,12 @@
   <div id="nav">
     <div id="logo">
       <h1>Basa</h1>
-      <strong>Sean's Framework</strong>
+      <strong>Sean's Library</strong>
     </div>
 
     <ul class="vertical-nav" id="main-nav">
       <li><a href="#section-layout">Layout</a></li>
-      <li><a href="#section-type">Elements</a></li>
+      <li><a href="#section-elements">Elements</a></li>
       <li><a href="#section-forms">Forms</a></li>
       <li><a href="#section-plugins">Plugins</a></li>
       <li><a href="#section-animations">Animate</a></li>
@@ -75,7 +75,7 @@
 
       <div class="columns large-10 large-centered">
 
-        <div id="section-layout" class="section">
+        <div id="section-layout" data-nav="0" class="section">
           <h2>1 - Layout</h2>
           <h3><em>1.1</em> Foundation Grid</h3>
 
@@ -241,7 +241,7 @@
             <img src="//placehold.it/640x330/E8117F/ffffff">
           </div>
 
-          <p><code><a href="scss/grid/_angled-edges.scss">_angled-edges.scss</a></code></p>
+          <p><code><a href="scss/modules/_browser-frame.scss">_browser-frame.scss</a></code></p>
           <br>
           
           <h3><em>1.7</em> Pricing Plans</h3><br>
@@ -272,7 +272,7 @@
             </li>
           </ul>
 
-          <p><code><a href="scss/grid/_pricing-plans.scss">_pricing-plans.scss</a></code></p>
+          <p><code><a href="scss/modules/_pricing-plans.scss">_pricing-plans.scss</a></code></p>
           <br>
 
 
@@ -298,7 +298,7 @@
             </div>
           </div>
 
-          <p><code><a href="scss/grid/_media-object.scss">_media-object.scss</a></code></p>
+          <p><code><a href="scss/modules/_media-object.scss">_media-object.scss</a></code></p>
           <br>
 
 
@@ -306,12 +306,12 @@
           <p>Stretch an image the full width of the page while keeping the text in a centered column.</p>
           <a href="https://css-tricks.com/full-width-containers-limited-width-parents/" class="button" data-no-instant>Documentation</a> <a href="components/fullwidth-image/" class="button red" data-no-instant>Demo</a>
 
-          <p><code><a href="scss/grid/_fullwidth-image.scss">_fullwidth-image.scss</a></code></p>
+          <p><code><a href="scss/modules/_fullwidth-image.scss">_fullwidth-image.scss</a></code></p>
 
         </div>
         <hr>
 
-        <div id="section-type" class="section">
+        <div id="section-elements" data-nav="1" class="section">
           <h2>2 - Elements</h2>
 
           <h3><em>2.1</em> Headings</h3>
@@ -364,7 +364,7 @@
             This is a simple message box style
           </div>
 
-          <p><code><a href="scss/grid/_type.scss">_type.scss</a></code></p>
+          <p><code><a href="scss/modules/_type.scss">_type.scss</a></code></p>
           <br>
 
           <h3><em>2.6</em> Buttons</h3>
@@ -487,7 +487,7 @@
         <div class="clear"></div>
         <hr>
 
-        <div id="section-forms" class="section">
+        <div id="section-forms" data-nav="2" class="section">
           <h2>3 - Forms and Tables</h2>
 
               <form>
@@ -586,7 +586,7 @@
         <div class="clear"></div>
         <hr>
 
-        <div id="section-plugins" class="section">
+        <div id="section-plugins" data-nav="3" class="section">
           <h2>4 - Plugins</h2>
 
           <h3><em>4.1</em> Modal Popup</h3>
@@ -724,15 +724,16 @@
           <a href="components/accordion/" class="button red" data-no-instant>Demo</a>
 
 
-          <h3><em>4.8</em> Scroll Events</h3>
+          <h3><em>4.8</em> Waypoints</h3>
 
           <ol>
-            <li>Attach the script <a href="js/plugins/scroll-events.js"><code>scroll-events.js</code></a></li>
-            <li>Plugin appends <code>class="scrolled"</code> to the body when you start scrolling so you can trigger events like pinning the menu to the top.</li>
-            <li>Looks for the nav with the ID <code>main-nav</code> and adds <code>class="active"</code> to each nav item when page is scrolled to that section.</li>
+            <li>Attach the script <a href="js/plugins/waypoints.min.js"><code>waypoints.min.js</code></a></li>
+            <li>Write waypoint listeners for each section</li>
+            <li>When page is scrolled to that section it will trigger the action of the waypoint (eg. highlight a menu item or start an animation)</li>
           </ol>
 
-          <a href="components/scroll-events/" class="button red" data-no-instant>Demo</a>
+          <a href="http://imakewebthings.com/waypoints/" class="button" data-no-instant>Documentation</a> <a href="components/waypoints/" class="button red" data-no-instant>Demo</a>
+         
 
           <h3><em>4.9</em> Swipe Slider</h3>
           <ol>
@@ -803,7 +804,7 @@
         <div class="clear"></div>
         <hr>
 
-        <div id="section-animations" class="section">
+        <div id="section-animations" data-nav="4" class="section">
           <h2>5 - Animations</h2>
 
           <p>Click the buttons below to play the animation.</p>
@@ -872,7 +873,8 @@
   <script src="js/plugins/basa-modal-ajax.js"></script>
   <!--<script src="js/plugins/tabs.js"></script>-->
   <script src="js/plugins/echo.js"></script>
-  <script src="js/plugins/scroll-events.js"></script>
+  <!--<script src="js/plugins/scroll-events.js"></script>-->
+  <script src="js/plugins/waypoints.min.js"></script>
   <script src="js/plugins/animations.js"></script>
   <script src="js/plugins/instantclick.min.js"></script>
   <script data-no-instant>InstantClick.init();</script>
