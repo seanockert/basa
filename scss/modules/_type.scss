@@ -103,7 +103,8 @@ q, blockquote {
 }
 
 .highlight {
-  background-color: $color-yellow;
+  /*background-color: $color-yellow;*/
+  background-image: linear-gradient(-100deg, rgba(255, 255, 255, 0), yellow 85%, rgba(255, 255, 255, 0))
 }
 
 /* Fancy Divider ---------------------- */
