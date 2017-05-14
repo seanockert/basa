@@ -31,7 +31,7 @@
   100%  { @include transform(rotate(359deg)); }
 }
 
-.amim {
+.anim {
   @include vendor-prefix(transition, all 0.45s cubic-bezier(0.650, 0.045, 0.405, 1.000));
 }
 
